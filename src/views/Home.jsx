@@ -1,11 +1,42 @@
+import { Nav as Navbar } from '../components/Navbar.jsx'; // Named import
+import HeroBanner from '../components/HeroBanner.jsx';
+import bgimage from '../assets/home/1.png'
+import SectionTwo from 'src/components/SectionTwo.jsx';
+import  SectionThree  from 'src/components/SectionThree.jsx';
+import SectionFour from 'src/components/SectionFour.jsx';
+import Footer from 'src/components/PageFooter.jsx';
+import Pricing from 'src/components/PricingTable.jsx';
+import SectionFive from 'src/components/SectionFive.jsx';
 function Home() {
   return (
     <>
-    <a href="#" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-     <p className="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-   </a>
-  </>
-  )
+      <div>
+        <div className="">
+          <Navbar />
+
+
+          {/* header section starts here */}
+          <HeroBanner />
+
+          {/* header section ends here */}
+{/* SectionFour */}
+<SectionFour/>
+          {/* SectionFour */}
+          {/* other section  */} 
+          <SectionTwo/>
+          {/* other section  */}
+
+<SectionFive/>
+<Pricing/>
+          {/* Sectionthree */}
+          < SectionThree/>
+          {/* SectionThree */}
+
+          <Footer/>
+        </div>
+      </div>
+    </>
+  );
 }
-export default Home
+
+export default Home;
