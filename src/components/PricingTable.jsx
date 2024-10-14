@@ -1,6 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import useAxios from 'src/Hooks/UseAxios'
+import { constructQueryString } from 'src/helpers'
+
+
+let qs = constructQueryString([
+  "Pricing",
+  "Pricing.Plans",
+  "Pricing.Plans.Features"
+]);
 
 export const Pricing = () => {
+
+  const [data, setData] = useState([]);
+  const { response, loading, error } = useAxios({
+    method: "get",
+    url: `home?${qs}`,
+  });
+  useEffect(() => {
+    if (response !== null) {
+      setData(response);
+    }
+  }, [response]);
+  // console.log(data, "Pricing");
+  if(!data.data) return
+
+  let { Heading, SubText ,Plans } = data.data.Pricing
+
+
   return (
     <div className="relative w-full h-full">
       <div className="absolute hidden w-full bg-gray-50 lg:block h-96" />
@@ -20,178 +46,70 @@ export const Pricing = () => {
                 </defs>
                 <rect fill="url(#svg-pattern)" width="52" height="24" />
               </svg>
-              <span className="relative">Affordable</span>
+              <span className="relative">{Heading}</span>
             </span>{' '}
-            for everyone
+            
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.
+            {SubText}
           </p>
         </div>
         <div className="grid max-w-screen-md gap-10 md:grid-cols-2 sm:mx-auto">
-          {/* Starter Plan */}
-          <div>
-            <div className="p-8 bg-gray-900 rounded">
-              <div className="mb-4 text-center">
-                <p className="text-xl font-medium tracking-wide text-white">Starter Plan</p>
-                <div className="flex items-center justify-center">
-                  <p className="mr-2 text-5xl font-semibold text-white lg:text-6xl">$39</p>
-                  <p className="text-lg text-gray-500">/ month</p>
-                </div>
-              </div>
-              <ul className="mb-8 space-y-2">
-                <li className="flex items-center">
-                  <div className="mr-3">
-                    <svg
-                      className="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8" />
-                      <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
-                    </svg>
-                  </div>
-                  <p className="font-medium text-gray-300">10 deploys per day</p>
-                </li>
-                <li className="flex items-center">
-                  <div className="mr-3">
-                    <svg
-                      className="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8" />
-                      <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
-                    </svg>
-                  </div>
-                  <p className="font-medium text-gray-300">10 GB of storage</p>
-                </li>
-                <li className="flex items-center">
-                  <div className="mr-3">
-                    <svg
-                      className="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8" />
-                      <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
-                    </svg>
-                  </div>
-                  <p className="font-medium text-gray-300">3 domains</p>
-                </li>
-                <li className="flex items-center">
-                  <div className="mr-3">
-                    <svg
-                      className="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8" />
-                      <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
-                    </svg>
-                  </div>
-                  <p className="font-medium text-gray-300">SSL Certificates</p>
-                </li>
-              </ul>
-              <button
-                type="button"
-                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-              >
-                Get Now
-              </button>
-            </div>
-            <div className="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75" />
-            <div className="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50" />
-            <div className="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25" />
-          </div>
-
-          {/* Pro Plan */}
-          <div>
-            <div className="p-8 bg-gray-900 rounded">
-              <div className="mb-4 text-center">
-                <p className="text-xl font-medium tracking-wide text-white">Pro Plan</p>
-                <div className="flex items-center justify-center">
-                  <p className="mr-2 text-5xl font-semibold text-white lg:text-6xl">$59</p>
-                  <p className="text-lg text-gray-500">/ month</p>
-                </div>
-              </div>
-              <ul className="mb-8 space-y-2">
-                <li className="flex items-center">
-                  <div className="mr-3">
-                    <svg
-                      className="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8" />
-                      <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
-                    </svg>
-                  </div>
-                  <p className="font-medium text-gray-300">100 deploys per day</p>
-                </li>
-                <li className="flex items-center">
-                  <div className="mr-3">
-                    <svg
-                      className="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8" />
-                      <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
-                    </svg>
-                  </div>
-                  <p className="font-medium text-gray-300">50 GB of storage</p>
-                </li>
-                <li className="flex items-center">
-                  <div className="mr-3">
-                    <svg
-                      className="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8" />
-                      <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
-                    </svg>
-                  </div>
-                  <p className="font-medium text-gray-300">Unlimited domains</p>
-                </li>
-                <li className="flex items-center">
-                  <div className="mr-3">
-                    <svg
-                      className="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8" />
-                      <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
-                    </svg>
-                  </div>
-                  <p className="font-medium text-gray-300">SSL Certificates</p>
-                </li>
-              </ul>
-              <button
-                type="button"
-                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-              >
-                Get Now
-              </button>
-            </div>
-            <div className="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75" />
-            <div className="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50" />
-            <div className="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25" />
-          </div>
-        </div>
+          {Plans.map((plan)=>{
+            return <PircingTab key={plan.id} plan={plan}/>
+          })}
+         </div>
       </div>
     </div>
   );
 };
+
+
+const PircingTab = ({plan}) => {
+  const { Features,Name,Price } = plan
+  return (
+    <div>
+      <div className="p-8 bg-gray-900 rounded">
+        <div className="mb-4 text-center">
+          <p className="text-xl font-medium tracking-wide text-white">{Name}</p>
+          <div className="flex items-center justify-center">
+            <p className="mr-2 text-5xl font-semibold text-white lg:text-6xl">$ {Price}</p>
+            <p className="text-lg text-gray-500">/ month</p>
+          </div>
+        </div>
+        <ul className="mb-8 space-y-2">
+          {Features.map((feature)=>{
+            return (
+              <li key={feature.id} className="flex items-center">
+              <div className="mr-3">
+                <svg
+                  className="w-4 h-4 text-teal-accent-400"
+                  viewBox="0 0 24 24"
+                  strokeLinecap="round"
+                  strokeWidth="2"
+                >
+                  <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8" />
+                  <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
+                </svg>
+              </div>
+              <p className="font-medium text-gray-300">{feature.Feature}</p>
+            </li>
+            )
+          })}
+         
+        </ul>
+        <button
+          type="button"
+          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+        >
+          Get Now
+        </button>
+      </div>
+      <div className="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75" />
+      <div className="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50" />
+      <div className="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25" />
+    </div>
+  )
+}
 
 export default Pricing;

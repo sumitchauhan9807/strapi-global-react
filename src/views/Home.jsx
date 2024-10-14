@@ -11,28 +11,18 @@ import Pricing from "src/components/PricingTable.jsx";
 import SectionFive from "src/components/SectionFive.jsx";
 
 import useAxios from 'src/Hooks/UseAxios'
+import { constructQueryString } from 'src/helpers'
+let qs = constructQueryString([
+  "Hero",
+  "Hero.HeroText",
+  "Hero.Image",
+  "HomeSection1",
+  "HomeSection1.Images",
+  "HomeSection1.Lists",
+]);
 
-
-const constructQueryString = (fields) => {
-  let str = ''
-  fields.forEach((element,index) => {
-    str += `populate[${index}]=${element}&`
-  });
-  return str
-}
 function Home() {
   const [data, setData] = useState([]);
-
-  let qs = constructQueryString([
-    "Hero",
-    "Hero.HeroText",
-    "Hero.Image",
-    "HomeSection1",
-    "HomeSection1.Images",
-    "HomeSection1.Lists",
-  ]);
-  console.log(qs, "asd");
-
   const { response, loading, error } = useAxios({
     method: "get",
     url: `home?${qs}`,
@@ -43,7 +33,7 @@ function Home() {
     }
   }, [response]);
 
-  console.log(data, "respdataonse");
+  if(!data.data) return
   return (
     <>
       <div>
@@ -51,11 +41,15 @@ function Home() {
           <Navbar />
 
           {/* header section starts here */}
-          <HeroBanner />
+          <HeroBanner
+            data={data.data.Hero}
+          />
 
           {/* header section ends here */}
           {/* SectionFour */}
-          <SectionFour />
+          <SectionFour 
+          data={data.data.HomeSection1}
+          />
           {/* SectionFour */}
           {/* other section  */}
           <SectionTwo />

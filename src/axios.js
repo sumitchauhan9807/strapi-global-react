@@ -1,6 +1,6 @@
 import axios from 'axios';
-const production = true
-axios.defaults.baseURL = production ? 'http://localhost:1337/api/' : "http://localhost:1337/api/"
+export const production = true
+axios.defaults.baseURL = production ? 'https://backend.globalchat.us/api/' : "http://localhost:1337/api/"
 
 
 

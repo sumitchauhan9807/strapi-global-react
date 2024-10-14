@@ -1,4 +1,28 @@
+import React, { useEffect, useState } from 'react';
+import useAxios from 'src/Hooks/UseAxios'
+import { constructQueryString } from 'src/helpers'
+
+
+let qs = constructQueryString([
+  "HomeSection3",
+  "HomeSection3.Lists",
+]);
+
 export const SectionThree = () => {
+  const [data, setData] = useState([]);
+  const { response, loading, error } = useAxios({
+    method: "get",
+    url: `home?${qs}`,
+  });
+  useEffect(() => {
+    if (response !== null) {
+      setData(response);
+    }
+  }, [response]);
+  console.log(data, "HomeSection3");
+  if(!data.data) return
+
+  let { Heading, SubText ,Lists } = data.data.HomeSection3
     return (
     <div className="bg-gradient-to-r from-white-50 to-white">
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16 bg-gradient-to-r ">
@@ -9,65 +33,25 @@ export const SectionThree = () => {
             </p>
           </div>
           <h2 className="max-w-lg mb-6 font-sans text-4xl font-sans leading-tight tracking-tight text-gray-900 sm:text-5xl md:mx-auto">
-          A Modern Heading for the New Era
+          {Heading}
              
           </h2>
           <p className="text-lg text-gray-700 md:text-xl">
-            Discover the new possibilities with our latest feature update. Dive into the details below.
+          {SubText}
+
           </p>
         </div>
         <div className="grid gap-10 row-gap-8 mb-10 md:row-gap-10 lg:grid-cols-4 sm:grid-cols-2">
-          {[
-            {
-              title: "AI-Powered Insights",
-              description:
-                "Leverage cutting-edge AI technology to optimize your workflow and make smarter decisions effortlessly.",
-            },
-            {
-              title: "Seamless Integration",
-              description:
-                "Integrate with popular tools and platforms, making collaboration across teams a breeze.",
-            },
-            {
-              title: "Real-Time Analytics",
-              description:
-                "Get actionable insights in real-time to help you stay ahead of the competition.",
-            },
-            {
-              title: "Advanced Security",
-              description:
-                "Rest assured with our robust security features that keep your data safe and protected.",
-            },
-            {
-                title: "Advanced Security",
-                description:
-                  "Rest assured with our robust security features that keep your data safe and protected.",
-              },
-              {
-                title: "Advanced Security",
-                description:
-                  "Rest assured with our robust security features that keep your data safe and protected.",
-              },
-              {
-                title: "Advanced Security",
-                description:
-                  "Rest assured with our robust security features that keep your data safe and protected.",
-              },
-              {
-                title: "Advanced Security",
-                description:
-                  "Rest assured with our robust security features that keep your data safe and protected.",
-              },
-          ].map((item, index) => (
+          {Lists.map((item, index) => (
             <div
               key={index}
               className="duration-500 transform bg-white border-l-4 border-gray-500 hover:-translate-y-3 hover:shadow-2xl transition-all ease-in-out"
             >
               <div className="h-full p-6 border border-l-0 rounded-r-lg shadow-sm">
                 <h6 className="mb-3 font-bold leading-6 text-lg text-gray-900">
-                  {item.title}
+                  {item.Heading}
                 </h6>
-                <p className="text-base text-gray-600">{item.description}</p>
+                <p className="text-base text-gray-600">{item.SubHeading}</p>
               </div>
             </div>
           ))}

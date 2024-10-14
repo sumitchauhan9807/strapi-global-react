@@ -1,32 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import bgimage from '../assets/home/home.gif';
-
-const textSlides = [
-  "Top-notch Customer Services",
-  "We prioritize your satisfaction",
-  "Delivering excellence at every step",
-  "Your trust is our commitment"
-];
+import { baseUrl } from 'src/helpers'
 
 
-const HeroBanner = () => {
+const HeroBanner = ({data}) => {
+
+  const { HeroText , Image, SubText } = data
   const [currentIndex, setCurrentIndex] = useState(0);
   
 
   useEffect(() => {
-    // const interval = setInterval(() => {
-    //   setCurrentIndex((prevIndex) => (prevIndex + 1) % textSlides.length);
-    // }, 4000); // Change text every 4 seconds
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % HeroText.length);
+    }, 4000); // Change text every 4 seconds
 
-    // return () => clearInterval(interval);
+    return () => clearInterval(interval);
   }, []);
-
-  
-  
-
-
-
- 
 
   return (
     <div className="relative bg-gradient-to-r from-gray-800 to-gray-600">
@@ -41,7 +29,7 @@ const HeroBanner = () => {
           <div className="flex flex-col items-center justify-between xl:flex-row">
             <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12 text-center xl:text-left">
               <h2 className="relative max-w-lg mb-6 py-10 font-sans text-5xl md:text-6xl font-extrabold tracking-tight text-white sm:leading-none">
-                {textSlides.map((text, index) => (
+                {HeroText.map((text, index) => (
                   <span
                     key={index}
                     className={`absolute transition-opacity duration-1000 ease-in-out ${
@@ -56,12 +44,12 @@ const HeroBanner = () => {
                       height: '100px', // Fixed height to prevent overlap
                     }}
                   >
-                    {text}
+                    {text.text}
                   </span>
                 ))}
               </h2>
               <p className="max-w-xl mb-6 text-lg text-gray-300 md:text-xl mt-28">
-                We take pride in helping people from all walks of life achieve the justice and peace they deserve.
+                {SubText}
               </p>
               <a
                 href="/"
@@ -80,7 +68,7 @@ const HeroBanner = () => {
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
               <div className="flex justify-center lg:justify-end">
                 <img
-                  src={bgimage}
+                  src={baseUrl() + Image[0].url}
                   loading="lazy"
                   alt="Modern illustration"
                   className="object-contain w-full h-full rounded-lg shadow-none transition-transform transform hover:scale-105 duration-500 ease-in-out"
