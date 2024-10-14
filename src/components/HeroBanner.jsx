@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { baseUrl } from 'src/helpers'
-
+import { PageSkeleton } from 'src/components/small/Skeletons'
 
 const HeroBanner = ({data}) => {
 
@@ -15,7 +15,8 @@ const HeroBanner = ({data}) => {
 
     return () => clearInterval(interval);
   }, []);
-
+  console.log(data,"datadatadatadatadatadata")
+  // return <PageSkeleton/>
   return (
     <div className="relative bg-gradient-to-r from-gray-800 to-gray-600">
       <img

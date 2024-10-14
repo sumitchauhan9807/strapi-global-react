@@ -4,27 +4,16 @@ axios.defaults.baseURL = production ? 'https://backend.globalchat.us/api/' : "ht
 
 
 
-// axios.interceptors.request.use((config) => {
-//   config.headers.authorization = `Bearer ${store.state.core.token}`
-//   if(config.loadingMesssage){
-//     store.commit('loadingText',config.loadingMesssage)
-//   }
-//   store.commit('loading',true)
-//   return config
-// }, (error) => {
-//   store.commit('loading',true)
-//   return Promise.reject(error)
-// })
+axios.interceptors.request.use((config) => {
+  return config
+}, (error) => {
+  return Promise.reject(error)
+})
 
-// axios.interceptors.response.use((response) => {
-//   store.commit('loading',false)
-//   store.commit('loadingText','MAZU Loading')
-
-//   return response
-// }, function(error) {
-//   store.commit('loading',false)
-//   store.commit('loadingText','MAZU Loading')
-
-//   return Promise.reject(error)
-// })
+axios.interceptors.response.use((response) => {
+  console.log("res i shere")
+  return response
+}, function(error) {
+  return Promise.reject(error)
+})
 export default axios

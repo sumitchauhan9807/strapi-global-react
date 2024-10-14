@@ -8,6 +8,7 @@ const useAxios = ({ url, method, body = null, headers = null }) => {
     const [loading, setloading] = useState(true);
 
     const fetchData = () => {
+        setloading(true);
         axios[method](url, JSON.parse(headers), JSON.parse(body))
           .then((res) => {
               setResponse(res.data);

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LanguageSelector from 'src/components/small/LanguageSelector';
 
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,6 +64,7 @@ export const Nav = () => {
           >
             About us
           </a>
+          
         </nav>
         
         <div className="hidden lg:flex">
@@ -74,6 +76,8 @@ export const Nav = () => {
           >
             Sign up
           </a>
+          <LanguageSelector/>
+
         </div>
 
         <div className="lg:hidden">
