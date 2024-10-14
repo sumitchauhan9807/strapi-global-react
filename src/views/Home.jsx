@@ -1,38 +1,73 @@
-import { Nav as Navbar } from '../components/Navbar.jsx'; // Named import
-import HeroBanner from '../components/HeroBanner.jsx';
-import bgimage from '../assets/home/1.png'
-import SectionTwo from 'src/components/SectionTwo.jsx';
-import  SectionThree  from 'src/components/SectionThree.jsx';
-import SectionFour from 'src/components/SectionFour.jsx';
-import Footer from 'src/components/PageFooter.jsx';
-import Pricing from 'src/components/PricingTable.jsx';
-import SectionFive from 'src/components/SectionFive.jsx';
+import { Nav as Navbar } from "../components/Navbar.jsx"; // Named import
+import React, { useEffect, useState } from 'react';
+
+import HeroBanner from "../components/HeroBanner.jsx";
+import bgimage from "../assets/home/1.png";
+import SectionTwo from "src/components/SectionTwo.jsx";
+import SectionThree from "src/components/SectionThree.jsx";
+import SectionFour from "src/components/SectionFour.jsx";
+import Footer from "src/components/PageFooter.jsx";
+import Pricing from "src/components/PricingTable.jsx";
+import SectionFive from "src/components/SectionFive.jsx";
+
+import useAxios from 'src/Hooks/UseAxios'
+
+
+const constructQueryString = (fields) => {
+  let str = ''
+  fields.forEach((element,index) => {
+    str += `populate[${index}]=${element}&`
+  });
+  return str
+}
 function Home() {
+  const [data, setData] = useState([]);
+
+  let qs = constructQueryString([
+    "Hero",
+    "Hero.HeroText",
+    "Hero.Image",
+    "HomeSection1",
+    "HomeSection1.Images",
+    "HomeSection1.Lists",
+  ]);
+  console.log(qs, "asd");
+
+  const { response, loading, error } = useAxios({
+    method: "get",
+    url: `home?${qs}`,
+  });
+  useEffect(() => {
+    if (response !== null) {
+      setData(response);
+    }
+  }, [response]);
+
+  console.log(data, "respdataonse");
   return (
     <>
       <div>
         <div className="">
           <Navbar />
 
-
           {/* header section starts here */}
           <HeroBanner />
 
           {/* header section ends here */}
-{/* SectionFour */}
-<SectionFour/>
           {/* SectionFour */}
-          {/* other section  */} 
-          <SectionTwo/>
+          <SectionFour />
+          {/* SectionFour */}
+          {/* other section  */}
+          <SectionTwo />
           {/* other section  */}
 
-<SectionFive/>
-<Pricing/>
+          <SectionFive />
+          <Pricing />
           {/* Sectionthree */}
-          < SectionThree/>
+          <SectionThree />
           {/* SectionThree */}
 
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </>

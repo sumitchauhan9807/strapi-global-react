@@ -8,16 +8,25 @@ const textSlides = [
   "Your trust is our commitment"
 ];
 
+
 const HeroBanner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % textSlides.length);
-    }, 4000); // Change text every 4 seconds
+    // const interval = setInterval(() => {
+    //   setCurrentIndex((prevIndex) => (prevIndex + 1) % textSlides.length);
+    // }, 4000); // Change text every 4 seconds
 
-    return () => clearInterval(interval);
+    // return () => clearInterval(interval);
   }, []);
+
+  
+  
+
+
+
+ 
 
   return (
     <div className="relative bg-gradient-to-r from-gray-800 to-gray-600">
