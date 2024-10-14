@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useAxios from 'src/Hooks/UseAxios'
 import { constructQueryString } from 'src/helpers'
+import {useSelector} from 'react-redux'
 
 
 let qs = constructQueryString([
@@ -10,9 +11,11 @@ let qs = constructQueryString([
 
 export const SectionThree = () => {
   const [data, setData] = useState([]);
+  const language = useSelector((state) => state.language);
+
   const { response, loading, error } = useAxios({
     method: "get",
-    url: `home?${qs}`,
+    url: `home?${qs}locale=${language.language}`,
   });
   useEffect(() => {
     if (response !== null) {
@@ -20,9 +23,10 @@ export const SectionThree = () => {
     }
   }, [response]);
   console.log(data, "HomeSection3");
-  if(!data.data) return
+  if(!data?.data?.HomeSection3) return
 
-  let { Heading, SubText ,Lists } = data.data.HomeSection3
+
+  let { Heading, SubText ,Lists ,ButtonText } = data.data.HomeSection3
     return (
     <div className="bg-gradient-to-r from-white-50 to-white">
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16 bg-gradient-to-r ">
@@ -61,7 +65,7 @@ export const SectionThree = () => {
             href="/"
             className="inline-flex items-center justify-center w-full h-12 px-8 font-semibold tracking-wide text-white transition duration-300 rounded-lg shadow-md md:w-auto bg-gradient-to-r from-gray-500 to-gray-500 hover:from-gray-600 hover:to-gray-600 focus:shadow-outline focus:outline-none"
           >
-            Learn More
+            {ButtonText}
           </a>
         </div>
       </div></div>

@@ -4,18 +4,23 @@ import { PageSkeleton } from 'src/components/small/Skeletons'
 
 const HeroBanner = ({data}) => {
 
-  const { HeroText , Image, SubText } = data
   const [currentIndex, setCurrentIndex] = useState(0);
   
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % HeroText.length);
-    }, 4000); // Change text every 4 seconds
-
-    return () => clearInterval(interval);
+    if(data?.HeroText) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % HeroText.length);
+      }, 4000); // Change text every 4 seconds
+  
+      return () => clearInterval(interval);
+    }
   }, []);
+  if(!data?.HeroText) return 
+
   console.log(data,"datadatadatadatadatadata")
+  const { HeroText , Image, SubText ,ButtonText } = data
+
   // return <PageSkeleton/>
   return (
     <div className="relative bg-gradient-to-r from-gray-800 to-gray-600">
@@ -56,7 +61,7 @@ const HeroBanner = ({data}) => {
                 href="/"
                 className="inline-flex items-center px-8 py-4 font-semibold tracking-wider text-black uppercase bg-white rounded-lg shadow-lg hover:bg-teal-600 hover:text-white hover:shadow-xl transition-transform duration-300 transform hover:scale-105 active:scale-95"
               >
-                Learn more
+                {ButtonText}
                 <svg
                   className="w-5 h-5 ml-2"
                   fill="currentColor"

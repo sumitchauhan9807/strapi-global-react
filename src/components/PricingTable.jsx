@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useAxios from 'src/Hooks/UseAxios'
 import { constructQueryString } from 'src/helpers'
+import {useSelector} from 'react-redux'
 
 
 let qs = constructQueryString([
@@ -10,11 +11,12 @@ let qs = constructQueryString([
 ]);
 
 export const Pricing = () => {
+  const language = useSelector((state) => state.language);
 
   const [data, setData] = useState([]);
   const { response, loading, error } = useAxios({
     method: "get",
-    url: `home?${qs}`,
+    url: `home?${qs}locale=${language.language}`,
   });
   useEffect(() => {
     if (response !== null) {
@@ -22,7 +24,7 @@ export const Pricing = () => {
     }
   }, [response]);
   // console.log(data, "Pricing");
-  if(!data.data) return
+  if(!data?.data?.Pricing) return
 
   let { Heading, SubText ,Plans } = data.data.Pricing
 

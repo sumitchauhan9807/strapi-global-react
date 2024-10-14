@@ -2,7 +2,7 @@ import { baseUrl } from 'src/helpers'
 
 export const SectionFour = ({data}) => {
   // console.log(data,"data")
-  // if(!data?.data) return
+  if(!data?.Heading) return
   const {Heading ,Images,Lists,SubHeading } = data 
 
     return (

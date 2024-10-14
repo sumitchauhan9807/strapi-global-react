@@ -2,6 +2,7 @@ import bgimage from '../assets/home/suport.gif';
 import React, { useEffect, useState } from 'react';
 import useAxios from 'src/Hooks/UseAxios'
 import { constructQueryString } from 'src/helpers'
+import {useSelector} from 'react-redux'
 import { baseUrl } from 'src/helpers'
 
 let qs = constructQueryString([
@@ -11,11 +12,11 @@ let qs = constructQueryString([
 ]);
 
 const SectionTwo = () => {
-
+  const language = useSelector((state) => state.language);
   const [data, setData] = useState([]);
   const { response, loading, error } = useAxios({
     method: "get",
-    url: `home?${qs}`,
+    url: `home?${qs}locale=${language.language}`,
   });
   useEffect(() => {
     if (response !== null) {
@@ -24,7 +25,7 @@ const SectionTwo = () => {
   }, [response]);
   // console.log(data, "SectionTwo");
 
-  if(!data.data) return
+  if(!data?.data?.HomeSection2) return
   let { Heading, Image  ,Lists ,Subtext } = data.data.HomeSection2
 
   return (

@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import useAxios from 'src/Hooks/UseAxios'
 import { constructQueryString } from 'src/helpers'
+import {useSelector} from 'react-redux'
+
 
 let qs = constructQueryString([
   "SubscribeSection",
 ]);
 
 export const SectionFive = () => {
+  const language = useSelector((state) => state.language);
 
   const [data, setData] = useState([]);
   const { response, loading, error } = useAxios({
     method: "get",
-    url: `home?${qs}`,
+    url: `home?${qs}locale=${language.language}`,
   });
   useEffect(() => {
     if (response !== null) {
@@ -19,8 +22,8 @@ export const SectionFive = () => {
     }
   }, [response]);
   // console.log(data, "SubscribeSection");
-  if(!data.data) return
-  let { Heading, SubText ,FootText } = data.data.SubscribeSection
+  if(!data?.data?.SubscribeSection) return
+  let { Heading, SubText ,FootText ,ButtonText } = data.data.SubscribeSection
 
 
     return (
@@ -56,7 +59,7 @@ export const SectionFive = () => {
                 type="submit"
                 className="inline-flex bg-white  items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black uppercase transition duration-200 rounded shadow-md md:w-auto bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
               >
-                Subscribe
+                {ButtonText}
               </button>
             </form>
             <p className="max-w-md mb-10 text-xs font-thin tracking-wide text-gray-500 sm:text-sm sm:mx-auto md:mb-16">
