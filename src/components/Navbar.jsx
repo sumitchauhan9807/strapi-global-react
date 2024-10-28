@@ -72,7 +72,7 @@ export const Nav = () => {
   return (
     <>
       <header className="bg-gray-800 shadow-lg sticky top-0 z-50 ">
-        <div className="container mx-auto flex justify-between items-center h-16 px-4 lg:px-16 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="container mx-auto flex justify-between items-center h-16 px-4 lg:px-16 px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <a
             href="/"
             aria-label="Company"
