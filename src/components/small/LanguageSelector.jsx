@@ -21,9 +21,9 @@ function LanguageSelector() {
     dispatch(setLang(lang))
   }
   return (
-    <a className="relative inline-block text-left ml-2 mt-0 pt-1 ">
+    <a className="relative inline-block text-left ml-2 h-full">
       <div>
-        <button onClick={() => setIsOpen((prev) => !prev) } type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+        <button onClick={() => setIsOpen((prev) => !prev) } type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white p-2 px-4 text-base font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
           Language {language.language}
           <svg className="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
             <path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
