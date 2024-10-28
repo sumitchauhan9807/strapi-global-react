@@ -10,6 +10,7 @@ import Footer from "src/components/PageFooter.jsx";
 import Pricing from "src/components/PricingTable.jsx";
 import SectionFive from "src/components/SectionFive.jsx";
 import { PageSkeleton } from 'src/components/small/Skeletons'
+import SubMenuNav from "src/components/SubMenu.jsx";
 
 
 import useAxios from 'src/Hooks/UseAxios'
@@ -41,6 +42,7 @@ function Home() {
     <>
       <div>
         <div className="">
+          <SubMenuNav/>
           <Navbar />
 
           {/* header section starts here */}
