@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import LanguageSelector from 'src/components/small/LanguageSelector';
 import SubNav from 'src/components/SubNav';
 import product1Image from 'src/assets/icons/1.png';
+import { AiOutlineCaretUp } from "react-icons/ai";
 
 const products = [
   {
@@ -22,44 +23,86 @@ const products = [
   // Add more products as needed
 ];
 
+
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showMegaMenu, setShowMegaMenu] = useState(false);
+  // const [showMegaMenu, setShowMegaMenu] = useState(false);
+  const [showMegaMenu, setShowMegaMenu] = useState('');
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handleOutSideClick = (event) => {
+      if (!ref.current?.contains(event.target)) {
+        setShowMegaMenu('')
+      }
+    };
+    ['mousedown', 'scroll'].forEach(event => window.addEventListener(event, handleOutSideClick));
+    return () => {
+      ['mousedown', 'scroll'].forEach(event => window.addEventListener(event, handleOutSideClick));
+    };
+  }, [ref]);
+
+
+  const MegaMenu = ({ data }) => {
+    return (
+      <div className="flex absolute flex-wrap bg-white shadow-lg p-4 top-full left-[-64px] w-[600px] z-10" ref={ref}>
+        <i className='absolute left-[15%] top-[-8%]'>
+          <AiOutlineCaretUp color='white' size={40}/>
+        </i>
+        {data.map((val, index) => (
+          <div key={index} className="flex items-center m-8 max-w-[200px] gap-2">
+            <img
+              src={val.image}
+              alt={val.name}
+              className="h-16 w-16 mb-1 object-contain" // Adjust size as needed
+            />
+            <a
+              href={`/product${index + 1}`}
+              className="flex flex-col text-gray-800 hover:text-gray-600 transition duration-200"
+            >
+              <span className="font-bold">{val.name}</span>
+              <span className="text-sm text-gray-500">{val.description}</span>
+            </a>
+          </div>
+        ))}
+      </div>
+    )
+  }
 
   return (
     <>
       <header className="bg-gray-800 shadow-lg sticky top-0 z-50 ">
-        <div className="container mx-auto flex justify-between items-center py-4 px-4 lg:px-16 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="container mx-auto flex justify-between items-center h-16 px-4 lg:px-16 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <a
             href="/"
             aria-label="Company"
             title="Company"
             className="flex items-center text-white text-xl h lg:text-2xl font-bold"
-          >
-           
-            
+          >    
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-6">
+          <nav className="hidden lg:flex items-center space-x-2 h-full">
             <div
-              className="relative"
-              onMouseEnter={() => setShowMegaMenu(true)}
-              onMouseLeave={() => setShowMegaMenu(false)}
+              className="flex relative h-full"
+            // onMouseEnter={() => setShowMegaMenu(true)}
+            // onMouseLeave={() => setShowMegaMenu(false)}
             >
               <a
                 href="#"
-                className="text-gray-300 hover:text-white transition duration-200"
+                className="flex items-center text-gray-300 hover:text-white transition duration-200 h-full px-6"
                 aria-label="Our product"
                 title="Our product"
+                // style={{ backgroundColor: showMegaMenu == 'product' ? 'white' : '', color: showMegaMenu == 'product' ? 'black' : '' }}
                 onClick={(e) => {
                   e.preventDefault();
-                  setShowMegaMenu(!showMegaMenu);
+                  setShowMegaMenu('product');
                 }}
               >
                 Product
               </a>
-              {showMegaMenu && (
+              {showMegaMenu == 'product' && <MegaMenu data={products} />}
+              {/* {showMegaMenu && (
                 <div className="absolute top-full left-0 bg-white bg-opacity-90 shadow-2xl rounded-md border-gray-300 border p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 w-64 md:w-80 lg:w-[600px]">
                   {products.map((product, index) => (
                     <div key={index} className="flex flex-col items-center">
@@ -68,44 +111,63 @@ export const Nav = () => {
                         href={`/product${index + 1}`}
                         className="flex flex-wrap gap-2 px-2  hover:text-white items-start text-left transition-transform duration-300 hover:bg-gray-700 bg-gray-100 border-2 py-4 rounded-md transform hover:scale-105 group "
                       >
-                        
+
                         <div><img
                           src={product.image}
                           alt={product.name}
                           className="h-10 w-10 mb-2 object-contain" // Adjust size as needed
                         /></div>  <div className="grid grid-cols-1 ">
-                        <span className="font-sans">{product.name}</span>
-                        <span className="text-sm text-gray-500 ">{product.description}</span></div>
+                          <span className="font-sans">{product.name}</span>
+                          <span className="text-sm text-gray-500 ">{product.description}</span></div>
                       </a>
                     </div>
                   ))}
                 </div>
-              )}
+              )} */}
             </div>
-            <a
-              href="/features"
-              className="text-gray-300 hover:text-white transition duration-200"
-              aria-label="Our features"
-              title="Our features"
-            >
-              Features
-            </a>
-            <a
-              href="/pricing"
-              className="text-gray-300 hover:text-white transition duration-200"
-              aria-label="Product pricing"
-              title="Product pricing"
-            >
-              Pricing
-            </a>
-            <a
-              href="/about"
-              className="text-gray-300 hover:text-white transition duration-200"
-              aria-label="About us"
-              title="About us"
-            >
-              About us
-            </a>
+            <div className="flex relative h-full">
+              <a
+                href="#"
+                className="flex items-center text-gray-300 hover:text-white transition duration-200 h-full px-6"
+                aria-label="Our features"
+                title="Our features"
+                // style={{ backgroundColor: showMegaMenu == 'features' ? 'white' : '', color: showMegaMenu == 'features' ? 'black' : '' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowMegaMenu('features');
+                }}
+              >
+                Features
+              </a>
+              {showMegaMenu == 'features' && <MegaMenu data={products} />}
+            </div>
+            <div className="flex relative h-full">
+              <a
+                href="#"
+                className="flex items-center text-gray-300 hover:text-white transition duration-200 h-full px-6"
+                aria-label="Product pricing"
+                // style={{ backgroundColor: showMegaMenu == 'pricing' ? 'white' : '', color: showMegaMenu == 'pricing' ? 'black' : '' }}
+                title="Product pricing"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowMegaMenu('pricing');
+                }}
+              >
+                Pricing
+              </a>
+              {showMegaMenu == 'pricing' && <MegaMenu data={products} />}
+            </div>
+            <div className="flex relative h-full">
+              <a
+                href="/about"
+                className="flex items-center text-gray-300 hover:text-white transition duration-200 h-full px-6"
+                aria-label="About us"
+                title="About us"
+              >
+                About us
+              </a>
+            </div>
+
           </nav>
 
           {/* Desktop Language Selector & Signup Button */}
@@ -193,8 +255,8 @@ export const Nav = () => {
                 >
                   Sign up
                 </a>
-                <div className="mt-4">
-                  <a
+                {/* <div className="mt-4"> */}
+                {/* <a
                     href="#"
                     className="text-gray-300 hover:text-white transition duration-200"
                     aria-label="Our product"
@@ -205,28 +267,11 @@ export const Nav = () => {
                     }}
                   >
                     Product
-                  </a>
-                  {showMegaMenu && (
-                    <div className="bg-white rounded-md shadow-lg mt-2 p-2">
-                      {products.map((product, index) => (
-                        <div key={index} className="flex flex-col items-center mb-2">
-                          <img
-                            src={product.image}
-                            alt={product.name}
-                            className="h-16 w-16 mb-1 object-contain" // Adjust size as needed
-                          />
-                          <a
-                            href={`/product${index + 1}`}
-                            className="text-gray-800 hover:text-gray-600 transition duration-200 text-center"
-                          >
-                            <span className="font-bold">{product.name}</span>
-                            <span className="text-sm text-gray-500">{product.description}</span>
-                          </a>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                  </a> */}
+                {/* {showMegaMenu && (
+                  
+                )} */}
+                {/* </div> */}
               </nav>
             </div>
           )}
