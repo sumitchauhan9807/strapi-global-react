@@ -11,6 +11,8 @@ import Pricing from "src/components/PricingTable.jsx";
 import SectionFive from "src/components/SectionFive.jsx";
 import { PageSkeleton } from 'src/components/small/Skeletons'
 import SubMenuNav from "src/components/SubMenu.jsx";
+import DropDOwn from "src/components/SubNav.jsx";
+
 
 
 import useAxios from 'src/Hooks/UseAxios'
@@ -44,6 +46,7 @@ function Home() {
         <div className="">
           <SubMenuNav/>
           <Navbar />
+          <DropDOwn/>
 
           {/* header section starts here */}
           <HeroBanner
