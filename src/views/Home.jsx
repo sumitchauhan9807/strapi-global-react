@@ -1,6 +1,6 @@
 import { Nav as Navbar } from "../components/Navbar.jsx"; // Named import
 import React, { useEffect, useState } from 'react';
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 import HeroBanner from "../components/HeroBanner.jsx";
 import bgimage from "../assets/home/1.png";
 import SectionTwo from "src/components/SectionTwo.jsx";
@@ -12,7 +12,8 @@ import SectionFive from "src/components/SectionFive.jsx";
 import { PageSkeleton } from 'src/components/small/Skeletons'
 import SubMenuNav from "src/components/SubMenu.jsx";
 import DropDOwn from "src/components/SubNav.jsx";
-
+import TopMen from "src/components/TopMen.jsx";
+import TopMen2 from "src/components/TopMen2.jsx";
 
 
 import useAxios from 'src/Hooks/UseAxios'
@@ -38,15 +39,17 @@ function Home() {
       setData(response);
     }
   }, [response]);
-  if(loading) return <PageSkeleton/>
-  if(!data.data) return
+  if (loading) return <PageSkeleton />
+  if (!data.data) return
   return (
     <>
       <div>
         <div className="">
-          <SubMenuNav/>
-          <Navbar />
-          <DropDOwn/>
+          <TopMen />
+          <TopMen2 />
+          {/* <SubMenuNav />
+          <Navbar /> */}
+          {/* <DropDOwn/> */}
 
           {/* header section starts here */}
           <HeroBanner
@@ -55,8 +58,8 @@ function Home() {
 
           {/* header section ends here */}
           {/* SectionFour */}
-          <SectionFour 
-          data={data?.data?.HomeSection1}
+          <SectionFour
+            data={data?.data?.HomeSection1}
           />
           {/* SectionFour */}
           {/* other section  */}
