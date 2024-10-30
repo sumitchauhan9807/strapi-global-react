@@ -1,12 +1,12 @@
 export const Footer = () => {
     return (
       <div className="bg-gray-900">
-        <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
           <div className="grid row-gap-10 mb-8 lg:grid-cols-6">
-            <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-3 md:grid-cols-3">
               <div>
                 <p className="font-medium tracking-wide text-gray-300">
-                  Category
+                 About
                 </p>
                 <ul className="mt-2 space-y-2">
                   <li>
@@ -14,7 +14,7 @@ export const Footer = () => {
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      News
+                     CEO Herr. Ing. Idris Kawa
                     </a>
                   </li>
                   <li>
@@ -22,36 +22,26 @@ export const Footer = () => {
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      World
+                     5203 Juan Tabo Blvd. NE Suite 2b
+
+Albuquerque, New Mexico
+
+87111 USA
                     </a>
                   </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Games
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      References
-                    </a>
-                  </li>
+                  
                 </ul>
               </div>
+             
               <div>
-                <p className="font-medium tracking-wide text-gray-300">Apples</p>
+                <p className="font-medium tracking-wide text-gray-300">Contact Us</p>
                 <ul className="mt-2 space-y-2">
                   <li>
                     <a
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      Web
+                     Email: info@global-world.us
                     </a>
                   </li>
                   <li>
@@ -59,7 +49,8 @@ export const Footer = () => {
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      eCommerce
+                     Phone: +1 505 585 0133
+
                     </a>
                   </li>
                   <li>
@@ -67,7 +58,7 @@ export const Footer = () => {
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      Business
+                      Fax: +1 505 539 3445
                     </a>
                   </li>
                   <li>
@@ -75,67 +66,22 @@ export const Footer = () => {
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      Entertainment
+                      Germany M +49 (0) 1722772888
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Portfolio
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-medium tracking-wide text-gray-300">Cherry</p>
-                <ul className="mt-2 space-y-2">
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Media
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Brochure
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Nonprofit
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Educational
-                    </a>
-                  </li>
-                  <li>
-                    <a
+                    {/* <a
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
                       Projects
-                    </a>
+                    </a> */}
                   </li>
                 </ul>
               </div>
               <div>
                 <p className="font-medium tracking-wide text-gray-300">
-                  Business
+                  
                 </p>
                 <ul className="mt-2 space-y-2">
                   <li>
@@ -143,7 +89,7 @@ export const Footer = () => {
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      Infopreneur
+                      Office +49 (0) 21188233700
                     </a>
                   </li>
                   <li>
@@ -151,27 +97,28 @@ export const Footer = () => {
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      Personal
+                     Serbia Mobile +381 (0) 692772888
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
                       Wiki
                     </a>
-                  </li>
-                  <li>
+                  </li> */}
+                  {/* <li>
                     <a
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
                       Forum
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
+              
             </div>
             <div className="md:max-w-md lg:col-span-2">
               <span className="text-base font-medium tracking-wide text-gray-300">
@@ -199,7 +146,7 @@ export const Footer = () => {
           </div>
           <div className="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
             <p className="text-sm text-gray-500">
-              © Copyright 2020 Lorem Inc. All rights reserved.
+              © Copyright 2024 GLOBAL WORLD IK LLC. All rights reserved.
             </p>
             <div className="flex items-center mt-4 space-x-4 sm:mt-0">
               <a
