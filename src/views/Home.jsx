@@ -45,8 +45,8 @@ function Home() {
     <>
       <div>
         <div className="">
-          <TopMen />
-          <TopMen2 />
+          {/* <TopMen />
+          <TopMen2 /> */}
           {/* <SubMenuNav />
           <Navbar /> */}
           {/* <DropDOwn/> */}
@@ -72,7 +72,7 @@ function Home() {
           <SectionThree />
           {/* SectionThree */}
 
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </>
