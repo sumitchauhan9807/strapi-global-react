@@ -37,19 +37,19 @@ function LanguageSelector() {
             <img src={USA} style={{float:'left',height:'20px',marginRight:"7px"}}/>
             USA
           </a>
-          {/* <a onClick={(e) => {e.preventDefault(); setLanguage('ar'); }} href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
+          <a onClick={(e) => {e.preventDefault(); setLanguage('ar'); }} href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={arabic} style={{float:'left',height:'20px',marginRight:"7px"}}/>
             Arabic
           </a>
           <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={france} style={{float:'left',height:'20px',marginRight:"7px"}}/>
             France
-          </a> */}
+          </a>
           <a  onClick={(e) => {e.preventDefault(); setLanguage('de'); }}  href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={germany} style={{float:'left',height:'20px',marginRight:"7px"}}/>
             Germany
           </a>
-          {/* <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
+          <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={hungary} style={{float:'left',height:'20px',marginRight:"7px"}}/>
             Hungary
           </a>
@@ -68,7 +68,7 @@ function LanguageSelector() {
           <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={serbia} style={{float:'left',height:'20px',marginRight:"7px"}}/>
             Serbia
-          </a> */}
+          </a>
         </div>
       </div>}
     </a>
