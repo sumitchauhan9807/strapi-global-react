@@ -39,35 +39,35 @@ function LanguageSelector() {
           </a>
           <a onClick={(e) => {e.preventDefault(); setLanguage('ar'); }} href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={arabic} style={{float:'left',height:'20px',marginRight:"7px"}}/>
-            Arabic
+            العربية
           </a>
           <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={france} style={{float:'left',height:'20px',marginRight:"7px"}}/>
-            France
+            française
           </a>
           <a  onClick={(e) => {e.preventDefault(); setLanguage('de'); }}  href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={germany} style={{float:'left',height:'20px',marginRight:"7px"}}/>
-            Germany
+            Deutsch
           </a>
           <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={hungary} style={{float:'left',height:'20px',marginRight:"7px"}}/>
-            Hungary
+            Magyarország
           </a>
           <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={italy} style={{float:'left',height:'20px',marginRight:"7px"}}/>
-            Italy
+            Italia
           </a>
           <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={romania} style={{float:'left',height:'20px',marginRight:"7px"}}/>
-            Romania
+            română
           </a>
           <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={russia} style={{float:'left',height:'20px',marginRight:"7px"}}/>
-            Russia
+            Русский
           </a>
           <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={serbia} style={{float:'left',height:'20px',marginRight:"7px"}}/>
-            Serbia
+            Србија
           </a>
         </div>
       </div>}
