@@ -31,7 +31,7 @@ function LanguageSelector() {
         </button>
       </div>
       { isOpen && <div className="absolute right-0 z-10 mt-2  origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
-        <div style={{width:"116px"}} className="py-1" role="none">
+        <div style={{width:"160px"}} className="py-1" role="none">
           {/* Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" */}
           <a onClick={(e) => {e.preventDefault(); setLanguage('en'); }} href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="menu-item-0">
             <img src={USA} style={{float:'left',height:'20px',marginRight:"7px"}}/>
