@@ -3,6 +3,7 @@
 export default function Solutions() {
     return (
         <>
+         <div style={{height:'400px'}} className="h-screen bg-cover bg-no-repeat" style={{backgroundImage: 'url("https://blog.bevatel.com/wp-content/uploads/2021/02/call-center-solutions-for-developing-your-business-project.jpeg")'}} />
             <section className="grid grid-cols-2">
                 <figure></figure>
                 <div className="flex flex-col">
