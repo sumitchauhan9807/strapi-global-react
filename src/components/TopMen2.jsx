@@ -62,9 +62,7 @@ export default function TopMen2() {
     const [activeMenu, setActiveMenu] = useState('')
 	return (
         <menu className="flex items-center justify-between p-2 px-8 h-24">
-            <figure className="h-12 w-12 border-2 border-black rounded-full mx-8">
-                <embed src="" type="" />
-            </figure>
+            <img style={{height:"97px"}} src="https://www.global-world.us/logo.png"/>
             <div className="flex text-xl text-[#3b516d] relative items-center right-16">
                 <div className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('products')}} >
                     <span
