@@ -3,6 +3,9 @@ import Solutions from '../src/views/Solutions'
 import TopMen from "src/components/TopMen.jsx";
 import TopMen2 from "src/components/TopMen2.jsx";
 import Footer from './components/PageFooter';
+import ContactUs from '../src/views/ContactUs.jsx';
+import PricingPage from '../src/views/PricingPage.jsx';
+import  AutomatedCallsPage from '../src/views/AutoCalls.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -17,6 +20,18 @@ const router = createBrowserRouter([
   {
     path: '/solutions',
     element: <Solutions />,
+  },
+  {
+    path: '/contactus',
+    element: <ContactUs />
+  },
+  {
+    path: '/pricing',
+    element: <PricingPage/>,
+  },
+  {
+    path:'/automatedcalls',
+    element: <AutomatedCallsPage/>,
   }
 ]);
 
