@@ -84,7 +84,7 @@ export default function Solutions() {
                     </div>
                 </div>
             </section>
-            <section className="flex my-32 border max-w-[1200px] mx-auto p-8">
+            <section className="flex items-center my-32 border max-w-[1200px] mx-auto p-8 gap-8">
                 <figure className="w-[600px]">
                     <img src={contactFormVectorImg} alt="" />
                 </figure>
@@ -98,11 +98,11 @@ export default function Solutions() {
                         <input type="text" placeholder="phone number" className="border p-2" />
                         <button className="bg-green-600 w-max p-2 px-8 my-2 font-bold text-white">Submit</button>
                     </div>
-                    <div className="flex gap-8">
-                        <span className="text-gray-400">
+                    <div className="flex justify-between gap-8">
+                        <small className="text-gray-400 w-[60%]">
                             If you have any further questions, please call this number for a free consultation:
-                        </span>
-                        <span>000 000 000</span>
+                        </small>
+                        <small>000 000 000</small>
                     </div>
                 </form>
             </section>
