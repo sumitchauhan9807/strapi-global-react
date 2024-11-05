@@ -1,6 +1,7 @@
 import { useState, useEffect,useRef } from "react"
 import { productMenuItems ,solutionsMenuItems ,pricingMenuItems} from "./menuItems"
 import LanguageSelect from 'src/components/small/LanguageSelector'
+import { NavLink } from "react-router-dom"
 
 export const ProductMenuList = ({ref}) => {
     return (
@@ -42,7 +43,7 @@ export const SolutionMenuList = ({ref}) => {
     return (
         <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[300px] overflow-hidden z-20 p-8 rounded-2xl" ref={ref}>
             {solutionsMenuItems.map(item => (
-                <div className="flex gap-4 text-white">
+                <a href={item.link} className="flex gap-4 text-white" key={Math.random()}>
                     <figure className="flex justify-center items-center p-3 bg-[#141b24] text-white rounded-md">
                         {item.icon}
                     </figure>
@@ -50,7 +51,7 @@ export const SolutionMenuList = ({ref}) => {
                         <strong className="text-base">{item.title}</strong>
                         <small className="text-sm">{item.description}</small>
                     </div>
-                </div>
+                </a>
             ))}
         </div>
     )
