@@ -6,6 +6,7 @@ import Footer from './components/PageFooter';
 import ContactUs from '../src/views/ContactUs.jsx';
 import PricingPage from '../src/views/PricingPage.jsx';
 import  AutomatedCallsPage from '../src/views/AutoCalls.jsx'
+import RobotController from './views/RobotController';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: '/solutions/phone-numbers',
     element: <Solutions />,
+  },
+  {
+    path: '/robot-controller',
+    element: <RobotController />,
   },
   {
     path: '/contactus',

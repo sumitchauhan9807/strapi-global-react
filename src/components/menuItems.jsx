@@ -45,13 +45,13 @@ export const solutionsMenuItems = [
         icon: <LuMousePointerClick size={28} />,
         title: 'Virtual PBX',
         description: "Robot controller,Home Office,Call Recording",
-        link: '/solutions/robots'
+        link: '/robot-controller'
     },
     {
         icon: <GrShieldSecurity size={28} />,
         title: 'Automated calls',
         description: `Automatic calls for online pharmacies`,
-        link: '/solutions/phone-numbers'
+        link: '/'
     }
 ]
 
