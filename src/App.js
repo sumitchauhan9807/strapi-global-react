@@ -5,8 +5,10 @@ import TopMen2 from "src/components/TopMen2.jsx";
 import Footer from './components/PageFooter';
 import ContactUs from '../src/views/ContactUs.jsx';
 import PricingPage from '../src/views/PricingPage.jsx';
-import  AutomatedCallsPage from '../src/views/AutoCalls.jsx'
+import AutomatedCallsPage from '../src/views/AutoCalls.jsx'
 import RobotController from './views/RobotController';
+import PhoneNumber from './views/PhoneNumber.jsx';
+import SipTrunk from './views/SipTrunk';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -32,11 +34,19 @@ const router = createBrowserRouter([
   },
   {
     path: '/pricing',
-    element: <PricingPage/>,
+    element: <PricingPage />,
   },
   {
-    path:'/automatedcalls',
-    element: <AutomatedCallsPage/>,
+    path: '/automatedcalls',
+    element: <AutomatedCallsPage />,
+  },
+  {
+    path: '/phonenumber',
+    element: <PhoneNumber />,
+  },
+  {
+    path: '/siptrunk',
+    element: <SipTrunk />,
   }
 ]);
 

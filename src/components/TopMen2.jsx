@@ -1,6 +1,7 @@
 import { useState, useEffect,useRef } from "react"
 import { productMenuItems ,solutionsMenuItems ,pricingMenuItems} from "./menuItems"
 import LanguageSelect from 'src/components/small/LanguageSelector'
+import Logo from 'src/assets/logo.png'
 import { NavLink } from "react-router-dom"
 
 export const ProductMenuList = ({ref}) => {
@@ -63,7 +64,7 @@ export default function TopMen2() {
     const [activeMenu, setActiveMenu] = useState('')
 	return (
         <menu className="flex items-center justify-between p-2 px-8 h-24">
-            <img style={{height:"97px"}} src="https://www.global-world.us/logo.png"/>
+            <img style={{height:"97px"}} src={Logo}/>
             <div className="flex text-xl text-[#3b516d] relative items-center right-16">
                 <div className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('products')}} >
                     <span
