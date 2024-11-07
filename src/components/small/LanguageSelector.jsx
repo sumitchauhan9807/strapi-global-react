@@ -74,5 +74,13 @@ function LanguageSelector() {
     </a>
   )
 }
-
+// spanish
+// netherland
+// turkish
+// bosnia
+// slovania --> slovakai
+// poland
+// albania
+// greece
+// india
 export default LanguageSelector

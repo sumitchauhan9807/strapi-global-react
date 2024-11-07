@@ -12,9 +12,9 @@ export default function TopMen() {
                 <span>Contacts</span>
             </div>
             <div className="flex items-center gap-4">
-                <span>+1 929 999 4176</span>
-                <span className="flex gap-2 items-center"><LuIndianRupee /><span></span>
-                </span>
+                <span>+ 49 211 88233700</span>
+                {/* <span className="flex gap-2 items-center"><LuIndianRupee /><span></span>
+                </span> */}
                 <span className="flex gap-2 items-center"><FaUser />Log in</span>
                 <span className="flex gap-2 items-center"><IoMdCreate />Sign up</span>
             </div>
