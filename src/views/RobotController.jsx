@@ -1,8 +1,8 @@
 export default function RobotController() {
     return (
         <>
-            <section className="grid grid-cols-2 my-16">
-                <figure></figure>
+            <section className="grid grid-cols-2 my-16 gap-8">
+                <figure className="border"></figure>
                 <div className="flex flex-col">
                     <small>SOLUTION</small>
                     <span className="text-3xl font-semibold my-4">Robot controller</span>
@@ -22,7 +22,7 @@ export default function RobotController() {
                 </div>
                 <span className="text-gray-400">Track channels for receiving information and quickly contact a potential client.</span>
             </section>
-            <section className="grid grid-cols-2 my-16 max-w-[1200px] mx-auto">
+            <section className="grid grid-cols-2 my-16 max-w-[1200px] mx-auto gap-8">
                 <figure className="border"></figure>
                 <div className="flex flex-col">
                     <span className="text-3xl font-semibold my-4">Do you want these functions to be faster, easier and more efficient?</span>
@@ -32,7 +32,7 @@ export default function RobotController() {
             </section>
             <section className="flex flex-col items-center max-w-[1200px] mx-auto justify-center">
                 <h4 className="text-2xl font-bold my-8">How does it work with a Robot that returns calls?</h4>
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-2 gap-8">
                     <div className="flex flex-col gap-4">
                         <div className="flex relative bg-gray-100 w-[300px] justify-center p-8">
                             <span className="flex h-8 w-8 justify-center items-center bg-green-500 p-2 rounded-full absolute left-[-20px] top-[20px]">
@@ -60,12 +60,12 @@ export default function RobotController() {
                             <button className="bg-green-300 w-max p-2 px-3 my-2">ORDER</button>
                         </div>
                     </div>
-                    <figure>
+                    <figure className="border">
 
                     </figure>
                 </div>
             </section>
-            <section className="flex flex-col items-center max-w-[1200px] mx-auto justify-center">
+            <section className="flex flex-col items-center max-w-[1200px] mx-auto my-16 justify-center">
                 <h4 className="text-2xl font-bold my-8">Who will need it and when?</h4>
                 <div className="flex gap-8">
                     <div className="bg-gray-100 p-16 w-[500px]">

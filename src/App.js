@@ -7,6 +7,7 @@ import ContactUs from '../src/views/ContactUs.jsx';
 import PricingPage from '../src/views/PricingPage.jsx';
 import AutomatedCallsPage from '../src/views/AutoCalls.jsx'
 import RobotController from './views/RobotController';
+import HomeOffice from './views/HomeOffice';
 import PhoneNumber from './views/PhoneNumber.jsx';
 import SipTrunk from './views/SipTrunk';
 import AiContactcenter from './views/AiContactcenter';
@@ -22,36 +23,28 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: '/solutions/phone-numbers',
+    path: 'solutions/phone-numbers',
     element: <Solutions />,
   },
   {
-    path: '/robot-controller',
+    path: 'solutions/robot-controller',
     element: <RobotController />,
   },
   {
-    path: '/contactus',
+    path: 'solutions/home-office',
+    element: <HomeOffice />,
+  },
+  {
+    path: 'contactus',
     element: <ContactUs />
   },
   {
     path: '/pricing',
-    element: <PricingPage />,
+    element: <PricingPage/>,
   },
   {
-    path: '/automatedcalls',
-    element: <AutomatedCallsPage />,
-  },
-  {
-    path: '/phonenumber',
-    element: <PhoneNumber />,
-  },
-  {
-    path: '/siptrunk',
-    element: <SipTrunk />,
-  },
-  {
-    path:'/aicontactcenter',
-    element:<AiContactcenter/>,
+    path:'/automatedcalls',
+    element: <AutomatedCallsPage/>,
   }
 ]);
 
