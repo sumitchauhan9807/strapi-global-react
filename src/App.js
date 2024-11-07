@@ -9,6 +9,7 @@ import AutomatedCallsPage from '../src/views/AutoCalls.jsx'
 import RobotController from './views/RobotController';
 import PhoneNumber from './views/PhoneNumber.jsx';
 import SipTrunk from './views/SipTrunk';
+import AiContactcenter from './views/AiContactcenter';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: '/siptrunk',
     element: <SipTrunk />,
+  },
+  {
+    path:'/aicontactcenter',
+    element:<AiContactcenter/>,
   }
 ]);
 

@@ -1,18 +1,19 @@
 import React from "react";
 
-const AutomatedCalls = () => {
+const AiContactcenter = () => {
   return (
     <div className="flex items-center justify-center p-10 bg-gray-50 rounded-lg">
       <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="flex items-center justify-center">
           <div className="flex-1 ">
-            <img src="https://kompaas.tech/img/hero-automated-calls.svg" alt="Robot" className="w-full max-w-xs" />
+            <img src="https://s.kompaas.org/assets/img/pages/contact-center/_01__contact-center.svg" alt="Robot" className="w-full h-full max-w-xs" />
           </div>
           <div className="flex-2 p-6">
             <h3 className="text-blue-500 uppercase font-bold text-sm">Product</h3>
-            <h1 className="text-5xl font-semi-bold text-gray-800 mt-2 mb-4">Automated calls</h1>
+            <h1 className="text-5xl font-semi-bold text-gray-800 mt-2 mb-4">AI Contact Center
+            </h1>
             <p className="text-gray-600 text-lg mb-4 font-sans ">
-              Software product which automates call center together with Virtual PBX services:
+            The virtual communication channel connecting the operator's <br /> telecommunications platform (CPaaS) and the client's equipment
             </p>
             <ul className="list-none space-y-2 text-gray-700 grid grid-cols-2 font-sans ">
               <li>Calls automation</li>
@@ -23,113 +24,99 @@ const AutomatedCalls = () => {
               <li>Debt collection</li>
             </ul>
             <div className="flex items-center gap-6 mt-6 ">
-              <div className="border-2 shadow-2xl  px-6 py-4 rounded-lg gap-3"> <span className="text-xl font-sans uppercase text-gray-800">from $19.99/mo</span>
-                <button className="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded transition duration-300">
+              <div className="border-2 shadow-2xl  px-6 py-4 rounded-lg gap-3"> <span className="text-xl font-sans uppercase text-gray-800">1 channel $1/mo</span>
+                <button className="bg-gray-600 hover:bg-gray-500 pr-5 text-white py-2 px-4 rounded transition duration-300">
                   BUY NOW
-                </button></div>0.
+                </button></div>
             </div>
           </div>
         </div> <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12 py-10">
           <h2 className="max-w-lg mb-6 font-sans text-2xl font-semi-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
             {' '}
-            Automated call to automate
-            outgoing calls and conversations
+            How does IP telephony differ from other types of communication?
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-            Transactional automated calls
+          IP telephony is the latest, most widespread, inexpensive and popular type of communication for small, medium and large businesses.
           </p>
         </div>
-        <div className="max-w-screen-lg sm:mx-auto">
-          <div className="flex flex-col items-start py-4 transition duration-300 transform rounded sm:px-4 lg:flex-row sm:hover:translate-x-4 sm:hover:bg-blue-gray-50">
-            <div className="mb-4 lg:mb-0">
-              <h5 className="mb-4 text-xl font-bold leading-none sm:text-2xl">
-                The quick, brown fox
-              </h5>
-              <div className="relative pr-8">
-                <p className="text-base text-gray-700 md:text-lg">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                  quae.
-                </p>
-              </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-6 md:grid-cols-2 md:col-span-2 lg:col-span-3">
+          <div className="rounded lg:p-5 lg:transition lg:duration-300 lg:hover:bg-indigo-50">
+            <div className="flex items-center mb-1">
+              <span className="flex items-center justify-center w-4 h-4 mr-2 text-xs font-medium text-white rounded bg-red-400">
+                1
+              </span>
+              <p className="text-lg font-semibold sm:text-base">
+              Favorable price
+              </p>
             </div>
-            <div className="flex justify-start w-56 lg:justify-end">
-              <a
-                href="/"
-                aria-label=""
-                className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-              >
-                Learn more
-                <svg
-                  className="inline-block w-3 ml-2"
-                  fill="currentColor"
-                  viewBox="0 0 12 12"
-                >
-                  <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
-                </svg>
-              </a>
-            </div>
+            <p className="text-sm text-gray-900">
+              Take a good look at the recipe. Don’t just skim it; read it
+              through from start to finish. As you read, visualize doing the
+              steps which will help when you’re prepping.
+            </p>
           </div>
-          <div className="flex flex-col items-start py-4 transition duration-300 transform rounded sm:px-4 lg:flex-row sm:hover:translate-x-4 sm:hover:bg-blue-gray-50">
-            <div className="mb-4 lg:mb-0">
-              <h5 className="mb-4 text-xl font-bold leading-none sm:text-2xl">
-                Bro ipsum dolor sit
-              </h5>
-              <div className="relative pr-8">
-                <p className="text-base text-gray-700 md:text-lg">
-                  Lookout flogging bilge rat main sheet bilge water nipper fluke
-                  to go on account heave down clap of thunder. Reef sails six
-                  pounders.
-                </p>
-              </div>
+          <div className="rounded lg:p-5 lg:transition lg:duration-300 lg:hover:bg-teal-50">
+            <div className="flex items-center mb-1">
+              <span className="flex items-center justify-center w-4 h-4 mr-2 text-xs font-medium text-teal-50 rounded bg-blue-400">
+                2
+              </span>
+              <p className="text-lg font-semibold sm:text-base">
+              Mobility
+
+              </p>
             </div>
-            <div className="flex justify-start w-56 lg:justify-end">
-              <a
-                href="/"
-                aria-label=""
-                className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-              >
-                Learn more
-                <svg
-                  className="inline-block w-3 ml-2"
-                  fill="currentColor"
-                  viewBox="0 0 12 12"
-                >
-                  <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
-                </svg>
-              </a>
-            </div>
+            <p className="text-sm text-gray-900">
+              All recipes are written using certain conventions, which define
+              the characteristics of common ingredients. The rules vary from
+              place to place.
+            </p>
           </div>
-          <div className="flex flex-col items-start py-4 transition duration-300 transform rounded sm:px-4 lg:flex-row sm:hover:translate-x-4 sm:hover:bg-blue-gray-50">
-            <div className="mb-4 lg:mb-0">
-              <h5 className="mb-4 text-xl font-bold leading-none sm:text-2xl">
-                Japan air Skate park
-              </h5>
-              <div className="relative pr-8">
-                <p className="text-base text-gray-700 md:text-lg">
-                  If one examines precultural libertarianism, one is faced with a
-                  choice: either accept rationalism.
-                </p>
-              </div>
+          <div className="rounded lg:p-5 lg:transition lg:duration-300 lg:hover:bg-teal-50">
+            <div className="flex items-center mb-1">
+              <span className="flex items-center justify-center w-4 h-4 mr-2 text-xs font-medium text-white rounded md:text-teal-50 bg-deep-purple-accent-400 md:bg-green-400">
+                3
+              </span>
+              <p className="text-lg font-semibold sm:text-base">
+              Convenient interface
+              </p>
             </div>
-            <div className="flex justify-start w-56 lg:justify-end">
-              <a
-                href="/"
-                aria-label=""
-                className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-              >
-                Learn more
-                <svg
-                  className="inline-block w-3 ml-2"
-                  fill="currentColor"
-                  viewBox="0 0 12 12"
-                >
-                  <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
-                </svg>
-              </a>
-            </div>
+            <p className="text-sm text-gray-900">
+              Check the “prep time” and “total time” listed at the top to be
+              sure you have enough time to complete the recipe. Look for hints,
+              such as the words “meanwhile” .
+            </p>
           </div>
-        </div> <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12 py-10">
+          <div className="rounded lg:p-5 lg:transition lg:duration-300 lg:hover:bg-indigo-50">
+            <div className="flex items-center mb-1">
+              <span className="flex items-center justify-center w-4 h-4 mr-2 text-xs font-medium text-teal-50 rounded md:text-white bg-teal-accent-400 md:bg-purple-400">
+                4
+              </span>
+              <p className="text-lg font-semibold sm:text-base">Reliability</p>
+            </div>
+            <p className="text-sm text-gray-900">
+              Missing a prep instruction can leave you scrambling in the middle
+              of a recipe. Keep your eyes peeled for time-consuming steps and be
+              careful.
+            </p>
+          </div>
+        </div>
+        <div className="relative md:col-span-2 lg:col-span-2">
+          <img
+            className="inset-0 object-cover object-bottom w-full h-56 rounded shadow-lg lg:absolute lg:h-full"
+            src="https://images.pexels.com/photos/3182759/pexels-photo-3182759.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+            alt=""
+          />
+        </div>
+      </div><div className="text-center py-10">
+        <a
+          href="/"
+          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition bg-gray-600 duration-200 rounded shadow-md md:w-auto bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+        >
+          Learn more
+        </a>
+      </div>
+     <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12 py-10">
           <h2 className="max-w-lg mb-6 font-sans text-2xl font-semi-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
             {' '}
             Automated call to automate
@@ -172,7 +159,7 @@ const AutomatedCalls = () => {
                 <div className="w-px h-full bg-gray-300" />
               </div>
               <div className="pt-1 pb-8">
-                <p className="mb-2 text-lg font-bold">Step 1</p>
+                <p className="mb-2 text-lg font-bold">Select a pricing plan</p>
                 <p className="text-gray-700">
                   All recipes are written using certain conventions, which define
                   the characteristics of common ingredients. The rules vary from
@@ -336,4 +323,4 @@ const AutomatedCalls = () => {
   );
 };
 
-export default AutomatedCalls;
+export default AiContactcenter;
