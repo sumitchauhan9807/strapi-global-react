@@ -9,6 +9,9 @@ import AutomatedCallsPage from '../src/views/AutoCalls.jsx'
 import RobotController from './views/RobotController';
 import HomeOffice from './views/HomeOffice';
 import PhoneNumber from './views/PhoneNumber.jsx';
+import SipTrunk from './views/SipTrunk';
+import AiContactcenter from './views/AiContactcenter';
+import VoiceRobots from './views/VoiceRobots';
 import SipTrunk from './views/SipTrunk.jsx';
 import AiContactcenter from './views/AiContactcenter.jsx';
 import TextTospeach from './views/SpeachTotext.jsx';
@@ -44,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: 'solutions/home-office',
     element: <HomeOffice />,
+  },
+  {
+    path: 'solutions/voice-robots',
+    element: <VoiceRobots />,
   },
   {
     path: 'contactus',
