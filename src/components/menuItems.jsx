@@ -107,7 +107,7 @@ export function SolutionMenuList() {
                         <figure><RiHomeOfficeLine size={28} /></figure>
                         <small>Home office</small>
                     </a>
-                    <a href='/' className="flex gap-4 p-2 hover:bg-[#242424]">
+                    <a href='/solutions/voice-robots' className="flex gap-4 p-2 hover:bg-[#242424]">
                         <figure><RiUserVoiceLine size={28} /></figure>
                         <small>Voice robot for inbound calls</small>
                     </a>

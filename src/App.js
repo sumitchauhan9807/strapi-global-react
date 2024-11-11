@@ -11,6 +11,7 @@ import HomeOffice from './views/HomeOffice';
 import PhoneNumber from './views/PhoneNumber.jsx';
 import SipTrunk from './views/SipTrunk';
 import AiContactcenter from './views/AiContactcenter';
+import VoiceRobots from './views/VoiceRobots';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: 'solutions/home-office',
     element: <HomeOffice />,
+  },
+  {
+    path: 'solutions/voice-robots',
+    element: <VoiceRobots />,
   },
   {
     path: 'contactus',
