@@ -9,8 +9,19 @@ import AutomatedCallsPage from '../src/views/AutoCalls.jsx'
 import RobotController from './views/RobotController';
 import HomeOffice from './views/HomeOffice';
 import PhoneNumber from './views/PhoneNumber.jsx';
-import SipTrunk from './views/SipTrunk';
-import AiContactcenter from './views/AiContactcenter';
+import SipTrunk from './views/SipTrunk.jsx';
+import AiContactcenter from './views/AiContactcenter.jsx';
+import TextTospeach from './views/SpeachTotext.jsx';
+import VoiceRobot from './views/VoiceRobot';
+import PBx from './views/PBx';
+import CallTranscription from './views/CallTranscription';
+import CallRecording from './views/CallRecording';
+import ChatbotNews from './views/ChatbotandNewsletter';
+import AccSales from './views/AccelerationofSales';
+import ChatBotbuilder from './views/ChatbotBuilder';
+import FreelancerChatbot from './views/ChatbotdesignforFreelancers';
+
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -40,12 +51,64 @@ const router = createBrowserRouter([
   },
   {
     path: '/pricing',
-    element: <PricingPage/>,
+    element: <PricingPage />,
   },
   {
-    path:'/automatedcalls',
-    element: <AutomatedCallsPage/>,
+    path: '/automatedcalls',
+    element: <AutomatedCallsPage />,
+  },
+  {
+    path: '/aicontactcenter',
+    element: <AiContactcenter />,
+
+  },
+  {
+    path: '/phonenumber',
+    element: <PhoneNumber />,
+
+  },
+  {
+    path: '/siptrunk',
+    element: <SipTrunk />,
+  },
+  {
+    path: '/texttospeach',
+    element: <TextTospeach />,
+  },
+  {
+    path: '/voicerobot',
+    element: <VoiceRobot />,
+  },
+  {
+    path: '/pbx',
+    element: <PBx />,
+  },
+  {
+    path: '/calltranscription',
+    element: <CallTranscription />,
+  },
+  {
+    path: '/callrecording',
+    element: <CallRecording />,
+  },
+  {
+    path: '/chatbotnews',
+    element: <ChatbotNews />,
+  },
+  {
+    path: '/accsales',
+    element: <AccSales />,
+  },
+  {
+    path: '/chatbotbuilder',
+    element: <ChatBotbuilder />,
+  },
+  {
+    path:'/freelancerchatbot',
+    element:<FreelancerChatbot/>,
   }
+
+
 ]);
 
 function App() {

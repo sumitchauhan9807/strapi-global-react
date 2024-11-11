@@ -1,12 +1,16 @@
 import React from "react";
+import Autocalls from "../assets/images/autocalls.gif"
+
 
 const AutomatedCalls = () => {
   return (
-    <div className="flex items-center justify-center p-10 bg-gray-50 rounded-lg">
+    <div className="flex items-center justify-center p-10 bg-gray-50 rounded-lg">     
+
       <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div className="flex items-center justify-center">
-          <div className="flex-1 ">
-            <img src="https://kompaas.tech/img/hero-automated-calls.svg" alt="Robot" className="w-full max-w-xs" />
+        <div className="grid items-center justify-center grid-cols-2"> 
+          {/* <img src="https://images.pexels.com/photos/3747463/pexels-photo-3747463.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" class="absolute inset-0 z-0 object-cover w-full h-56" alt="" /> */}
+        <div className="flex-1 ">
+            <img src={Autocalls} alt="Robot" className="w-full h-full max-w-xl transition duration-300 transform hover:scale-105 hover:grayscale-0 grayscale" />
           </div>
           <div className="flex-2 p-6">
             <h3 className="text-blue-500 uppercase font-bold text-sm">Product</h3>
@@ -33,10 +37,10 @@ const AutomatedCalls = () => {
           <h2 className="max-w-lg mb-6 font-sans text-2xl font-semi-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
             {' '}
             Automated call to automate
-            outgoing calls and conversations
+            outgoing calls and conversations.
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-            Transactional automated calls
+            Transactional automated calls.
           </p>
         </div>
         <div className="max-w-screen-lg sm:mx-auto">
@@ -103,7 +107,7 @@ const AutomatedCalls = () => {
           <div className="flex flex-col items-start py-4 transition duration-300 transform rounded sm:px-4 lg:flex-row sm:hover:translate-x-4 sm:hover:bg-blue-gray-50">
             <div className="mb-4 lg:mb-0">
               <h5 className="mb-4 text-xl font-bold leading-none sm:text-2xl">
-                Japan air Skate park
+                Japan air Skate park.
               </h5>
               <div className="relative pr-8">
                 <p className="text-base text-gray-700 md:text-lg">
@@ -133,10 +137,10 @@ const AutomatedCalls = () => {
           <h2 className="max-w-lg mb-6 font-sans text-2xl font-semi-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
             {' '}
             Automated call to automate
-            outgoing calls and conversations
+            outgoing calls and conversations.
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-            Transactional automated calls
+            Transactional automated calls.
           </p>
         </div>
         <div className="grid gap-6 row-gap-10 lg:grid-cols-2 py-10" >
@@ -176,7 +180,7 @@ const AutomatedCalls = () => {
                 <p className="text-gray-700">
                   All recipes are written using certain conventions, which define
                   the characteristics of common ingredients. The rules vary from
-                  place to place.
+                  place to place. 
                 </p>
               </div>
             </div>

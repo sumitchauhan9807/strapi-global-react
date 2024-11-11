@@ -1,4 +1,5 @@
 import React from "react";
+import Trunk from '../assets/images/siptrunk.gif'
 
 const SipTrunk = () => {
   return (
@@ -6,7 +7,7 @@ const SipTrunk = () => {
       <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="flex items-center justify-center">
           <div className="flex-1 ">
-            <img src="https://kompaas.tech/img/pages/siptrunk/_01__siptrunk.svg" alt="Robot" className="w-full max-w-xs" />
+            <img src={Trunk} alt="Robot" className="w-full max-w-xl" />
           </div>
           <div className="flex-2 p-6">
             <h3 className="text-blue-500 uppercase font-bold text-sm">Product</h3>
