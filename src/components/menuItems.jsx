@@ -7,8 +7,8 @@ import { TbSettingsAutomation } from "react-icons/tb";
 export const productMenuItems = [
   {
     icon: <GrAnalytics size={28} />,
-    title: "USA Phone Numbers",
-    description: "Virtual phone numbers from KOMPaaS for VoIP telephony (SIP)",
+    title: "Global Dialer Phone Numbers",
+    description: "Virtual phone numbers from Global Dialer for VoIP telephony (SIP)",
     link: "/phonenumber",
   },
   {

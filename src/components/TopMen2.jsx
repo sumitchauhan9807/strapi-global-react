@@ -65,7 +65,7 @@ export default function TopMen2() {
         <menu className="flex items-center justify-between p-2 px-8 h-24">
            <Link to="/"><img src={Logo} style={{height:"98px"}}/></Link>
             <div className="flex text-[#3b516d] relative items-center right-16">
-                <div className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('products')}} >
+                <div style={{fontSize:"15px"}} className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('products')}} >
                     <span
                         className={`uppercase font-semibold rounded-t-md p-4 px-6 ${activeMenu === 'products' ? 'bg-[#24282e] text-white' : 'text-[#3b516d]'}`}
                     >
@@ -73,7 +73,7 @@ export default function TopMen2() {
                     </span>
                     {activeMenu === 'products' && <ProductMenuList/>}
                 </div>
-                <div className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('features')}}>
+                <div style={{fontSize:"15px"}} className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('features')}}>
                     <span
                         className={`uppercase font-semibold rounded-t-md p-4 px-6 ${activeMenu === 'features' ? 'bg-[#24282e] text-white' : 'text-[#3b516d]'}`}
                     >
@@ -89,14 +89,14 @@ export default function TopMen2() {
                     </span>
                     {activeMenu === 'pricing' && <PricingMenuList />}
                 </div> */}
-								<Link to="/pricing" className="relative p-4 cursor-pointer">
+								<Link style={{fontSize:"15px"}} to="/pricing" className="relative p-4 cursor-pointer">
                     <span
                         className="uppercase font-semibold px-6"
                     >
                         Pricing
                     </span>
                 </Link>
-                <div className="relative p-4 cursor-pointer">
+                <div style={{fontSize:"15px"}} className="relative p-4 cursor-pointer">
                     <span
                         className="uppercase font-semibold px-6"
                     >
