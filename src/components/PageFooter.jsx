@@ -6,7 +6,9 @@ import useAxios from 'src/Hooks/UseAxios'
 import { constructQueryString } from 'src/helpers'
 let qs = constructQueryString([
   "WorkingHours",
- "ContactUs",
+//  "ContactUs",
+ "MobileNumbers",
+ "MobileNumbers.Number"
   // "Location1",
   // "Location2",
 ]);
@@ -34,10 +36,7 @@ export const Footer = () => {
 
   let location1 = data.data.Location1.replaceAll("\n","<br/>")
   let location2 = data.data.Location2.replaceAll("\n","<br/>")
-  let location3 = data.data.Location3
 
-
-  console.log(data.data.Location3)
   return (
     <div className="bg-gray-900 flex justify-center">
   <div className="px-4 pt-16 mx-auto max-w-screen-lg sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
@@ -48,72 +47,42 @@ export const Footer = () => {
             Working Hours
           </p>
           <ul className="mt-2 space-y-2">
-            <li>
-              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-              Monday - Friday
-              </a>
-            </li>
-            <li>
-              <a href="/" className="text-gray-400 transition-colors duration-300 hover:text-deep-purple-accent-200">
-                8:00-16:00
-              </a>
-            </li>
-            <li>
-              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-             Saturday
-              </a>
-            </li>
-            <li>
-              <a href="/" className="text-gray-400 transition-colors duration-300 hover:text-deep-purple-accent-200">
-                8:00-16:00
-              </a>
-            </li>
-            <li>
-              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-             Saturday
-              </a>
-            </li>
-            <li>
-              <a href="/" className="text-gray-400 transition-colors duration-300 hover:text-deep-purple-accent-200">
-                Closed
-              </a>
-            </li>
+            {data.data.WorkingHours.map((item)=>{
+              return (<>
+                <li>
+                <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
+                {item.Heading}
+                </a>
+              </li>
+              <li>
+                <a href="/" className="text-gray-400 transition-colors duration-300 hover:text-deep-purple-accent-200">
+                {item.SubHeading}
+
+                </a>
+              </li>
+              </>)
+            })}
+            
           </ul>
         </div>
 
         <div>
           <p className="font-medium tracking-wide text-gray-300">Contact Us</p>
           <ul className="mt-2 space-y-2">
-            <li>
-              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-               Mobiles : &nbsp; +94 1722772888
-              </a>
-            </li>
-            <li>
-              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-                Office: +49 21188233700
-              </a>
-            </li>
-            <li>
-              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-                Fax: +49 21188233700
-              </a>
-            </li>
-            <li>
-              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-               Office: +43 720 111 313
-              </a>
-            </li>
-            <li>
-              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-               Fax (AT): +15 055393445
-              </a>
-            </li>
-            <li>
-              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-               Office (AT): +43 720 111 313
-              </a>
-            </li>
+            {data.data.MobileNumbers.Number.map((item)=>{
+              let spacing = item.LeftSpacing.split("s")[1]
+             return (
+              <li>
+                <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
+                {item.Place}:
+                {Array(Number(spacing)).fill("x").map(()=>{
+                  return <>&nbsp;</>
+                })}
+                {item.Number}
+                </a>
+              </li>
+             )
+            })}
           </ul>
         </div>
 
