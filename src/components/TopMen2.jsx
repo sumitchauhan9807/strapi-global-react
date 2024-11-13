@@ -5,9 +5,9 @@ import { Link } from "react-router-dom"
 
 export const ProductMenuList = () => {
     return (
-        <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[500px] overflow-hidden z-20 p-8 rounded-2xl">
-            {productMenuItems.map(item => (
-                <div className="flex gap-4 text-white">
+        <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[690px] overflow-hidden z-20 p-8 rounded-2xl">
+            {productMenuItems.map((item,index) => (
+                <Link key={index} to={item.link} className="flex gap-4 text-white">
                     <figure className="flex justify-center items-center p-3 bg-[#141b24] text-white rounded-md">
                         {item.icon}
                     </figure>
@@ -15,7 +15,7 @@ export const ProductMenuList = () => {
                         <strong className="text-base">{item.title}</strong>
                         <small className="text-sm">{item.description}</small>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     )
@@ -41,7 +41,7 @@ export const PricingMenuList = () => {
 
 export const SolutionMenuList = () => {
     return (
-        <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[300px] overflow-hidden z-20 p-8 rounded-2xl">
+        <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[990px] overflow-hidden z-20 p-8 rounded-2xl">
             {solutionsMenuItems.map((item,index) => (
                 <Link key={index} to={item.link} className="flex gap-4 text-white">
                     <figure className="flex justify-center items-center p-3 bg-[#141b24] text-white rounded-md">
@@ -83,14 +83,21 @@ export default function TopMen2() {
                     </span>
                     {activeMenu === 'features' && <SolutionMenuList />}
                 </div>
-                <div className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('pricing')}}>
+                {/* <div className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('pricing')}}>
                     <span
                         className={`uppercase font-semibold rounded-t-md p-4 px-6 ${activeMenu === 'pricing' ? 'bg-[#24282e] text-white' : 'text-[#3b516d]'}`}
                     >
                         Pricing
                     </span>
                     {activeMenu === 'pricing' && <PricingMenuList />}
-                </div>
+                </div> */}
+								<Link to="/pricing" className="relative p-4 cursor-pointer">
+                    <span
+                        className="uppercase font-semibold px-6"
+                    >
+                        Pricing
+                    </span>
+                </Link>
                 <div className="relative p-4 cursor-pointer">
                     <span
                         className="uppercase font-semibold px-6"
