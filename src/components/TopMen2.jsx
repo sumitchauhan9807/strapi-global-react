@@ -2,7 +2,7 @@ import { useState, useEffect,useRef } from "react"
 import { productMenuItems ,solutionsMenuItems ,pricingMenuItems} from "./menuItems"
 import LanguageSelect from 'src/components/small/LanguageSelector'
 import { Link } from "react-router-dom"
-
+import Logo from 'src/assets/logo.png'
 export const ProductMenuList = () => {
     return (
         <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[690px] overflow-hidden z-20 p-8 rounded-2xl">
@@ -63,9 +63,7 @@ export default function TopMen2() {
     const [activeMenu, setActiveMenu] = useState('')
 	return (
         <menu className="flex items-center justify-between p-2 px-8 h-24">
-            <figure className="h-12 w-12 border-2 border-black rounded-full mx-8">
-                <embed src="" type="" />
-            </figure>
+           <img src={Logo} style={{height:"98px"}}/>
             <div className="flex text-[#3b516d] relative items-center right-16">
                 <div className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('products')}} >
                     <span
