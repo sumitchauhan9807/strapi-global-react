@@ -65,7 +65,7 @@ export default function TopMen2() {
             <figure className="h-12 w-12 border-2 border-black rounded-full mx-8">
                 <embed src="" type="" />
             </figure>
-            <div className="flex text-xl text-[#3b516d] relative items-center right-16">
+            <div className="flex text-[#3b516d] relative items-center right-16">
                 <div className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('products')}} >
                     <span
                         className={`uppercase font-semibold rounded-t-md p-4 px-6 ${activeMenu === 'products' ? 'bg-[#24282e] text-white' : 'text-[#3b516d]'}`}
