@@ -1,10 +1,12 @@
+import { baseUrl } from 'src/helpers'
+
 function ProductDescription({data}) {
   console.log(data,"asdasd")
   return(
     <>
     <div className="flex items-center justify-center">
           <div className="flex-1 ">
-            <img src="https://kompaas.tech/img/hero-phone-numbers.svg" alt="Robot" className="w-full max-w-xs" />
+            <img src={baseUrl() + data.Image.url} alt="Robot" className="w-full max-w-xs" />
           </div>
           <div className="flex-2 p-6">
             <h3 className="text-blue-500 uppercase font-bold text-sm">Product</h3>

@@ -11,6 +11,7 @@ import DeployingSteps from 'src/components/Product/DeployingSteps'
 let qs = constructQueryString([
   "Description",
   "Description.ProductSpecs",
+  "Description.Image",
   "ProductSpecs",
   "ProductSpecs.ProductSpecs",
   "ProductSpecs.Image",
@@ -37,10 +38,14 @@ const PhoneNumber = () => {
     <div className="flex items-center justify-center p-10 bg-gray-50 rounded-lg">
       <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <ProductDescription
-        data={data.data.Description}
+         data={data.data.Description}
         />
-        <ProductSpecs/>
-        <DeployingSteps/>
+        <ProductSpecs
+          data={data.data.ProductSpecs}
+        />
+        <DeployingSteps
+        data={data.data.DeployingSteps}
+        />
       </div>
     </div>
   );
