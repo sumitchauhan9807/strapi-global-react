@@ -63,7 +63,7 @@ export default function TopMen2() {
     const [activeMenu, setActiveMenu] = useState('')
 	return (
         <menu className="flex items-center justify-between p-2 px-8 h-24">
-           <img src={Logo} style={{height:"98px"}}/>
+           <Link to="/"><img src={Logo} style={{height:"98px"}}/></Link>
             <div className="flex text-[#3b516d] relative items-center right-16">
                 <div className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('products')}} >
                     <span
