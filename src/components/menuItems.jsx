@@ -38,16 +38,19 @@ export const solutionsMenuItems = [
     icon: <GrAnalytics size={28} />,
     title: "Phone Numbers",
     description: "Phone numbers for corporate customers",
+    link: "/solutions/phone-numbers",
   },
   {
     icon: <LuMousePointerClick size={28} />,
     title: "Virtual PBX",
     description: "Robot controller,Home Office,Call Recording",
+    link: "/solutions/phone-numbers",
   },
   {
     icon: <GrShieldSecurity size={28} />,
     title: "Automated calls",
     description: `Automatic calls for online pharmacies`,
+    link: "/solutions/phone-numbers",
   },
 ];
 

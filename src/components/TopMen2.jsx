@@ -1,10 +1,11 @@
 import { useState, useEffect,useRef } from "react"
 import { productMenuItems ,solutionsMenuItems ,pricingMenuItems} from "./menuItems"
 import LanguageSelect from 'src/components/small/LanguageSelector'
+import { Link } from "react-router-dom"
 
-export const ProductMenuList = ({ref}) => {
+export const ProductMenuList = () => {
     return (
-        <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[500px] overflow-hidden z-20 p-8 rounded-2xl" ref={ref}>
+        <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[500px] overflow-hidden z-20 p-8 rounded-2xl">
             {productMenuItems.map(item => (
                 <div className="flex gap-4 text-white">
                     <figure className="flex justify-center items-center p-3 bg-[#141b24] text-white rounded-md">
@@ -20,9 +21,9 @@ export const ProductMenuList = ({ref}) => {
     )
 }
 
-export const PricingMenuList = ({ref}) => {
+export const PricingMenuList = () => {
     return (
-        <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[700px] overflow-hidden z-20 p-8 rounded-2xl" ref={ref}>
+        <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[700px] overflow-hidden z-20 p-8 rounded-2xl">
             {pricingMenuItems.map(item => (
                 <div className="flex gap-4 text-white">
                     <figure className="flex justify-center items-center p-3 bg-[#141b24] text-white rounded-md">
@@ -38,11 +39,11 @@ export const PricingMenuList = ({ref}) => {
     )
 }
 
-export const SolutionMenuList = ({ref}) => {
+export const SolutionMenuList = () => {
     return (
-        <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[300px] overflow-hidden z-20 p-8 rounded-2xl" ref={ref}>
-            {solutionsMenuItems.map(item => (
-                <div className="flex gap-4 text-white">
+        <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[300px] overflow-hidden z-20 p-8 rounded-2xl">
+            {solutionsMenuItems.map((item,index) => (
+                <Link key={index} to={item.link} className="flex gap-4 text-white">
                     <figure className="flex justify-center items-center p-3 bg-[#141b24] text-white rounded-md">
                         {item.icon}
                     </figure>
@@ -50,7 +51,7 @@ export const SolutionMenuList = ({ref}) => {
                         <strong className="text-base">{item.title}</strong>
                         <small className="text-sm">{item.description}</small>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     )
@@ -72,7 +73,7 @@ export default function TopMen2() {
                     >
                         Products
                     </span>
-                    {activeMenu === 'products' && <ProductMenuList ref={ref}/>}
+                    {activeMenu === 'products' && <ProductMenuList/>}
                 </div>
                 <div className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('features')}}>
                     <span
@@ -102,3 +103,8 @@ export default function TopMen2() {
         </menu>
     )
 }
+
+// add logo
+// fotter things
+// adding data to Backend 
+// adding data in all langs
