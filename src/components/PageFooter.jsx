@@ -1,4 +1,43 @@
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux'
+import { PageSkeleton } from 'src/components/small/Skeletons'
+
+import useAxios from 'src/Hooks/UseAxios'
+import { constructQueryString } from 'src/helpers'
+let qs = constructQueryString([
+  "WorkingHours",
+ "ContactUs",
+  // "Location1",
+  // "Location2",
+]);
+
+// Mobiles :     +94 1722772888
+// Office:          +49 21188233700
+// Fax:               +49 21188233700
+// Office:          +43 720 111 313
+// Fax (AT):       +15 055393445
+// Office (AT): +43 720 111 313
 export const Footer = () => {
+  const [data, setData] = useState([]);
+  const language = useSelector((state) => state.language);
+  const { response, loading, error } = useAxios({
+    method: "get",
+    url: `footer?${qs}locale=${language.language}`,
+  });
+  useEffect(() => {
+    if (response !== null) {
+      setData(response);
+    }
+  }, [response]);
+  if (loading) return <PageSkeleton />
+  if (!data.data) return
+
+  let location1 = data.data.Location1.replaceAll("\n","<br/>")
+  let location2 = data.data.Location2.replaceAll("\n","<br/>")
+  let location3 = data.data.Location3
+
+
+  console.log(data.data.Location3)
   return (
     <div className="bg-gray-900 flex justify-center">
   <div className="px-4 pt-16 mx-auto max-w-screen-lg sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
@@ -47,7 +86,7 @@ export const Footer = () => {
           <ul className="mt-2 space-y-2">
             <li>
               <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-               Mobiles : +94 1722772888
+               Mobiles : &nbsp; +94 1722772888
               </a>
             </li>
             <li>
@@ -82,17 +121,17 @@ export const Footer = () => {
           <p className="font-medium tracking-wide text-gray-300">Location</p>
           <ul className="mt-2 space-y-2">
             <li>
-              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-                Subsidiary Company <br />
-                Konigsallee 19 <br />
-                Global World LK LLC
+              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+              dangerouslySetInnerHTML={{__html: location1}}
+              >
+              
               </a>
             </li>
             <li>
-              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-                HeadQuarters <br />
-                5203 Juan Tabo Blvd Ne Suite 2b , Albuquerquebr <br />
-                New Mexico 87111 USA
+              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+              dangerouslySetInnerHTML={{__html: location2}}
+              
+              >
               </a>
             </li>
           </ul>
