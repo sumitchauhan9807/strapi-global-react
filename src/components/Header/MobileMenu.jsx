@@ -1,10 +1,16 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from 'src/assets/logo.png'
 import { productMenuItems ,solutionsMenuItems ,pricingMenuItems} from "src/components/menuItems"
+import {  useLocation } from 'react-router-dom'
 
 function MobileMenu() {
   let menuRef = useRef("")
+  let location = useLocation()
+
+  useEffect(()=>{
+    setActiveSubNav(null)
+  },[location])
   const [activeSubNav,setActiveSubNav] = useState(null)
   const setActiveTab = (val) => {
     if(activeSubNav == val) {
@@ -45,11 +51,11 @@ function MobileMenu() {
 									</svg>
 								</button>
 							</li>
-							<li>
+							<Link to="/pricing">
 								<a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
 									Pricing
 								</a>
-							</li>
+							</Link>
 							<li>
 								<a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
 									About
@@ -71,11 +77,11 @@ const ProductMenuList = () => {
     <div className="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-6">
       <ul>
       {productMenuItems.map((item,index) => (
-        <li>
-        <a href="#" className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+        <li key={index}>
+        <Link  to={item.link} className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
           <div className="font-semibold">{item.title}</div>
           <span className="text-sm text-gray-500 dark:text-gray-400">{item.description}</span>
-        </a>
+        </Link>
       </li>
       ))}
       </ul>
@@ -90,11 +96,11 @@ const SolutionMenuList = () => {
     <div className="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-6">
       <ul>
       {solutionsMenuItems.map((item,index) => (
-        <li>
-        <a href="#" className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+        <li key={index}>
+        <Link  to={item.link} className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
           <div className="font-semibold">{item.title}</div>
           <span className="text-sm text-gray-500 dark:text-gray-400">{item.description}</span>
-        </a>
+        </Link>
       </li>
       ))}
       </ul>

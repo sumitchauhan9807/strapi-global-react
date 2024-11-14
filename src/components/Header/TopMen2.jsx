@@ -3,6 +3,8 @@ import { productMenuItems ,solutionsMenuItems ,pricingMenuItems} from "../menuIt
 import LanguageSelect from 'src/components/small/LanguageSelector'
 import { Link } from "react-router-dom"
 import Logo from 'src/assets/logo.png'
+import {  useLocation } from 'react-router-dom'
+
 export const ProductMenuList = () => {
     return (
         <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[690px] overflow-hidden z-20 p-8 rounded-2xl">
@@ -61,6 +63,10 @@ export const SolutionMenuList = () => {
 export default function TopMen2() {
     const ref = useRef(null);
     const [activeMenu, setActiveMenu] = useState('')
+		let location = useLocation()
+		useEffect(()=>{
+			setActiveMenu('')
+		},[location])
 	return (
         <menu className="flex items-center justify-between p-2 px-8 h-24">
            <Link to="/"><img src={Logo} style={{height:"98px"}}/></Link>

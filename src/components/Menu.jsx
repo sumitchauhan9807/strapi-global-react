@@ -5,7 +5,7 @@ import MobileMenu from 'src/components/Header/MobileMenu'
 
 function Menu() {
   const { height, width } = useWindowDimensions();
-  console.log(height,width)
+  
   return (
     <>
       {width > 1064 && <LargeMenu />}
