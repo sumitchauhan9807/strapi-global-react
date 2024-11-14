@@ -1,23 +1,18 @@
 import { Nav as Navbar } from "../components/Navbar.jsx"; // Named import
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import HeroBanner from "../components/HeroBanner.jsx";
-import bgimage from "../assets/home/1.png";
+
 import SectionTwo from "src/components/SectionTwo.jsx";
 import SectionThree from "src/components/SectionThree.jsx";
 import SectionFour from "src/components/SectionFour.jsx";
-import Footer from "src/components/PageFooter.jsx";
+
 import Pricing from "src/components/PricingTable.jsx";
 import SectionFive from "src/components/SectionFive.jsx";
-import { PageSkeleton } from 'src/components/small/Skeletons'
-import SubMenuNav from "src/components/SubMenu.jsx";
-import DropDOwn from "src/components/SubNav.jsx";
-import TopMen from "src/components/TopMen.jsx";
-import TopMen2 from "src/components/TopMen2.jsx";
+import { PageSkeleton } from "src/components/small/Skeletons";
 
-
-import useAxios from 'src/Hooks/UseAxios'
-import { constructQueryString } from 'src/helpers'
+import useAxios from "src/Hooks/UseAxios";
+import { constructQueryString } from "src/helpers";
 let qs = constructQueryString([
   "Hero",
   "Hero.HeroText",
@@ -39,8 +34,8 @@ function Home() {
       setData(response);
     }
   }, [response]);
-  if (loading) return <PageSkeleton />
-  if (!data.data) return
+  if (loading) return <PageSkeleton />;
+  if (!data.data) return;
   return (
     <>
       <div>
@@ -52,15 +47,11 @@ function Home() {
           {/* <DropDOwn/> */}
 
           {/* header section starts here */}
-          <HeroBanner
-            data={data.data.Hero}
-          />
+          <HeroBanner data={data.data.Hero} />
 
           {/* header section ends here */}
           {/* SectionFour */}
-          <SectionFour
-            data={data?.data?.HomeSection1}
-          />
+          <SectionFour data={data?.data?.HomeSection1} />
           {/* SectionFour */}
           {/* other section  */}
           <SectionTwo />
