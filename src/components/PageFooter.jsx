@@ -131,7 +131,7 @@ export const Footer = () => {
         </div>
       </div>
     </div>
-
+<center>
     <div className="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
       <p className="text-sm text-gray-500">
         © Copyright 2024 GLOBAL WORLD IK LLC. All rights reserved.
@@ -155,6 +155,8 @@ export const Footer = () => {
         </a>
       </div>
     </div>
+  </center>
+
   </div>
 </div>
 
