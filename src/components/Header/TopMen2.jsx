@@ -66,6 +66,58 @@ export const SolutionMenuList = () => {
     )
 }
 
+export const ProductMenuList2 = () => {
+	let solutionItems = splitArray(productMenuItems,3)
+	console.log(solutionItems,"solutionItems")
+    return (
+        <div id="mega-menu-full-dropdown" className=" absolute left-[-10rem] top-[90%] bg-[#24282e] w-[700px] overflow-hidden z-20 p-8 rounded-2xl ">
+            <div className="grid max-w-screen-2xl px-2 py-2 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-2">
+                <ul>
+                    {solutionItems.first.map((item, index)=>{
+											return (
+												<li key={index}>
+                        <Link to={item.link}  className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
+
+                            <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
+														{item.icon}
+                            </figure>
+														<div>
+                                <p className="font-semibold text-sm">{item.title}</p>
+                                <span className="text-sm text-gray-500 dark:text-gray-400">
+																{item.description}
+                                </span>
+                            </div>
+                        </Link>
+											</li>
+											)
+										})}
+                </ul>
+                <ul>
+								{solutionItems.second.map((item, index)=>{
+											return (
+												<li key={index}>
+                        <Link to={item.link} className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
+
+                            <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
+														{item.icon}
+                            </figure>
+														<div>
+                                <p className="font-semibold text-sm">{item.title}</p>
+                                <span className="text-sm text-gray-500 dark:text-gray-400">
+																{item.description}
+                                </span>
+                            </div>
+                        </Link>
+											</li>
+											)
+										})}
+                </ul>
+            </div>
+        </div>
+
+    )
+}
+
 export const SolutionMenuList2 = () => {
 	let solutionItems = splitArray(solutionsMenuItems,5)
 	console.log(solutionItems,"solutionItems")
@@ -76,7 +128,7 @@ export const SolutionMenuList2 = () => {
                     {solutionItems.first.map((item, index)=>{
 											return (
 												<li key={index}>
-                        <a href="#" className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
+                        <Link to={item.link} className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
 
                             <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
 														{item.icon}
@@ -87,7 +139,7 @@ export const SolutionMenuList2 = () => {
 																{item.description}
                                 </span>
                             </div>
-                        </a>
+                        </Link>
 											</li>
 											)
 										})}
@@ -96,7 +148,7 @@ export const SolutionMenuList2 = () => {
 								{solutionItems.second.map((item, index)=>{
 											return (
 												<li key={index}>
-                        <a href="#" className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
+                        <Link to={item.link} className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
 
                             <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
 														{item.icon}
@@ -107,7 +159,7 @@ export const SolutionMenuList2 = () => {
 																{item.description}
                                 </span>
                             </div>
-                        </a>
+                        </Link>
 											</li>
 											)
 										})}
@@ -136,7 +188,7 @@ export default function TopMen2() {
                     >
                         Products
                     </span>
-                    {activeMenu === 'products' && <ProductMenuList />}
+                    {activeMenu === 'products' && <ProductMenuList2 />}
                 </div>
                 <div style={{ fontSize: "15px" }} className="relative p-4 cursor-pointer" onMouseLeave={() => { setActiveMenu('') }} onMouseEnter={() => { setActiveMenu('features') }}>
                     <span
