@@ -43,10 +43,10 @@ export const Footer = () => {
   
 
   return (
-    <div className="bg-gray-900 flex justify-center">
+    <div className="bg-gray-900 flex justify-center ite">
   <div className="px-4 pt-16 mx-auto max-w-screen-lg sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
-    <div className="grid row-gap-10 mb-8 lg:grid-cols-4">
-      <div className="grid grid-cols-4 gap-5 row-gap-8 lg:col-span-3 md:grid-cols-4">
+    <div className="grid row-gap-10 mb-8 lg:grid-cols-3">
+      <div className="grid lg:grid-cols-4 grid-cols-1 gap-5 row-gap-8 lg:col-span-3 md:grid-cols-4">
         <div>
           <p className="font-medium tracking-wide text-gray-300">
             Working Hours
