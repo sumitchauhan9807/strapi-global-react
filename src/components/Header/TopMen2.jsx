@@ -76,18 +76,24 @@ export const ProductMenuList2 = () => {
                     {solutionItems.first.map((item, index)=>{
 											return (
 												<li key={index}>
-                        <Link to={item.link}  className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
+                        <Link
+  to={item.link}
+  className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700"
+>
+  <figure
+    className="flex justify-center items-center w-16 h-16 bg-[#141b24] text-white rounded-md"
+    style={{ minWidth: "4rem", minHeight: "4rem", flexShrink: 0 }}
+  >
+    {item.icon}
+  </figure>
+  <div className="flex-1">
+    <p className="font-semibold text-sm">{item.title}</p>
+    <span className="text-sm text-gray-500 dark:text-gray-400">
+      {item.description}
+    </span>
+  </div>
+</Link>
 
-                            <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
-														{item.icon}
-                            </figure>
-														<div>
-                                <p className="font-semibold text-sm">{item.title}</p>
-                                <span className="text-sm text-gray-500 dark:text-gray-400">
-																{item.description}
-                                </span>
-                            </div>
-                        </Link>
 											</li>
 											)
 										})}
@@ -98,7 +104,8 @@ export const ProductMenuList2 = () => {
 												<li key={index}>
                         <Link to={item.link} className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
 
-                            <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
+                            <figure className="flex justify-center items-center w-16 h-16 bg-[#141b24] text-white rounded-md"
+                             style={{ minWidth: "4rem", minHeight: "4rem", flexShrink: 0 }}>
 														{item.icon}
                             </figure>
 														<div>
@@ -130,7 +137,7 @@ export const SolutionMenuList2 = () => {
 												<li key={index}>
                         <Link to={item.link} className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
 
-                            <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
+                            <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md"  style={{ minWidth: "4rem", minHeight: "4rem", flexShrink: 0 }}>
 														{item.icon}
                             </figure>
 														<div>
@@ -150,7 +157,7 @@ export const SolutionMenuList2 = () => {
 												<li key={index}>
                         <Link to={item.link} className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
 
-                            <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
+                            <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md"  style={{ minWidth: "4rem", minHeight: "4rem", flexShrink: 0 }}>
 														{item.icon}
                             </figure>
 														<div>
