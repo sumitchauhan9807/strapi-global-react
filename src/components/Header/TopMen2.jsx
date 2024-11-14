@@ -4,6 +4,7 @@ import LanguageSelect from 'src/components/small/LanguageSelector'
 import { Link } from "react-router-dom"
 import Logo from 'src/assets/logo.png'
 import {  useLocation } from 'react-router-dom'
+import { TbSettingsAutomation } from "react-icons/tb";
 
 export const ProductMenuList = () => {
     return (
@@ -66,6 +67,9 @@ export const SolutionMenuList2 = () => {
     <ul>
       <li>
         <a href="#" className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+				<figure className="flex justify-center items-center p-3 bg-[#141b24] text-white rounded-md">
+                        <TbSettingsAutomation/>
+                    </figure>
           <div className="font-semibold">Online Stores</div>
           <span className="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
         </a>
