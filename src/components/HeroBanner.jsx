@@ -18,7 +18,7 @@ const HeroBanner = ({data}) => {
   }, []);
   if(!data?.HeroText) return 
 
-  console.log(data,"datadatadatadatadatadata")
+  
   const { HeroText , Image, SubText ,ButtonText } = data
 
   // return <PageSkeleton/>

@@ -23,7 +23,7 @@ export const Pricing = () => {
       setData(response);
     }
   }, [response]);
-  // console.log(data, "Pricing");
+  
   if(!data?.data?.Pricing) return
 
   let { Heading, SubText ,Plans } = data.data.Pricing

@@ -6,6 +6,12 @@ import Logo from 'src/assets/logo.png'
 import { useLocation } from 'react-router-dom'
 import { TbSettingsAutomation } from "react-icons/tb";
 
+const splitArray = (arr,indexToSplit) => {
+	let first = arr.slice(0, indexToSplit);
+	let second = arr.slice(indexToSplit + 1);
+	return {first,second}
+}
+
 export const ProductMenuList = () => {
     return (
         <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[690px] overflow-hidden z-20 p-8 rounded-2xl">
@@ -43,7 +49,7 @@ export const PricingMenuList = () => {
 }
 
 export const SolutionMenuList = () => {
-    return (
+	  return (
         <div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[990px] overflow-hidden z-20 p-8 rounded-2xl">
             {solutionsMenuItems.map((item, index) => (
                 <Link key={index} to={item.link} className="flex gap-4 text-white">
@@ -61,68 +67,50 @@ export const SolutionMenuList = () => {
 }
 
 export const SolutionMenuList2 = () => {
+	let solutionItems = splitArray(solutionsMenuItems,5)
+	console.log(solutionItems,"solutionItems")
     return (
         <div id="mega-menu-full-dropdown" className=" absolute left-[-10rem] top-[90%] bg-[#24282e] w-[700px] overflow-hidden z-20 p-8 rounded-2xl ">
             <div className="grid max-w-screen-2xl px-2 py-2 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-2">
                 <ul>
-                    <li>
+                    {solutionItems.first.map((item, index)=>{
+											return (
+												<li key={index}>
                         <a href="#" className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
 
                             <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
-                                <TbSettingsAutomation />
+														{item.icon}
                             </figure>
-
-                            <div>
-                                <p className="font-semibold text-sm">Online Stores</p>
+														<div>
+                                <p className="font-semibold text-sm">{item.title}</p>
                                 <span className="text-sm text-gray-500 dark:text-gray-400">
-                                    Connect with third-party tools that you're already using.
+																{item.description}
                                 </span>
                             </div>
                         </a>
-
-                    </li>
-                    <li>
-                        <a href="#" className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
-                            <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
-                                <TbSettingsAutomation />
-                            </figure><div className="font-semibold">Segmentation                        <br />     <span className="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
-                        <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
-                                <TbSettingsAutomation />
-                            </figure> <div className="font-semibold">Marketing CRM <br />                            <span className="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                            </div>
-                        </a>
-                    </li>
+											</li>
+											)
+										})}
                 </ul>
                 <ul>
-                    <li>
+								{solutionItems.second.map((item, index)=>{
+											return (
+												<li key={index}>
                         <a href="#" className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
-                        <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
-                                <TbSettingsAutomation />
-                            </figure> <div className="font-semibold">Online Stores <br />                            <span className="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
+
+                            <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
+														{item.icon}
+                            </figure>
+														<div>
+                                <p className="font-semibold text-sm">{item.title}</p>
+                                <span className="text-sm text-gray-500 dark:text-gray-400">
+																{item.description}
+                                </span>
                             </div>
                         </a>
-                    </li>
-                    <li>
-                        <a href="#" className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
-                        <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
-                                <TbSettingsAutomation />
-                            </figure> <div className="font-semibold">Segmentation <br />                            <span className="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700">
-                        <figure className="flex justify-center items-center w-12 h-12 bg-[#141b24] text-white rounded-md">
-                                <TbSettingsAutomation />
-                            </figure> <div className="font-semibold">Marketing CRM <br />                            <span className="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                            </div>
-                        </a>
-                    </li>
+											</li>
+											)
+										})}
                 </ul>
             </div>
         </div>
@@ -158,14 +146,6 @@ export default function TopMen2() {
                     </span>
                     {activeMenu === 'features' && <SolutionMenuList2 />}
                 </div>
-                {/* <div className="relative p-4 cursor-pointer" onMouseLeave={()=>{ setActiveMenu('')}} onMouseEnter={()=>{ setActiveMenu('pricing')}}>
-                    <span
-                        className={`uppercase font-semibold rounded-t-md p-4 px-6 ${activeMenu === 'pricing' ? 'bg-[#24282e] text-white' : 'text-[#3b516d]'}`}
-                    >
-                        Pricing
-                    </span>
-                    {activeMenu === 'pricing' && <PricingMenuList />}
-                </div> */}
                 <Link style={{ fontSize: "15px" }} to="/pricing" className="relative p-4 cursor-pointer">
                     <span
                         className="uppercase font-semibold px-6"

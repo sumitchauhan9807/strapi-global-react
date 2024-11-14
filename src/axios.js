@@ -11,7 +11,6 @@ axios.interceptors.request.use((config) => {
 })
 
 axios.interceptors.response.use((response) => {
-  console.log("res i shere")
   return response
 }, function(error) {
   return Promise.reject(error)

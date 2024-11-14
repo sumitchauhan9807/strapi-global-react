@@ -1,7 +1,6 @@
 import { baseUrl } from 'src/helpers'
 
 function ProductDescription({data}) {
-  console.log(data,"asdasd")
   return(
     <>
     <div className="flex items-center justify-center">

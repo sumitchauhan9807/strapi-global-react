@@ -39,8 +39,7 @@ export const Footer = () => {
   let location3 = data.data.Location3.replaceAll("\n","<br/>")
   let location4 = data.data.Location4.replaceAll("\n","<br/>")
 
-  console.log(location3)
-  console.log(location4)
+ 
   
 
   return (
