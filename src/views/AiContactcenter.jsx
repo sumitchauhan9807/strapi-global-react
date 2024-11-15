@@ -1,10 +1,43 @@
-import React from "react";
-import AI from "../assets/images/ai.gif"
+import useAxios from 'src/Hooks/UseAxios'
+import { PageSkeleton } from 'src/components/small/Skeletons'
+import { constructQueryString } from 'src/helpers'
+import { useSelector } from 'react-redux'
+import { useEffect ,useState } from 'react';
+import ProductDescription from 'src/components/Product/ProductDescription'
+import ProductSpecs from 'src/components/Product/ProductSpecs'
+import DeployingSteps from 'src/components/Product/DeployingSteps'
 
-const AiContactcenter = () => {
+
+let qs = constructQueryString([
+  "Description",
+  "Description.ProductSpecs",
+  "Description.Image",
+  "ProductSpecs",
+  "ProductSpecs.ProductSpecs",
+  "ProductSpecs.Image",
+  "DeployingSteps",
+  "DeployingSteps.Steps",
+  "DeployingSteps.Image"
+]);
+
+const PhoneNumber = () => {
+  const [data, setData] = useState([]);
+  const language = useSelector((state) => state.language);
+  const { response, loading, error } = useAxios({
+    method: "get",
+    url: `ai-contact-center?${qs}locale=${language.language}`,
+  });
+  useEffect(() => {
+    if (response !== null) {
+      setData(response);
+    }
+  }, [response]);
+  if (loading) return <PageSkeleton />
+  if (!data.data) return
   return (
     <div className="flex items-center justify-center p-10 bg-gray-50 rounded-lg">
       <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+<<<<<<< HEAD
         <div className="grid items-center justify-center lg:grid-cols-2 grid-cols-1">
           <div className="flex-1 ">
             <img src={AI} alt="Robot" className="w-full h-full max-w-xl transition duration-300 transform hover:scale-105 hover:grayscale-0 grayscale" />
@@ -364,9 +397,20 @@ const AiContactcenter = () => {
           </div>
         </div>
       </div>
+=======
+        <ProductDescription
+         data={data.data.Description}
+        />
+        <ProductSpecs
+          data={data.data.ProductSpecs}
+        />
+        <DeployingSteps
+        data={data.data.DeployingSteps}
+        />
+>>>>>>> 3a3b7e471aa028d03c76ce11bc430c136e5b0982
       </div>
     </div>
   );
 };
 
-export default AiContactcenter;
+export default PhoneNumber;
