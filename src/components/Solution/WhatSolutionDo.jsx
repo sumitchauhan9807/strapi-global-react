@@ -1,5 +1,5 @@
 function WhatSolutionDo({ data }) {
-	if(!data.Heading) return 
+	if(!data) return 
 	return (
 		<section className="flex flex-col max-w-[1280px] mx-auto">
 			<h4 className="flex font-bold text-2xl mx-auto my-8">{data.Heading}</h4>
