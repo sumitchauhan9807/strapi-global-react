@@ -1,7 +1,7 @@
 function HowSolutionWorks({ data }) {
 	return (
 		<section className="mt-12 mb-12 flex flex-col items-center max-w-[1200px] mx-auto justify-center">
-			<h4 className="text-2xl font-bold my-8">How does it work with a Robot that returns calls?</h4>
+			{/* <h4 className="text-2xl font-bold my-8">How does it work with a Robot that returns calls?</h4> */}
 			<div className="grid  gap-8">
 				<div className="flex flex-col gap-4">
 					{data.map((item) => {
