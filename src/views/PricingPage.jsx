@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import useAxios from 'src/Hooks/UseAxios'
 import { constructQueryString } from 'src/helpers'
 import {useSelector} from 'react-redux'
+import { PageSkeleton } from 'src/components/small/Skeletons'
+
 let qs = constructQueryString([
   "Pricing",
   "Pricing.Plans",
@@ -20,7 +22,7 @@ export const PricingPage = () => {
       setData(response);
     }
   }, [response]);
-  
+  if (loading) return <PageSkeleton />
   if(!data?.data?.Pricing) return
   let pricingData = data?.data?.Pricing
   return (
