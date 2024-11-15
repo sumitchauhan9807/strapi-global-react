@@ -50,7 +50,7 @@ export default function Solutions() {
 			<SolutionTip data={data.data.SolutionTip} />
 			<SolutionBenefits data={data.data.SolutionBenefits} />
 			<HowSolutionWorks data={data.data.HowSolutionWorks} />
-			<ActivateSolution data={data.data.SolutionDescription} />
+			{/* <ActivateSolution data={data.data.SolutionDescription} /> */}
 			{/* <section className="flex items-center my-32 border max-w-[1200px] mx-auto p-8 gap-8">
                 <figure className="w-[600px]">
                     <img src={contactFormVectorImg} alt="" />
