@@ -7,7 +7,7 @@ const AutomatedCalls = () => {
     <div className="flex items-center justify-center p-10 bg-gray-50 rounded-lg">     
 
       <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div className="grid items-center justify-center grid-cols-2"> 
+        <div className="grid items-center justify-center lg:grid-cols-2 grid-cols-1"> 
           {/* <img src="https://images.pexels.com/photos/3747463/pexels-photo-3747463.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" class="absolute inset-0 z-0 object-cover w-full h-56" alt="" /> */}
         <div className="flex-1 ">
             <img src={Autocalls} alt="Robot" className="w-full h-full max-w-xl transition duration-300 transform hover:scale-105 hover:grayscale-0 grayscale" />
@@ -18,7 +18,7 @@ const AutomatedCalls = () => {
             <p className="text-gray-600 text-lg mb-4 font-sans ">
               Software product which automates call center together with Virtual PBX services:
             </p>
-            <ul className="list-none space-y-2 text-gray-700 grid grid-cols-2 font-sans ">
+            <ul className="list-none space-y-2 text-gray-700 grid lg:grid-cols-2 grid-cols-1 font-sans ">
               <li>Calls automation</li>
               <li>Order confirmation</li>
               <li>Quality control</li>

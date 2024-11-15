@@ -19,6 +19,7 @@ import ChatbotNews from "src/views/ChatbotandNewsletter";
 import AccSales from "src/views/AccelerationofSales";
 import ChatBotbuilder from "src/views/ChatbotBuilder";
 import FreelancerChatbot from "src/views/ChatbotdesignforFreelancers";
+import Partner from "./views/PartNers";
 
 
 // const router = createBrowserRouter([
@@ -132,6 +133,7 @@ function Router() {
         <Route exact path="/accsales" element={<AccSales />} />
         <Route exact path="/chatbotbuilder" element={<ChatBotbuilder />} />
         <Route exact path="/freelancerchatbot" element={<FreelancerChatbot />} />
+        <Route exact path="/partners" element={<Partner/>} />
       </Routes>
     </>
   );

@@ -18,7 +18,7 @@ const PBx = () => {
             <p className="text-gray-600 text-lg mb-4 font-sans ">
               Software product which automates call center together with Virtual PBX services:
             </p>
-            <ul className="list-none space-y-2 text-gray-700 grid grid-cols-2 font-sans ">
+            <ul className="list-none space-y-2 text-gray-700 lg:grid-cols-2 grid-cols-1 font-sans ">
               <li>Calls automation</li>
               <li>Order confirmation</li>
               <li>Quality control</li>

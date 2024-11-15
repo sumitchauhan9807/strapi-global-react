@@ -16,7 +16,7 @@ const AiContactcenter = () => {
             <p className="text-gray-600 text-lg mb-4 font-sans ">
             The virtual communication channel connecting the operator's <br /> telecommunications platform (CPaaS) and the client's equipment
             </p>
-            <ul className="list-none space-y-2 text-gray-700 grid grid-cols-2 font-sans ">
+            <ul className="list-none space-y-2 text-gray-700 grid lg:grid-cols-2 grid-cols-1 font-sans ">
               <li>Calls automation</li>
               <li>Order confirmation</li>
               <li>Quality control</li>
