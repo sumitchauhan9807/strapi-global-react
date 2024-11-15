@@ -20,7 +20,7 @@ function ProductDescription({data}) {
             </ul>
             <div className="flex items-center gap-6 mt-6 ">
               <div className="border-2 shadow-2xl  px-6 py-4 rounded-lg gap-3"> 
-              <span className="text-xl font-sans uppercase text-gray-800">+44 Start $0.99/mo</span> <br/>
+              <span className="text-xl font-sans uppercase text-gray-800">{data.ProductPrice}</span> <br/>
                 <center><button className="bg-gray-600 hover:bg-gray-500 pr-5 text-white py-2 px-4 rounded transition duration-300 mt-2">
                   BUY NOW
                 </button></center>
