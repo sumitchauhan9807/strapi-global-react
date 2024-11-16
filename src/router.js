@@ -1,4 +1,8 @@
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import Menu from 'src/components/Menu'
+import Footer from "./components/PageFooter";
+import { PageSkeleton } from 'src/components/small/Skeletons'
+
 import Home from "src/views/Home";
 import Solutions from "src/views/Solutions";
 import ContactUs from "src/views/ContactUs.jsx";
@@ -21,6 +25,11 @@ import ChatBotbuilder from "src/views/ChatbotBuilder";
 import FreelancerChatbot from "src/views/ChatbotdesignforFreelancers";
 import Partner from "./views/PartNers";
 
+import { GlobalData } from "src/context";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import useAxios from "./Hooks/UseAxios";
+import { constructQueryString } from 'src/helpers'
 
 // const router = createBrowserRouter([
 //   {
@@ -108,10 +117,28 @@ import Partner from "./views/PartNers";
 
 
 // ]);
-
+let qs = constructQueryString([
+  "LightLogo",
+  "DarkLogo"
+]);
 function Router() {
+  const [data, setData] = useState([]);
+  const language = useSelector((state) => state.language);
+  const { response, loading, error } = useAxios({
+    method: "get",
+    url: `global?${qs}locale=${language.language}`,
+  });
+  useEffect(() => {
+    if (response !== null) {
+      setData(response);
+    }
+  }, [response]);
+  if (loading) return <PageSkeleton />
+  if (!data.data) return
   return (
     <>
+    <GlobalData.Provider value={data.data}>
+      <Menu />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/solutions/phone-numbers" element={<Solutions />} />
@@ -135,6 +162,8 @@ function Router() {
         <Route exact path="/freelancerchatbot" element={<FreelancerChatbot />} />
         <Route exact path="/partners" element={<Partner/>} />
       </Routes>
+      <Footer />
+    </GlobalData.Provider>
     </>
   );
 }

@@ -5,6 +5,9 @@ import { Link } from "react-router-dom"
 import Logo from 'src/assets/logo.png'
 import { useLocation } from 'react-router-dom'
 import { TbSettingsAutomation } from "react-icons/tb";
+import { GlobalData } from "src/context";
+import { useContext } from 'react';
+import { baseUrl } from 'src/helpers'
 
 const splitArray = (arr,indexToSplit) => {
 	let first = arr.slice(0, indexToSplit);
@@ -68,7 +71,6 @@ export const SolutionMenuList = () => {
 
 export const ProductMenuList2 = () => {
 	let solutionItems = splitArray(productMenuItems,3)
-	console.log(solutionItems,"solutionItems")
     return (
         <div id="mega-menu-full-dropdown" className=" absolute left-[-10rem] top-[90%] bg-[#24282e] w-[700px] overflow-hidden z-20 p-8 rounded-2xl ">
             <div className="grid max-w-screen-2xl px-2 py-2 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-2">
@@ -77,22 +79,22 @@ export const ProductMenuList2 = () => {
 											return (
 												<li key={index}>
                         <Link
-  to={item.link}
-  className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700"
->
-  <figure
-    className="flex justify-center items-center w-16 h-16 bg-[#141b24] text-white rounded-md"
-    style={{ minWidth: "4rem", minHeight: "4rem", flexShrink: 0 }}
-  >
-    {item.icon}
-  </figure>
-  <div className="flex-1">
-    <p className="font-semibold text-sm">{item.title}</p>
-    <span className="text-sm text-gray-500 dark:text-gray-400">
-      {item.description}
-    </span>
-  </div>
-</Link>
+                            to={item.link}
+                            className="flex items-center p-1 rounded-lg hover:bg-gray-100 gap-2 dark:hover:bg-gray-700"
+                          >
+                            <figure
+                              className="flex justify-center items-center w-16 h-16 bg-[#141b24] text-white rounded-md"
+                              style={{ minWidth: "4rem", minHeight: "4rem", flexShrink: 0 }}
+                            >
+                              {item.icon}
+                            </figure>
+                            <div className="flex-1">
+                              <p className="font-semibold text-sm">{item.title}</p>
+                              <span className="text-sm text-gray-500 dark:text-gray-400">
+                                {item.description}
+                              </span>
+                            </div>
+                          </Link>
 
 											</li>
 											)
@@ -179,6 +181,8 @@ export const SolutionMenuList2 = () => {
 
 
 export default function TopMen2() {
+  const globalData = useContext(GlobalData);
+
     const ref = useRef(null);
     const [activeMenu, setActiveMenu] = useState('')
     let location = useLocation()
@@ -187,7 +191,7 @@ export default function TopMen2() {
     }, [location])
     return (
         <menu className="flex items-center justify-between p-2 px-8 h-24">
-            <Link to="/"><img src={Logo} style={{ height: "98px" }} /></Link>
+            <Link to="/"><img src={baseUrl() + globalData.LightLogo.url} style={{ height: "98px" }} /></Link>
             <div className="flex text-[#3b516d] relative items-center right-16">
                 <div style={{ fontSize: "15px" }} className="relative p-4 cursor-pointer" onMouseLeave={() => { setActiveMenu('') }} onMouseEnter={() => { setActiveMenu('products') }} >
                     <span

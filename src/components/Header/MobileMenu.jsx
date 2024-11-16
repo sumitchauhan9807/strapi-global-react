@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import Logo from 'src/assets/logo.png'
 import { productMenuItems ,solutionsMenuItems ,pricingMenuItems} from "src/components/menuItems"
 import {  useLocation } from 'react-router-dom'
+import { GlobalData } from "src/context";
+import { useContext } from 'react';
+import { baseUrl } from 'src/helpers'
 
 function MobileMenu() {
+  const globalData = useContext(GlobalData);
+
   let menuRef = useRef("")
   let location = useLocation()
 
@@ -23,8 +28,8 @@ function MobileMenu() {
 		<>
 			<nav className="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900">
 				<div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-					<a href="https://flowbite.com" className="flex items-center space-x-3 rtl:space-x-reverse">
-           <Link to="/"><img src={Logo} style={{height:"98px"}}/></Link>
+					<a  className="flex items-center space-x-3 rtl:space-x-reverse">
+           <Link to="/"><img src={baseUrl() + globalData.DarkLogo.url} style={{height:"98px"}}/></Link>
 					</a>
     
 					<button onClick={()=> menuRef.current.classList.toggle('hidden') }  data-collapse-toggle="mega-menu-full" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mega-menu-full" aria-expanded="false">

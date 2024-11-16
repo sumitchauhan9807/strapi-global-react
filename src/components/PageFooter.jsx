@@ -4,6 +4,8 @@ import { PageSkeleton } from 'src/components/small/Skeletons'
 
 import useAxios from 'src/Hooks/UseAxios'
 import { constructQueryString } from 'src/helpers'
+import { GlobalData } from "src/context";
+import { useContext } from 'react';
 let qs = constructQueryString([
   "WorkingHours",
 //  "ContactUs",
@@ -13,15 +15,12 @@ let qs = constructQueryString([
   // "Location2",
 ]);
 
-// Mobiles :     +94 1722772888
-// Office:          +49 21188233700
-// Fax:               +49 21188233700
-// Office:          +43 720 111 313
-// Fax (AT):       +15 055393445
-// Office (AT): +43 720 111 313
+
 export const Footer = () => {
   const [data, setData] = useState([]);
   const language = useSelector((state) => state.language);
+    const globalData = useContext(GlobalData);
+    console.log(globalData,"globalData")
   const { response, loading, error } = useAxios({
     method: "get",
     url: `footer?${qs}locale=${language.language}`,

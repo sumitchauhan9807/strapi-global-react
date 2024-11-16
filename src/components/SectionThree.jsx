@@ -22,7 +22,6 @@ export const SectionThree = () => {
       setData(response);
     }
   }, [response]);
-  console.log(data, "HomeSection3");
   if(!data?.data?.HomeSection3) return
 
 
