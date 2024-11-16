@@ -2,7 +2,6 @@ import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Menu from 'src/components/Menu'
 import Footer from "./components/PageFooter";
 import { PageSkeleton } from 'src/components/small/Skeletons'
-
 import Home from "src/views/Home";
 import Solutions from "src/views/Solutions";
 import ContactUs from "src/views/ContactUs.jsx";

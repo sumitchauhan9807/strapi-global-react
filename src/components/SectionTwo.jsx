@@ -4,6 +4,7 @@ import useAxios from 'src/Hooks/UseAxios'
 import { constructQueryString } from 'src/helpers'
 import {useSelector} from 'react-redux'
 import { baseUrl } from 'src/helpers'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 let qs = constructQueryString([
   "HomeSection2",
@@ -30,7 +31,20 @@ const SectionTwo = () => {
 
   return (
     <div className="bg-gradient-to-r bg-gray-50">
+      {/* <ScrollAnimation animateIn='fadeIn'
+        animateOut='fadeOut'>
+        <h1>
+          React Animate On Scroll
+        </h1>
+        <h2>
+          Using:
+        </h2>
+      </ScrollAnimation> */}
       {/* Section with Heading and Image */}
+      <ScrollAnimation
+       animateIn='fadeIn'
+       animateOut='fadeOut'>
+      
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="grid gap-10 lg:grid-cols-2 items-center">
           <div className="lg:pr-10 py-4">
@@ -54,7 +68,7 @@ const SectionTwo = () => {
           </div>
         </div>
       </div>
-
+      </ScrollAnimation>
       {/* Feature Section with Numbers */}
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-4 mb-16">
         <div className="grid gap-8 row-gap-8 lg:grid-cols-4 text-center lg:text-left">
