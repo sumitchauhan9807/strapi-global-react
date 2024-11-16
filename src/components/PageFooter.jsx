@@ -19,8 +19,8 @@ let qs = constructQueryString([
 export const Footer = () => {
   const [data, setData] = useState([]);
   const language = useSelector((state) => state.language);
-    const globalData = useContext(GlobalData);
-    console.log(globalData,"globalData")
+  // const globalData = useContext(GlobalData);
+    
   const { response, loading, error } = useAxios({
     method: "get",
     url: `footer?${qs}locale=${language.language}`,

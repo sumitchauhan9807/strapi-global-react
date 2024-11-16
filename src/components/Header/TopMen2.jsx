@@ -129,8 +129,7 @@ export const ProductMenuList2 = () => {
 
 export const SolutionMenuList2 = () => {
 	let solutionItems = splitArray(solutionsMenuItems,5)
-	console.log(solutionItems,"solutionItems")
-    return (
+	  return (
         <div id="mega-menu-full-dropdown" className=" absolute left-[-10rem] top-[90%] bg-[#24282e] w-[700px] overflow-hidden z-20 p-8 rounded-2xl ">
             <div className="grid max-w-screen-2xl px-2 py-2 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-2">
                 <ul>
