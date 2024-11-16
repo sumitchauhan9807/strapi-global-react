@@ -15,9 +15,8 @@ function Animate({ config,children }) {
     if(config.initiallyVisible) initiallyVisible = config.initiallyVisible
 
   }
-  console.log(config,"configconfig")
-	return (
-		<ScrollAnimation animateIn={animateIn}  animateOnce={true} delay={delay * 1000} offset={offset} initiallyVisible={initiallyVisible}>
+  return (
+		<ScrollAnimation animateIn={animateIn}  animateOnce={true} delay={delay * 1000} offset={offset} initiallyVisible={initiallyVisible} duration={1.5}>
 			{children}
 		</ScrollAnimation>
 	);

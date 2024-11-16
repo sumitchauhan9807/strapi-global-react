@@ -1,4 +1,3 @@
-import { Nav as Navbar } from "../components/Navbar.jsx"; // Named import
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import HeroBanner from "../components/HeroBanner.jsx";
@@ -9,8 +8,9 @@ import SectionFour from "src/components/SectionFour.jsx";
 import GlobalWorldMap from "src/components/Basic/GlobalWorldMap";
 import Pricing from "src/components/PricingTable.jsx";
 import SectionFive from "src/components/SectionFive.jsx";
+import DialerProducts from 'src/components/DialerProducts'
 import { PageSkeleton } from "src/components/small/Skeletons";
-
+import Partners from 'src/components/Partners'
 import useAxios from "src/Hooks/UseAxios";
 import { constructQueryString } from "src/helpers";
 let qs = constructQueryString(["Hero", "Hero.HeroText", "Hero.Image", "HomeSection1", "HomeSection1.Images", "HomeSection1.Lists","Map"]);
@@ -35,20 +35,24 @@ function Home() {
 				<div className="">
 					{/* header section starts here */}
 					<HeroBanner data={data.data.Hero} />
-          <GlobalWorldMap data ={data.data.Map}/>
+					<SectionFour data={data?.data?.HomeSection1} />
 
+					<DialerProducts/>
+
+          <GlobalWorldMap data ={data.data.Map}/>
 					{/* header section ends here */}
 					{/* SectionFour */}
-					<SectionFour data={data?.data?.HomeSection1} />
 					{/* SectionFour */}
 					{/* other section  */}
+
 					<SectionTwo />
+					<Partners/>
 					{/* other section  */}
 
-					<SectionFive />
-					<Pricing />
+					{/* <SectionFive /> */}
+					{/* <Pricing /> */}
 					{/* Sectionthree */}
-					<SectionThree />
+					{/* <SectionThree /> */}
 				</div>
 			</div>
 		</>
