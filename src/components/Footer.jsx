@@ -38,7 +38,7 @@ function Footer() {
 	let location4 = data.data.Location4.replaceAll("\n", "<br/>");
 	return (
 		<footer className="p-6 dark:bg-gray-100 dark:text-gray-800" style={{ background: "black", color: "white" }}>
-			<div className="container grid grid-cols-2 mx-auto gap-x-3 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
+			<div className="container grid grid-cols-1 mx-auto gap-x-3 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
 				<div className="flex flex-col space-y-4">
 					<h2 className="font-medium">Working hours</h2>
 					<div className="flex flex-col space-y-2 text-sm dark:text-gray-600">
