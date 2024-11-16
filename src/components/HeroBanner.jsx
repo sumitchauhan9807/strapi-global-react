@@ -57,7 +57,7 @@ const HeroBanner = ({data}) => {
               <p className="max-w-xl mb-6 text-lg text-gray-300 md:text-xl mt-28">
                 {SubText}
               </p>
-              <a
+              {/* <a
                 href="/"
                 className="inline-flex items-center px-8 py-4 font-semibold tracking-wider text-black uppercase bg-white rounded-lg shadow-lg hover:bg-teal-600 hover:text-white hover:shadow-xl transition-transform duration-300 transform hover:scale-105 active:scale-95"
               >
@@ -69,7 +69,7 @@ const HeroBanner = ({data}) => {
                 >
                   <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
                 </svg>
-              </a>
+              </a> */}
             </div>
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
               <div className="flex justify-center lg:justify-end">
