@@ -1,6 +1,8 @@
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Menu from 'src/components/Menu'
-import Footer from "./components/PageFooter";
+// import Footer from "./components/PageFooter";
+import Footer from "src/components/Footer";
+
 import { PageSkeleton } from 'src/components/small/Skeletons'
 import Home from "src/views/Home";
 import Solutions from "src/views/Solutions";
