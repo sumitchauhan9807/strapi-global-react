@@ -35,9 +35,9 @@ function Partners() {
 									delay: index / 10,
 								}}
 							>
-								<a key={index} href="#" className="flex justify-center items-center shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300">
+								{/* <a key={index} href="#" className="flex justify-center items-center shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300">
 									<img src={baseUrl() + partner.logo.url} />
-								</a>
+								</a> */}
 							</Animate>
 						);
 					})}
