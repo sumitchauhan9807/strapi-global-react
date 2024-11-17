@@ -1,7 +1,7 @@
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Menu from 'src/components/Menu'
-// import Footer from "./components/PageFooter";
-import Footer from "src/components/Footer";
+import Footer from "./components/PageFooter";
+// import Footer from "src/components/Footer";
 
 import { PageSkeleton } from 'src/components/small/Skeletons'
 import Home from "src/views/Home";
@@ -24,7 +24,7 @@ import ChatbotNews from "src/views/ChatbotandNewsletter";
 import AccSales from "src/views/AccelerationofSales";
 import ChatBotbuilder from "src/views/ChatbotBuilder";
 import FreelancerChatbot from "src/views/ChatbotdesignforFreelancers";
-import Partner from "./views/PartNers";
+import OurPartners from "src/views/OurPartners";
 
 import { GlobalData } from "src/context";
 import { useEffect, useState } from "react";
@@ -161,7 +161,7 @@ function Router() {
         <Route exact path="/accsales" element={<AccSales />} />
         <Route exact path="/chatbotbuilder" element={<ChatBotbuilder />} />
         <Route exact path="/freelancerchatbot" element={<FreelancerChatbot />} />
-        <Route exact path="/partners" element={<Partner/>} />
+        <Route exact path="/partners" element={<OurPartners/>} />
       </Routes>
       <Footer />
     </GlobalData.Provider>

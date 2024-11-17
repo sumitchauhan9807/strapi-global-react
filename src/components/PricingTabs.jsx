@@ -22,12 +22,11 @@ export const PricingPage = () => {
 	if (loading) return <PageSkeleton />;
 	if (!data?.data?.Pricing) return;
 	let pricingData = data?.data?.Pricing;
-	console.log(pricingData);
 
 	return (
 		<>
 			<div>
-				<div className="min-h-full bg-gray-200 pb-12">
+				<div className="min-h-full bg-gray-50 pb-12">
 					<div className="w-full bg-blue-900 pt-16 pb-24 text-center">
 						<h4 className="text-2xl text-gray-100"> {pricingData.Heading}</h4>
 						<p className="text-sm text-gray-100 mt-2">{pricingData.SubText}</p>

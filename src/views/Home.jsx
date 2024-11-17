@@ -10,10 +10,10 @@ import Pricing from "src/components/PricingTable.jsx";
 import SectionFive from "src/components/SectionFive.jsx";
 import DialerProducts from 'src/components/DialerProducts'
 import { PageSkeleton } from "src/components/small/Skeletons";
-import Partners from 'src/components/Partners'
+// import Partners from 'src/components/Partners'
 import useAxios from "src/Hooks/UseAxios";
 import { constructQueryString } from "src/helpers";
-let qs = constructQueryString(["Hero", "Hero.HeroText", "Hero.Image", "HomeSection1", "HomeSection1.Images", "HomeSection1.Lists","Map"]);
+let qs = constructQueryString(["Hero", "Hero.HeroText", "Hero.Image", "HomeSection1", "HomeSection1.Images", "HomeSection1.Lists"]);
 
 function Home() {
 	const [data, setData] = useState([]);
@@ -39,14 +39,14 @@ function Home() {
 
 					<DialerProducts/>
 
-          <GlobalWorldMap data ={data.data.Map}/>
+          {/* <GlobalWorldMap data ={data.data.Map}/> */}
 					{/* header section ends here */}
 					{/* SectionFour */}
 					{/* SectionFour */}
 					{/* other section  */}
 
 					<SectionTwo />
-					<Partners/>
+					{/* <Partners/> */}
 					{/* other section  */}
 
 					{/* <SectionFive /> */}
