@@ -4,8 +4,9 @@ import { constructQueryString } from "src/helpers";
 import { useSelector } from "react-redux";
 import { PageSkeleton } from "src/components/small/Skeletons";
 import Animate from "src/components/Basic/Animate";
+import { baseUrl } from "src/helpers";
 
-let qs = constructQueryString(["Pricing", "Pricing.Plans", "Pricing.Plans.Features", "Pricing.Plans.MissingFeatures"]);
+let qs = constructQueryString(["Pricing", "Pricing.Plans", "Pricing.Plans.Features", "Pricing.Plans.MissingFeatures","TopImage"]);
 export const PricingPage = () => {
 	const language = useSelector((state) => state.language);
 
@@ -22,12 +23,14 @@ export const PricingPage = () => {
 	if (loading) return <PageSkeleton />;
 	if (!data?.data?.Pricing) return;
 	let pricingData = data?.data?.Pricing;
-
+//https://cdn.sanity.io/images/yk5gp8um/prod/2bfdb6e79211d931344d574cf773b94dd4690b20-3600x2160.jpg?w=1280&h=720&auto=format
 	return (
 		<>
 			<div>
 				<div className="min-h-full bg-gray-50 pb-12">
-					<div className="w-full bg-blue-900 pt-16 pb-24 text-center">
+					<div style={{backgroundImage:`url(${
+                baseUrl() + data?.data.TopImage.url
+            })`,backgroundPosition:"center"}} className="w-full bg-blue-900 pt-16 pb-24 text-center">
 						<h4 className="text-2xl text-gray-100"> {pricingData.Heading}</h4>
 						<p className="text-sm text-gray-100 mt-2">{pricingData.SubText}</p>
 					</div>

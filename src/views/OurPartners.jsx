@@ -1,10 +1,34 @@
 import Partners from "src/components/Partners";
 import Team from 'src/components/Team'
+import React, { useEffect, useState } from "react";
+import useAxios from "src/Hooks/UseAxios";
+import { constructQueryString } from "src/helpers";
+import { useSelector } from "react-redux";
+import { PageSkeleton } from "src/components/small/Skeletons";
+import Animate from "src/components/Basic/Animate";
+import { baseUrl } from "src/helpers";
+let qs = constructQueryString(["TopImage"]);
+
+
 function OurPartners() {
+	const language = useSelector((state) => state.language);
+
+	const [data, setData] = useState([]);
+	const { response, loading, error } = useAxios({
+		method: "get",
+		url: `partner-page?${qs}locale=${language.language}`,
+	});
+	useEffect(() => {
+		if (response !== null) {
+			setData(response);
+		}
+	}, [response]);
+	if (loading) return <PageSkeleton />;
+	if (!data?.data) return;
 	return (
 		<>
     <section className="flex relative items-center w-full h-[400px] overflow-hidden border">
-				<img className="absolute w-full" src="https://cdn.sanity.io/images/yk5gp8um/prod/2bfdb6e79211d931344d574cf773b94dd4690b20-3600x2160.jpg?w=1280&h=720&auto=format" alt="" />
+				<img className="absolute w-full" src={baseUrl()+data.data.TopImage.url} alt="" />
 			</section>
 			<Partners />
       <Team/>
