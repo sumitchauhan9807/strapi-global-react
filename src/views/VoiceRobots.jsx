@@ -37,7 +37,6 @@ export default function Solutions() {
     }, [response]);
     if (loading) return <PageSkeleton />
     if (!data.data) return
-		console.log(data.data)
 	return (
 		<>
 			<section className="flex relative items-center w-full h-[400px] overflow-hidden border">

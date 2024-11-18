@@ -8,53 +8,66 @@ export default function TopMen() {
   const globalData = useContext(GlobalData);
 
   return (
-    <menu className="flex flex-wrap items-center justify-between bg-gradient-to-r from-gray-800 to-gray-900 p-4 md:px-16 text-white shadow-lg">
-      {/* Left Section */}
-      <div className="flex items-center gap-4 md:gap-6 font-medium w-full lg:text-sm text-xs md:w-auto mb-4 md:mb-0">
-        <span className="hover:text-blue-300 transition uppercase duration-300 cursor-pointer">
-          About
+    <menu className="flex flex-wrap items-center lg:justify-between justify-center  bg-[#141b24] p-4 text-white">
+      {/* Left Section */}<span className="text-xl glow block py-4 lg:hidden  md:text-base uppercase text-center bg-transparent">
+          <b>**Still under construction**</b>
         </span>
-        <span className="hover:text-blue-300 transition uppercase duration-300 lg:text-sm text-xs cursor-pointer">
-          <Link to="/contactus">Contact Us</Link>
+      <div className="flex items-center uppercase text-center gap-4 sm:gap-6 font-light">
+      
+ <span>About</span>
+        <span>
+          <Link to="/contactus" className="hover:underline">
+            Contact Us
+          </Link>
         </span>
-        {/* mobile section */}
-        <span className="lg:text-sm text-sm text-bold block lg:hidden uppercase text-sans bg-gray-600 px-2 py-2 rounded-sm  items-center gap-2">
-          📞
-          <span className="font-light">{globalData.Phonenumber}</span>
-        </span>
-        {/* mobile section */}
-
       </div>
 
-      {/* Right Section */}
-      <div className="flex flex-wrap items-center gap-3 md:gap-6 w-full md:w-auto">
-        {/* Phone Number */}
-        <span className="lg:text-sm text-xs lg:block hidden md:text-base  items-center gap-2">
-          📞
-          <span className="font-light">{globalData.Phonenumber}</span>
-        </span>
-
-        {/* Email */}
+      {/* Middle Section (Hidden on small screens, visible on large) */}
+      <div className="lg:hidden block   flex-col items-center gap-2">
+        <span className="text-xs px-2  text-center">{globalData.Phonenumber}</span>
         <a
           target="_blank"
+          rel="noopener noreferrer"
           href={`mailto:${globalData.Email}`}
-          className="lg:text-sm text-xs md:text-base  text-center  decoration-blue-500 hover:decoration-blue-300 transition duration-300"
+          className="underline text-xs hover:text-gray-300 transition  text-center"
         >
           {globalData.Email}
         </a>
+      </div>
 
-        {/* Log In */}
-        <span className="flex gap-2 items-center text-sm md:text-base bg-gray-700 px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer">
+      {/* Right Section */}
+      <div className="flex flex-wrap items-center justify-center gap-3 w-full lg:w-auto mt-4 lg:mt-0">
+        {/* Construction Notice */}
+        <span className="text-xl glow lg:block hidden  md:text-base text-center bg-transparent">
+          <b>**Still under construction**</b>
+        </span>
+
+        {/* Responsive Contact Info (Visible on small screens) */}
+        <div className="flex flex-col  items-center lg:block hidden text-sm gap-4">
+          <span className="px-6">📞 {globalData.Phonenumber}</span>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={`mailto:${globalData.Email}`}
+            className="underline hover:text-gray-300 transition"
+          >
+            {globalData.Email}
+          </a>
+        </div>
+
+        {/* Log In Button */}
+        <button className="flex gap-2 items-center text-sm md:text-base bg-gray-700 px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer">
           <FaUser className="text-lg" />
           Log in
-        </span>
+        </button>
 
-        {/* Sign Up */}
-        <span className="flex gap-2 items-center text-sm md:text-base bg-gray-600 px-4 py-2 rounded-md hover:bg-green-500 transition duration-300 cursor-pointer">
+        {/* Sign Up Button */}
+        <button className="flex gap-2 items-center text-sm md:text-base bg-gray-600 px-4 py-2 rounded-md hover:bg-green-500 transition duration-300 cursor-pointer">
           <IoMdCreate className="text-lg" />
           Sign up
-        </span>
+        </button>
       </div>
     </menu>
   );
 }
+
