@@ -5,7 +5,9 @@ import Facebook from 'src/assets/icons/Facebook.gif';
 import Linkedin from 'src/assets/icons/linkedin.gif';
 import XXXi from 'src/assets/icons/xing.gif';
 import Skype from 'src/assets/icons/Skype.gif';
-import Instagram from 'src/assets/icons/Instagram.gif'
+import Instagram from 'src/assets/icons/Instagram.gif';
+import Whatsapp from 'src/assets/icons/whatsapp.png';
+import Signal from 'src/assets/icons/Signal.png'
 
 
 import useAxios from 'src/Hooks/UseAxios'
@@ -156,6 +158,12 @@ export const Footer = () => {
             </a>
             <a href="/" className="transition hover:opacity-80">
               <img src={Instagram} alt="Linkedin" className="h-6" />
+            </a>
+            <a href="/" className="transition hover:opacity-80 animate-pulse">
+              <img src={Whatsapp} alt="Linkedin" className="h-6" />
+            </a>
+            <a href="/" className="transition hover:opacity-80 animate-pulse">
+              <img src={Signal} alt="Linkedin" className="h-6" />
             </a>
           </div>
     </div>
