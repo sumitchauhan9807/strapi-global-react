@@ -98,9 +98,9 @@ let PricingTab = ({ pricing }) => {
 				})}
 			</ul>
 			<div className="flex items-center justify-center mt-6">
-				<a href="#" className="bg-gray-600 hover:bg-gray-500 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">
+				{/* <a href="#" className="bg-gray-600 hover:bg-gray-500 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">
 					Purchase
-				</a>
+				</a> */}
 			</div>
 		</div>
 	);
