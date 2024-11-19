@@ -66,9 +66,9 @@ export const Footer = () => {
 
 	return (
 		<div className="bg-gray-900 flex justify-center ite">
-			<div className="px-4 pt-16 mx-auto max-w-screen-lg sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
+			<div className="pt-16 mx-auto max-w-screen-lg sm:max-w-xl md:max-w-full lg:max-w-screen-2xl">
 				<div className="grid row-gap-10 mb-8 lg:grid-cols-3">
-					<div className="grid lg:grid-cols-5 grid-cols-1  lg:gap-24 sm:gap-24 row-gap-8 lg:col-span-3 md:grid-cols-4">
+					<div className="grid lg:grid-cols-5 grid-cols-1  lg:gap-24  row-gap-8 lg:col-span-3 md:grid-cols-4">
 						<div>
 							<p className="font-medium tracking-wide text-gray-300">Working Hours</p>
 							<ul className="mt-2 space-y-2">
@@ -90,7 +90,7 @@ export const Footer = () => {
 								})}
 							</ul>
 						</div>
-
+              {width < 1064 && <br/>}
 						<div>
 							<p className="font-medium tracking-wide text-gray-300">Contact Us</p>
 							<ul className="mt-2 space-y-2">
@@ -112,6 +112,7 @@ export const Footer = () => {
 								})}
 							</ul>
 						</div>
+            {width < 1064 && <br/>}
 
 						<div>
 							<p className="font-medium tracking-wide text-gray-300">Location</p>
