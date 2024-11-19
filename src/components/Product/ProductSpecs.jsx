@@ -40,7 +40,7 @@ function ProductSpecs({data}) {
           </div>
           <div className="relative md:col-span-2 lg:col-span-2">
             <img
-              className="inset-0 object-cover object-bottom w-full h-56 rounded shadow-lg lg:absolute lg:h-full"
+              className="inset-0 object-cover object-bottom w-full  shadow-lg "
               src={baseUrl() + data.Image.url}
               alt=""
             />

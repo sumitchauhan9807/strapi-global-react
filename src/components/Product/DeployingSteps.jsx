@@ -83,7 +83,7 @@ function DeployingSteps({data}) {
           </div>
           <div className="relative">
             <img
-              className="inset-0 object-cover object-bottom w-full rounded shadow-lg h-96 lg:absolute lg:h-full"
+              className=" w-full rounded shadow-lg  "
               src={baseUrl() + data.Image.url}
               alt=""
             />
