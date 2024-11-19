@@ -27,8 +27,8 @@ let qs = constructQueryString([
 export const Footer = () => {
   const [data, setData] = useState([]);
   const language = useSelector((state) => state.language);
-  // const globalData = useContext(GlobalData);
-    
+  const globalData = useContext(GlobalData);
+    console.log(globalData,"globalData")
   const { response, loading, error } = useAxios({
     method: "get",
     url: `footer?${qs}locale=${language.language}`,
@@ -144,25 +144,25 @@ export const Footer = () => {
         © Copyright 2024 GLOBAL WORLD IK LLC. All rights reserved.
       </p>
       <div className="flex items-center space-x-4 mt-4 sm:mt-0">
-            <a href="/" className="transition hover:opacity-80">
+            <a target="_blank" href={globalData.facebook} className="transition hover:opacity-80">
               <img src={Facebook} alt="Facebook" className="h-6" />
             </a>
-            <a href="/" className="transition hover:opacity-80">
+            <a target="_blank" href={globalData.skype} className="transition hover:opacity-80">
               <img src={Skype} alt="Skype" className="h-6" />
             </a>
-            <a href="/" className="transition hover:opacity-80">
+            <a target="_blank" href={globalData.xing} className="transition hover:opacity-80">
               <img src={XXXi} alt="Xing" className="h-6" />
             </a>
-            <a href="/" className="transition hover:opacity-80">
+            <a target="_blank" href={globalData.linkedin} className="transition hover:opacity-80">
               <img src={Linkedin} alt="Linkedin" className="h-6" />
             </a>
-            <a href="/" className="transition hover:opacity-80">
+            <a target="_blank" href={globalData.facebook} className="transition hover:opacity-80">
               <img src={Instagram} alt="Linkedin" className="h-6" />
             </a>
-            <a href="/" className="transition hover:opacity-80 animate-pulse">
+            <a target="_blank" href={globalData.whatsapp} className="transition hover:opacity-80 animate-pulse">
               <img src={Whatsapp} alt="Linkedin" className="h-6" />
             </a>
-            <a href="/" className="transition hover:opacity-80 animate-pulse">
+            <a target="_blank" href={globalData.signal} className="transition hover:opacity-80 animate-pulse">
               <img src={Signal} alt="Linkedin" className="h-6" />
             </a>
           </div>

@@ -56,16 +56,16 @@ export default function TopMen() {
         </div>
 
         {/* Log In Button */}
-        <button className="flex gap-2 items-center text-sm md:text-base bg-gray-700 px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer">
+        {/* <button className="flex gap-2 items-center text-sm md:text-base bg-gray-700 px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer">
           <FaUser className="text-lg" />
           Log in
-        </button>
+        </button> */}
 
         {/* Sign Up Button */}
-        <button className="flex gap-2 items-center text-sm md:text-base bg-gray-600 px-4 py-2 rounded-md hover:bg-green-500 transition duration-300 cursor-pointer">
+        {/* <button className="flex gap-2 items-center text-sm md:text-base bg-gray-600 px-4 py-2 rounded-md hover:bg-green-500 transition duration-300 cursor-pointer">
           <IoMdCreate className="text-lg" />
           Sign up
-        </button>
+        </button> */}
       </div>
     </menu>
   );
