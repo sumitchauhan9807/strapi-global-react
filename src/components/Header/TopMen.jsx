@@ -41,9 +41,9 @@ export default function TopMen() {
       {/* Right Section */}
       <div className="flex flex-wrap items-center justify-center gap-3 w-full lg:w-auto mt-4 lg:mt-0">
         {/* Construction Notice */}
-        <span className="text-xl glow lg:block hidden  md:text-base text-center bg-transparent">
+        {/* <span className="text-xl glow lg:block hidden  md:text-base text-center bg-transparent">
           <b>**Still under construction**</b>
-        </span>
+        </span> */}
 
         {/* Responsive Contact Info (Visible on small screens) */}
         <div className="flex flex-col  items-center lg:block hidden text-sm gap-4">
