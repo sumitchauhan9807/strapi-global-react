@@ -66,4 +66,10 @@ function Team() {
 		</div>
 	);
 }
+
+function NewTeam () {
+	return (
+		<></>
+	)
+}
 export default Team;
