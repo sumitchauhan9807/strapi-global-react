@@ -48,6 +48,8 @@ export const Footer = () => {
   let location2 = data.data.Location2.replaceAll("\n","<br/>")
   let location3 = data.data.Location3.replaceAll("\n","<br/>")
   let location4 = data.data.Location4.replaceAll("\n","<br/>")
+  let location5 = data.data.Location5.replaceAll("\n","<br/>")
+
   
 
  
@@ -134,6 +136,13 @@ export const Footer = () => {
             <li>
               <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
               dangerouslySetInnerHTML={{__html: location4}}
+              
+              >
+              </a>
+            </li>
+            <li>
+              <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+              dangerouslySetInnerHTML={{__html: location5}}
               
               >
               </a>
