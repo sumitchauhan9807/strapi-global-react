@@ -3,15 +3,17 @@ import { IoMdCreate } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { GlobalData } from "src/context";
 import { useContext } from "react";
+import {SocialMedia} from "src/components/Header/SocialMedia.jsx";
 
 export default function TopMen() {
   const globalData = useContext(GlobalData);
 
   return (
     <menu className="flex flex-wrap items-center lg:justify-between justify-center  bg-[#141b24] p-4 text-white">
-      {/* Left Section */}<span className="text-xl glow block py-4 lg:hidden  md:text-base uppercase text-center bg-transparent">
+      {/* Left Section */}<span className="text-xl glow block py-2 lg:hidden  md:text-base uppercase text-center bg-transparent">
           <b>**Still under construction**</b>
-        </span>
+        </span> <div className="lg:hidden block">
+        < SocialMedia/></div>
       <div className="flex items-center uppercase text-center gap-4 sm:gap-6 font-light">
       
  <span>About</span>
@@ -21,7 +23,8 @@ export default function TopMen() {
           </Link>
         </span>
       </div>
-
+      <div className="lg:block hidden">
+      < SocialMedia/></div>
       {/* Middle Section (Hidden on small screens, visible on large) */}
       <div className="lg:hidden block   flex-col items-center gap-2">
         <span className="text-xs px-2  text-center">{globalData.Phonenumber}</span>

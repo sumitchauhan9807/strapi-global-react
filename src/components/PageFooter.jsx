@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { PageSkeleton } from "src/components/small/Skeletons";
-import Facebook from "src/assets/icons/Facebook.gif";
-import Linkedin from "src/assets/icons/linkedin.gif";
-import XXXi from "src/assets/icons/xing.gif";
-import Skype from "src/assets/icons/Skype.gif";
-import Instagram from "src/assets/icons/Instagram.gif";
-import Whatsapp from "src/assets/icons/whatsapp.png";
-import Signal from "src/assets/icons/Signal.png";
+
 import { useWindowDimensions } from "src/Hooks/HelperHooks";
 
 import useAxios from "src/Hooks/UseAxios";
 import { constructQueryString } from "src/helpers";
 import { GlobalData } from "src/context";
 import { useContext } from "react";
+import { SocialMedia } from "src/components/Header/SocialMedia.jsx";
 let qs = constructQueryString([
 	"WorkingHours",
 	//  "ContactUs",
@@ -48,14 +43,14 @@ export const Footer = () => {
 	let location4 = data.data.Location4.replaceAll("\n", "<br/>");
 	let location5 = data.data.Location5.replaceAll("\n", "<br/>");
 
-	if (width < 1064)  {
-    location1 = location1.replaceAll("<br/><br/>","<br/>")
-    location2 = location2.replaceAll("<br/><br/>","<br/>")
-    location3 = location3.replaceAll("<br/><br/>","<br/>")
-    location4 = location4.replaceAll("<br/><br/>","<br/>")
-    location5 = location5.replaceAll("<br/><br/>","<br/>")
-  }
-  console.log(location3)
+	if (width < 1064) {
+		location1 = location1.replaceAll("<br/><br/>", "<br/>")
+		location2 = location2.replaceAll("<br/><br/>", "<br/>")
+		location3 = location3.replaceAll("<br/><br/>", "<br/>")
+		location4 = location4.replaceAll("<br/><br/>", "<br/>")
+		location5 = location5.replaceAll("<br/><br/>", "<br/>")
+	}
+	console.log(location3)
 	// let location1 = data.data.Location1
 	// let location2 = data.data.Location2
 	// let location3 = data.data.Location3
@@ -76,12 +71,12 @@ export const Footer = () => {
 									return (
 										<>
 											<li>
-												<a  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
+												<a className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
 													{item.Heading}
 												</a>
 											</li>
 											<li>
-												<a  className="text-gray-400 transition-colors duration-300 hover:text-deep-purple-accent-200">
+												<a className="text-gray-400 transition-colors duration-300 hover:text-deep-purple-accent-200">
 													{item.SubHeading}
 												</a>
 											</li>
@@ -90,7 +85,7 @@ export const Footer = () => {
 								})}
 							</ul>
 						</div>
-              {width < 1064 && <br/>}
+						{width < 1064 && <br />}
 						<div>
 							<p className="font-medium tracking-wide text-gray-300">Contact Us</p>
 							<ul className="mt-2 space-y-2">
@@ -98,7 +93,7 @@ export const Footer = () => {
 									let spacing = item.LeftSpacing.split("s")[1];
 									return (
 										<li>
-											<a  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
+											<a className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
 												{item.Place}:
 												{Array(Number(spacing))
 													.fill("x")
@@ -112,13 +107,13 @@ export const Footer = () => {
 								})}
 							</ul>
 						</div>
-            {width < 1064 && <br/>}
+						{width < 1064 && <br />}
 
 						<div>
 							<p className="font-medium tracking-wide text-gray-300">Location</p>
 							<ul className="mt-2 space-y-2">
 								<li>
-									<a  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200" dangerouslySetInnerHTML={{ __html: location1 }}></a>
+									<a className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200" dangerouslySetInnerHTML={{ __html: location1 }}></a>
 								</li>
 								<li>
 									<a className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200" dangerouslySetInnerHTML={{ __html: location2 }}></a>
@@ -136,7 +131,7 @@ export const Footer = () => {
 								</li>
 							</ul>
 						</div>
-            <div>
+						<div>
 							{/* <p className="font-medium tracking-wide text-gray-300">Location</p> */}
 							<ul className="mt-2 space-y-2">
 								<li>
@@ -147,31 +142,11 @@ export const Footer = () => {
 					</div>
 				</div>
 				<center>
-					<div className="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
-						<p className="text-sm text-gray-500">© Copyright 2024 GLOBAL WORLD IK LLC. All rights reserved.</p>
-						<div className="flex items-center space-x-4 mt-4 sm:mt-0">
-							<a target="_blank" href={globalData.facebook} className="transition hover:opacity-80">
-								<img src={Facebook} alt="Facebook" className="h-6" />
-							</a>
-							<a target="_blank" href={globalData.skype} className="transition hover:opacity-80">
-								<img src={Skype} alt="Skype" className="h-6" />
-							</a>
-							<a target="_blank" href={globalData.xing} className="transition hover:opacity-80">
-								<img src={XXXi} alt="Xing" className="h-6" />
-							</a>
-							<a target="_blank" href={globalData.linkedin} className="transition hover:opacity-80">
-								<img src={Linkedin} alt="Linkedin" className="h-6" />
-							</a>
-							<a target="_blank" href={globalData.facebook} className="transition hover:opacity-80">
-								<img src={Instagram} alt="Linkedin" className="h-6" />
-							</a>
-							<a target="_blank" href={globalData.whatsapp} className="transition hover:opacity-80 animate-pulse">
-								<img src={Whatsapp} alt="Linkedin" className="h-6" />
-							</a>
-							<a target="_blank" href={globalData.signal} className="transition hover:opacity-80 animate-pulse">
-								<img src={Signal} alt="Linkedin" className="h-6" />
-							</a>
-						</div>
+					<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 border-t border-gray-800 sm:flex-row">
+						<p className="text-sm text-gray-500">
+							© Copyright 2024 GLOBAL WORLD IK LLC. All rights reserved.
+						</p>
+						<SocialMedia />
 					</div>
 				</center>
 			</div>
