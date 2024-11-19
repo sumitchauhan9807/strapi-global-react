@@ -38,7 +38,7 @@ function Partners() {
 									delay: index / 10,
 								}}
 							>
-								<a key={index} onClick={(e)=>{ e.preventDefault()}} className="flex justify-center items-center shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300">
+								<a style={{height:"120px"}} key={index} onClick={(e)=>{ e.preventDefault()}} className="flex justify-center items-center shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300">
 									<img src={baseUrl() + partner.logo.url} />
 								</a>
 							</Animate>
