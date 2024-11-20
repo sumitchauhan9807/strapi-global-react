@@ -60,75 +60,60 @@ export const PricingPage = () => {
 
 let PricingTab = ({ pricing }) => {
 	return (
-	  <div className="transition-transform transform hover:scale-105 bg-white shadow-lg rounded-lg py-4 hover:shadow-2xl text-gray-600 hover:bg-gray-100 hover:text-white">
-		<p className="text-xl text-center font-bold text-gray-800 hover:text-gray-600 transition-colors">
-		  {pricing.Name}
-		</p>
-		<p className="text-center py-8">
-		  <span className="text-4xl font-bold text-gray-600  transition-colors">
-			{pricing.Currency}
-			<span>{pricing.Price}</span>
-		  </span>
-		  <span className="text-xs uppercase text-gray-500">
-			/ month
-		  </span>
-		</p>
-		<ul className="border-t border-gray-300 py-8 space-y-6">
-		  {pricing.Features.map((feature, index) => (
-			<li
-			  key={index}
-			  className="flex items-center space-x-2 px-8 hover:text-gray-600 transition-colors"
-			>
-			  <span className="bg-gray-600 hover:bg-blue-800 rounded-full p-1 transition-colors">
-				<svg
-				  xmlns="http://www.w3.org/2000/svg"
-				  className="h-3 w-3 text-white"
-				  viewBox="0 0 20 20"
-				  fill="currentColor"
-				>
-				  <path
-					fillRule="evenodd"
-					d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-					clipRule="evenodd"
-				  />
-				</svg>
-			  </span>
-			  <span className="text-gray-600 capitalize">{feature.text}</span>
-			</li>
-		  ))}
-		  {pricing.MissingFeatures.map((feature, index) => (
-			<li
-			  key={index}
-			  className="flex items-center space-x-2 px-8 hover:text-gray-400 transition-colors"
-			>
-			  <span className="bg-gray-300 hover:bg-gray-400 rounded-full p-1 transition-colors">
-				<svg
-				  xmlns="http://www.w3.org/2000/svg"
-				  className="h-3 w-3 text-white"
-				  viewBox="0 0 20 20"
-				  fill="currentColor"
-				>
-				  <path
-					fillRule="evenodd"
-					d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-					clipRule="evenodd"
-				  />
-				</svg>
-			  </span>
-			  <span className="text-gray-400 capitalize">{feature.text}</span>
-			</li>
-		  ))}
-		</ul>
-		<div className="flex items-center justify-center mt-6">
-		  <button
-			className="bg-gray-600 hover:bg-blue-800 px-8 py-2 text-sm text-white uppercase rounded font-bold transition duration-150"
-		  >
-			Purchase
-		  </button>
+		<div className="bg-white text-gray-600 shadow-2xl rounded-lg py-4 transition-all duration-200 hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-700 hover:text-white hover:text-white">
+			<p className="text-xl text-center font-bold">{pricing.Name}</p>
+			<p className="text-center py-8">
+				<span className="text-4xl font-bold">
+					{pricing.Currency}
+					<span>{pricing.Price}</span>
+				</span>
+				<span className="text-xs uppercase">/ month</span>
+			</p>
+			<ul className="border-t border-gray-300 py-8 space-y-6">
+				{pricing.Features.map((feature, index) => (
+					<li key={index} className="flex items-center space-x-2 px-8">
+						<span className="rounded-full p-1">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								className="h-3 w-3"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+							>
+								<path
+									fillRule="evenodd"
+									d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+									clipRule="evenodd"
+								/>
+							</svg>
+						</span>
+						<span>{feature.text}</span>
+					</li>
+				))}
+				{pricing.MissingFeatures.map((feature, index) => (
+					<li key={index} className="flex items-center space-x-2 px-8">
+						<span className="rounded-full p-1">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								className="h-3 w-3"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+							>
+								<path
+									fillRule="evenodd"
+									d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+									clipRule="evenodd"
+								/>
+							</svg>
+						</span>
+						<span>{feature.text}</span>
+					</li>
+				))}
+			</ul>
+			
 		</div>
-	  </div>
 	);
-  };
-  
+};
+
+
 
 export default PricingPage;
