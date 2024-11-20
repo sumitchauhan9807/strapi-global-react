@@ -40,18 +40,18 @@ function ProductSpecs({data}) {
           </div>
           <div className="relative md:col-span-2 lg:col-span-2">
             <img
-              className="inset-0 object-cover object-bottom w-full h-56 rounded shadow-lg lg:absolute lg:h-full"
+              className="inset-0 object-cover object-bottom w-full  shadow-lg "
               src={baseUrl() + data.Image.url}
               alt=""
             />
           </div>
         </div><div className="text-center py-10">
-          <a
+          {/* <a
             href="/"
             className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition bg-gray-600 duration-200 rounded shadow-md md:w-auto bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
           >
             Learn more
-          </a>
+          </a> */}
         </div>
     </>
   )

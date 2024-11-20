@@ -9,6 +9,7 @@ import { constructQueryString } from "src/helpers";
 import { GlobalData } from "src/context";
 import { useContext } from "react";
 import { SocialMedia } from "src/components/Header/SocialMedia.jsx";
+import { Link } from "react-router-dom";
 let qs = constructQueryString([
 	"WorkingHours",
 	//  "ContactUs",
@@ -58,7 +59,7 @@ export const Footer = () => {
 	// let location5 = data.data.Location5
 
 	//1064
-
+//<b class="font-medium tracking-wide text-gray-300">Headquarters</b>
 	return (
 		<div className="bg-gray-900 flex justify-center ite">
 			<div className="pt-16 mx-auto max-w-screen-lg sm:max-w-xl md:max-w-full ">
@@ -110,7 +111,7 @@ export const Footer = () => {
 						{width < 1064 && <br />}
 
 						<div>
-							<p className="font-medium tracking-wide text-gray-300">Location</p>
+							<p className="font-medium tracking-wide text-gray-300">Headquarters</p>
 							<ul className="mt-2 space-y-2">
 								<li>
 									<a className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200" dangerouslySetInnerHTML={{ __html: location1 }}></a>
@@ -141,6 +142,15 @@ export const Footer = () => {
 						</div>
 					</div>
 				</div>
+				<center>
+					<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 yborder-gray-800 sm:flex-row">
+						<p className="text-sm text-gray-500">
+							<Link className="" to="/terms">Terms</Link>
+							<Link className="ml-2" to="/privacy">Privacy Policy</Link>
+							<Link className="ml-2" to="/imprint">Imprint</Link>
+						</p>
+					</div>
+				</center>
 				<center>
 					<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 border-t border-gray-800 sm:flex-row">
 						<p className="text-sm text-gray-500">

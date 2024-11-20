@@ -48,9 +48,9 @@ const RightImageSection = ({ data }) => {
 					<div className="lg:py-24">
 						<h2 className="text-3xl font-bold sm:text-4xl">{data.name}</h2>
 						<p className="mt-4 text-gray-600">{data.description}</p>
-						<a href="#" className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
+						{/* <a href="#" className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
 							Get Started Today
-						</a>
+						</a> */}
 					</div>
 				</Animate>
 				<Animate
@@ -88,9 +88,9 @@ const LeftImageSection = ({ data }) => {
 					<div className="lg:py-24">
 						<h2 className="text-3xl font-bold sm:text-4xl">{data.name}</h2>
 						<p className="mt-4 text-gray-600">{data.description}</p>
-						<a href="#" className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
+						{/* <a href="#" className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
 							Get Started Today
-						</a>
+						</a> */}
 					</div>
 				</Animate>
 			</div>

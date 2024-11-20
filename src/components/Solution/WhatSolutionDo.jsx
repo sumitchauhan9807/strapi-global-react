@@ -9,7 +9,7 @@ function WhatSolutionDo({ data }) {
 						<div key={solu.id} className="flex flex-col p-16 bg-[#fafafa]">
 							<span className="text-xl font-bold my-4">{solu.Heading}</span>
 							<p>{solu.SubHeading}</p>
-							<button className="w-max p-2 px-4 rounded text-white bg-[#141b24] my-8">READ MORE</button>
+							{/* <button className="w-max p-2 px-4 rounded text-white bg-[#141b24] my-8">READ MORE</button> */}
 						</div>
 					);
 				})}

@@ -25,6 +25,10 @@ import AccSales from "src/views/AccelerationofSales";
 import ChatBotbuilder from "src/views/ChatbotBuilder";
 import FreelancerChatbot from "src/views/ChatbotdesignforFreelancers";
 import OurPartners from "src/views/OurPartners";
+import Terms from 'src/views/Terms'
+import Privacy from 'src/views/Privacy'
+import Imprint from 'src/views/Imprint'
+
 
 import { GlobalData } from "src/context";
 import { useEffect, useState } from "react";
@@ -162,6 +166,11 @@ function Router() {
         <Route exact path="/chatbotbuilder" element={<ChatBotbuilder />} />
         <Route exact path="/freelancerchatbot" element={<FreelancerChatbot />} />
         <Route exact path="/partners" element={<OurPartners/>} />
+        <Route exact path="/terms" element={<Terms/>} />
+        <Route exact path="/privacy" element={<Privacy/>} />
+        <Route exact path="/imprint" element={<Imprint/>} />
+
+        
       </Routes>
       <Footer />
     </GlobalData.Provider>
