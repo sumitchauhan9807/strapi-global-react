@@ -6,6 +6,7 @@ import {  useLocation } from 'react-router-dom'
 import { GlobalData } from "src/context";
 import { useContext } from 'react';
 import { baseUrl } from 'src/helpers'
+import LanguageSelect from "src/components/small/LanguageSelector";
 
 function MobileMenu() {
   const globalData = useContext(GlobalData);
@@ -31,7 +32,7 @@ function MobileMenu() {
 					<a  className="flex items-center space-x-3 rtl:space-x-reverse">
            <Link to="/"><img src={baseUrl() + globalData.DarkLogo.url} style={{height:"98px"}}/></Link>
 					</a>
-    
+            <LanguageSelect/>
 					<button onClick={()=> menuRef.current.classList.toggle('hidden') }  data-collapse-toggle="mega-menu-full" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mega-menu-full" aria-expanded="false">
 						<span className="sr-only">Open main menu</span>
 						<svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">

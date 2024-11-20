@@ -25,7 +25,7 @@ export const Footer = () => {
 	const globalData = useContext(GlobalData);
 	const { height, width } = useWindowDimensions();
 
-	console.log(globalData, "globalData");
+	// console.log(globalData, "globalData");
 	const { response, loading, error } = useAxios({
 		method: "get",
 		url: `footer?${qs}locale=${language.language}`,
@@ -51,7 +51,7 @@ export const Footer = () => {
 		location4 = location4.replaceAll("<br/><br/>", "<br/>")
 		location5 = location5.replaceAll("<br/><br/>", "<br/>")
 	}
-	console.log(location3)
+	// console.log(location3)
 	// let location1 = data.data.Location1
 	// let location2 = data.data.Location2
 	// let location3 = data.data.Location3
