@@ -59,7 +59,7 @@ export const Footer = () => {
 	// let location5 = data.data.Location5
 
 	//1064
-//<b class="font-medium tracking-wide text-gray-300">Headquarters</b>
+	//<b class="font-medium tracking-wide text-gray-300">Headquarters</b>
 	return (
 		<div className="bg-gray-900 flex justify-center ite">
 			<div className="pt-16 mx-auto max-w-screen-lg sm:max-w-xl md:max-w-full ">
@@ -143,17 +143,17 @@ export const Footer = () => {
 					</div>
 				</div>
 				<center>
-					<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 yborder-gray-800 sm:flex-row">
-						<p className="text-sm text-gray-500">
-							<Link className="" to="/terms">Terms</Link>
-							<Link className="ml-2" to="/privacy">Privacy Policy</Link>
-							<Link className="ml-2" to="/imprint">Imprint</Link>
-						</p>
-					</div>
+
 				</center>
 				<center>
 					<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 border-t border-gray-800 sm:flex-row">
-						<p className="text-sm text-gray-500">
+						<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 yborder-gray-800 sm:flex-row">
+							<p className="text-sm text-gray-500">
+								<Link className="" to="/terms">Terms</Link>
+								<Link className="ml-2" to="/privacy">Privacy Policy</Link>
+								<Link className="ml-2" to="/imprint">Imprint</Link>
+							</p>
+						</div><p className="text-sm text-gray-500">
 							© Copyright 2024 GLOBAL WORLD IK LLC. All rights reserved.
 						</p>
 						<SocialMedia />
