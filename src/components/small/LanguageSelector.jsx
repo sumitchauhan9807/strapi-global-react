@@ -23,6 +23,7 @@ function LanguageSelector() {
 	};
   let allLangs = getLanguages()
   console.log(allLangs,"asdasdasdasdasdas")
+  return null
 	return (
     <>
 		<a className="relative inline-block text-left ml-2 h-full">
