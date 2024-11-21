@@ -38,7 +38,7 @@ function Countries() {
 							}}
 						>
 							<div className="transition-transform transform hover:scale-105">
-								<img className="h-auto max-w-full rounded-lg" src={baseUrl() + item.flag.url} alt="" />
+								<img style={{height:"50px"}} className="h-auto max-w-full rounded-lg" src={baseUrl() + item.flag.url} alt="" />
 								<center className="p-2">{item.name}</center>
 							</div>
 						</Animate>
