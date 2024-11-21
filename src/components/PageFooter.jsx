@@ -152,6 +152,8 @@ export const Footer = () => {
 								<Link className="" to="/terms">Terms</Link>
 								<Link className="ml-2" to="/privacy">Privacy Policy</Link>
 								<Link className="ml-2" to="/imprint">Imprint</Link>
+								<Link className="ml-2" to="/imprint">Impressum</Link>
+
 							</p>
 						</div><p className="text-sm text-gray-500">
 							© Copyright 2024 GLOBAL WORLD IK LLC. All rights reserved.
