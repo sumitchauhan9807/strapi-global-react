@@ -5,6 +5,8 @@ import useAxios from "src/Hooks/UseAxios";
 import { useSelector } from "react-redux";
 import { constructQueryString } from "src/helpers";
 import { baseUrl } from "src/helpers";
+import { useWindowDimensions } from "src/Hooks/HelperHooks";
+
 import Animate from "src/components/Basic/Animate";
 let qs = constructQueryString(["Map"]);
 let qsc = constructQueryString([""]);
@@ -12,6 +14,8 @@ let qsc = constructQueryString([""]);
 function GlobalWorldMap() {
 	const [data, setData] = useState([]);
 	const [countries, setCountries] = useState([]);
+	const { height, width } = useWindowDimensions();
+	
 	// const [mapData, setMapData] = useState([]);
 
 	const language = useSelector((state) => state.language);
@@ -63,6 +67,7 @@ function GlobalWorldMap() {
 		// { country: "mx", value: 127318112 },
 	];
 	console.log(countries, "countries");
+	let size = width < 1064 ? 'responsive' : "xxl"
 	return (
 		<>
 			<div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -84,7 +89,7 @@ function GlobalWorldMap() {
 							data={countries}
 							style="marker"
 							styleFunction={getStyleFunction(countries)}
-							// richInteraction
+							richInteraction
 							// frame
 						/>
 					</Animate>

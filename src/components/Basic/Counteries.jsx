@@ -26,6 +26,8 @@ function Countries() {
 	}, [response]);
 	if (loading) return <PageSkeleton />;
 	if (!data?.data) return;
+	return <Compo data={data?.data} />;
+
 	return (
 		<div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
 			<div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -34,11 +36,11 @@ function Countries() {
 						<Animate
 							config={{
 								animateIn: "bounceInUp",
-                delay: index / 10,
+								delay: index / 10,
 							}}
 						>
 							<div className="transition-transform transform hover:scale-105">
-								<img style={{height:"50px"}} className="h-auto max-w-full rounded-lg" src={baseUrl() + item.flag.url} alt="" />
+								<img style={{ height: "50px" }} className="h-auto max-w-full rounded-lg" src={baseUrl() + item.flag.url} alt="" />
 								<center className="p-2">{item.name}</center>
 							</div>
 						</Animate>
@@ -49,4 +51,41 @@ function Countries() {
 	);
 }
 
+const Compo = ({ data }) => {
+	return (
+		<div>
+			<div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+				<table className="w-full text-left table-auto min-w-max">
+					<thead>
+						<tr className="border-b border-slate-300 bg-slate-50">
+							<th className="p-4 text-xl font-normal leading-none text-slate-500">Flag</th>
+							<th className="p-4 text-xl font-normal leading-none text-slate-500">Name</th>
+							<th className="p-4 text-xl font-normal leading-none text-slate-500">Call Centers</th>
+							{/* <th className="p-4 text-sm font-normal leading-none text-slate-500">Price per Item</th>
+							<th className="p-4 text-sm font-normal leading-none text-slate-500">Total Price</th>
+							<th className="p-4 text-sm font-normal leading-none text-slate-500" /> */}
+						</tr>
+					</thead>
+					<tbody>
+						{data.map((item) => {
+							return (
+								<tr className="hover:bg-slate-50">
+									<td className="p-4 border-b border-slate-200 py-5">
+										<img src={baseUrl() + item.flag.url} alt="Product 1" className="w-16 h-16 object-cover rounded" />
+									</td>
+									<td className="p-4 border-b border-slate-200 py-5">
+										<p className="block font-semibold text-sm text-slate-800">{item.name}</p>
+									</td>
+									<td className="p-4 border-b border-slate-200 py-5">
+										<p className="font-semibold text-sm text-slate-800">{item.CallCenters ? item.CallCenters : "-" }</p>
+									</td>
+								</tr>
+							);
+						})}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	);
+};
 export default Countries;
