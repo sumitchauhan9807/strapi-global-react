@@ -14,7 +14,7 @@ let qs = constructQueryString([
 	
 ]);
 
-const Datenschutz = () => {
+const Impressum = () => {
   const [data, setData] = useState([]);
 	const language = useSelector((state) => state.language);
 	const globalData = useContext(GlobalData);
@@ -32,9 +32,11 @@ const Datenschutz = () => {
 	}, [response]);
 	if (loading) return <PageSkeleton />;
 	if (!data.data) return;
-  return (
-    <div dangerouslySetInnerHTML={{__html: data.data.description}}></div>
-  );
+	return (
+		<div className=" min-h-screen p-6">
+			<div className="max-w-5xl mx-auto  shadow-2xl rounded-xl border-0 border-gray-600 p-8" dangerouslySetInnerHTML={{__html: data.data.description}}></div>
+		</div>
+	);
 };
 
-export default Datenschutz;
+export default Impressum;
