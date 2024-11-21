@@ -1,9 +1,9 @@
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
-import Menu from 'src/components/Menu'
+import Menu from "src/components/Menu";
 import Footer from "./components/PageFooter";
 // import Footer from "src/components/Footer";
 
-import { PageSkeleton } from 'src/components/small/Skeletons'
+import { PageSkeleton } from "src/components/small/Skeletons";
 import Home from "src/views/Home";
 import Solutions from "src/views/Solutions";
 import ContactUs from "src/views/ContactUs.jsx";
@@ -25,18 +25,18 @@ import AccSales from "src/views/AccelerationofSales";
 import ChatBotbuilder from "src/views/ChatbotBuilder";
 import FreelancerChatbot from "src/views/ChatbotdesignforFreelancers";
 import OurPartners from "src/views/OurPartners";
-import Terms from 'src/views/Terms'
-import Privacy from 'src/views/Privacy'
-import Imprint from 'src/views/Imprint'
-
+import Terms from "src/views/Terms";
+import Privacy from "src/views/Privacy";
+import Imprint from "src/views/Imprint";
 
 import { GlobalData } from "src/context";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import useAxios from "./Hooks/UseAxios";
-import { constructQueryString } from 'src/helpers'
+import { constructQueryString } from "src/helpers";
 import Impressum from "./views/ImpresSum";
 import Datenschutz from "./views/DatenscHutz";
+import { useLocation } from 'react-router-dom';
 
 // const router = createBrowserRouter([
 //   {
@@ -122,66 +122,62 @@ import Datenschutz from "./views/DatenscHutz";
 //     element:<FreelancerChatbot/>,
 //   }
 
-
 // ]);
-let qs = constructQueryString([
-  "LightLogo",
-  "DarkLogo"
-]);
+let qs = constructQueryString(["LightLogo", "DarkLogo"]);
 function Router() {
-  const [data, setData] = useState([]);
-  const language = useSelector((state) => state.language);
-  const { response, loading, error } = useAxios({
-    method: "get",
-    url: `global?${qs}locale=${language.language}`,
-  });
+	const [data, setData] = useState([]);
+	const language = useSelector((state) => state.language);
+  const { pathname } = useLocation();
   useEffect(() => {
-    if (response !== null) {
-      setData(response);
-    }
-  }, [response]);
-  if (loading) return <PageSkeleton />
-  if (!data.data) return
-  return (
-    <>
-    <GlobalData.Provider value={data.data}>
-      <Menu />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/solutions/phone-numbers" element={<Solutions />} />
-        <Route exact path="/solutions/robot-controller" element={<RobotController />} />
-        <Route exact path="/solutions/home-office" element={<HomeOffice />} />
-        <Route exact path="/solutions/voice-robots" element={<VoiceRobots />} />
-        <Route exact path="/contactus" element={<ContactUs />} />
-        <Route exact path="/pricing" element={<PricingPage />} />
-        <Route exact path="/automatedcalls" element={<AutomatedCallsPage />} />
-        <Route exact path="/aicontactcenter" element={<AiContactcenter />} />
-        <Route exact path="/phonenumber" element={<PhoneNumber />} />
-        <Route exact path="/siptrunk" element={<SipTrunk />} />
-        <Route exact path="/texttospeach" element={<TextTospeach />} />
-        <Route exact path="/voicerobot" element={<VoiceRobot />} />
-        <Route exact path="/pbx" element={<PBx />} />
-        <Route exact path="/calltranscription" element={<CallTranscription />} />
-        <Route exact path="/callrecording" element={<CallRecording />} />
-        <Route exact path="/chatbotnews" element={<ChatbotNews />} />
-        <Route exact path="/accsales" element={<AccSales />} />
-        <Route exact path="/chatbotbuilder" element={<ChatBotbuilder />} />
-        <Route exact path="/freelancerchatbot" element={<FreelancerChatbot />} />
-        <Route exact path="/partners" element={<OurPartners/>} />
-        <Route exact path="/terms" element={<Terms/>} />
-        <Route exact path="/privacy" element={<Privacy/>} />
-        <Route exact path="/imprint" element={<Imprint/>} />
-        <Route exact path="/impressum" element={<Impressum/>}/>
-        <Route exact path="/datenschutz" element={<Datenschutz/>}/>
-"
-
-
-        
-      </Routes>
-      <Footer />
-    </GlobalData.Provider>
-    </>
-  );
+    window.scrollTo(0, 0);
+  }, [pathname]);
+	const { response, loading, error } = useAxios({
+		method: "get",
+		url: `global?${qs}locale=${language.language}`,
+	});
+	useEffect(() => {
+		if (response !== null) {
+			setData(response);
+		}
+	}, [response]);
+	if (loading) return <PageSkeleton />;
+	if (!data.data) return;
+	return (
+		<>
+			<GlobalData.Provider value={data.data}>
+				<Menu />
+				<Routes>
+					<Route exact path="/" element={<Home />} />
+					<Route exact path="/solutions/phone-numbers" element={<Solutions />} />
+					<Route exact path="/solutions/robot-controller" element={<RobotController />} />
+					<Route exact path="/solutions/home-office" element={<HomeOffice />} />
+					<Route exact path="/solutions/voice-robots" element={<VoiceRobots />} />
+					<Route exact path="/contactus" element={<ContactUs />} />
+					<Route exact path="/pricing" element={<PricingPage />} />
+					<Route exact path="/automatedcalls" element={<AutomatedCallsPage />} />
+					<Route exact path="/aicontactcenter" element={<AiContactcenter />} />
+					<Route exact path="/phonenumber" element={<PhoneNumber />} />
+					<Route exact path="/siptrunk" element={<SipTrunk />} />
+					<Route exact path="/texttospeach" element={<TextTospeach />} />
+					<Route exact path="/voicerobot" element={<VoiceRobot />} />
+					<Route exact path="/pbx" element={<PBx />} />
+					<Route exact path="/calltranscription" element={<CallTranscription />} />
+					<Route exact path="/callrecording" element={<CallRecording />} />
+					<Route exact path="/chatbotnews" element={<ChatbotNews />} />
+					<Route exact path="/accsales" element={<AccSales />} />
+					<Route exact path="/chatbotbuilder" element={<ChatBotbuilder />} />
+					<Route exact path="/freelancerchatbot" element={<FreelancerChatbot />} />
+					<Route exact path="/partners" element={<OurPartners />} />
+					<Route exact path="/terms" element={<Terms />} />
+					<Route exact path="/privacy" element={<Privacy />} />
+					<Route exact path="/imprint" element={<Imprint />} />
+					<Route exact path="/impressum" element={<Impressum />} />
+					<Route exact path="/datenschutz" element={<Datenschutz />} />"
+				</Routes>
+				<Footer />
+			</GlobalData.Provider>
+		</>
+	);
 }
 
-export default Router
+export default Router;
