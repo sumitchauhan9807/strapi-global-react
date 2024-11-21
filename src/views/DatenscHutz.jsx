@@ -4,7 +4,7 @@ const Datenschutz = () => {
   return (
     <div className="p-6 font-sans bg-gray-800 text-gray-700">
       <div className="max-w-5xl mx-auto  space-y-8">
-        <h1 className="text-4xl font-bold text-yellow-400">Impressum</h1>
+        <h1 className="text-4xl font-bold text-yellow-400">datenschutz</h1>
 
         {/* Company Information */}
         <section className="space-y-2">
