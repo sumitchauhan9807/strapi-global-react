@@ -35,6 +35,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import useAxios from "./Hooks/UseAxios";
 import { constructQueryString } from 'src/helpers'
+import Impressum from "./views/ImpresSum";
 
 // const router = createBrowserRouter([
 //   {
@@ -169,6 +170,8 @@ function Router() {
         <Route exact path="/terms" element={<Terms/>} />
         <Route exact path="/privacy" element={<Privacy/>} />
         <Route exact path="/imprint" element={<Imprint/>} />
+        <Route exact path="/impressum" element={<Impressum/>}/>
+
 
         
       </Routes>
