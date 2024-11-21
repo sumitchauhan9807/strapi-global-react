@@ -8,12 +8,13 @@ import SectionFour from "src/components/SectionFour.jsx";
 import GlobalWorldMap from "src/components/Basic/GlobalWorldMap";
 import Pricing from "src/components/PricingTable.jsx";
 import SectionFive from "src/components/SectionFive.jsx";
+import CountUp from 'src/components/Basic/CountUp'
 import DialerProducts from 'src/components/DialerProducts'
 import { PageSkeleton } from "src/components/small/Skeletons";
 // import Partners from 'src/components/Partners'
 import useAxios from "src/Hooks/UseAxios";
 import { constructQueryString } from "src/helpers";
-let qs = constructQueryString(["Hero", "Hero.HeroText", "Hero.Image", "HomeSection1", "HomeSection1.Images", "HomeSection1.Lists"]);
+let qs = constructQueryString(["Hero", "Hero.HeroText", "Hero.Image", "HomeSection1", "HomeSection1.Images", "HomeSection1.Lists","Countup.icon"]);
 
 function Home() {
 	const [data, setData] = useState([]);
@@ -44,7 +45,7 @@ function Home() {
 					{/* SectionFour */}
 					{/* SectionFour */}
 					{/* other section  */}
-
+					<CountUp data={data.data.Countup}/>
 					<SectionTwo />
 					{/* <Partners/> */}
 					{/* other section  */}
