@@ -27,7 +27,7 @@ function Countries() {
 	}, [response]);
 	if (loading) return <PageSkeleton />;
 	if (!data?.data) return;
-	let allCountries = explodeArray(data?.data, 13);
+	let allCountries = explodeArray(data?.data, 11);
 
 	return (
 		<div id="full-width-megamenu" aria-labelledby="full-width-megamenu" className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -46,7 +46,7 @@ function Countries() {
 									<li className>
 										<a href="" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
 											<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-												<img src={baseUrl() + country.flag.url} style={{ float: "left", height: "20px", marginRight: "7px" }} />
+												<img src={baseUrl() + country.flag.url} style={{ float: "left", height: "50px", marginRight: "7px" }} />
 											</div>
 											<div className="ml-4 w-4/5">
 												<p className="text-xs font-medium text-gray-900"> {country.name}</p>
