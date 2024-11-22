@@ -22,7 +22,7 @@ function LanguageSelector() {
 		dispatch(setLang(lang));
 	};
   let allLangs = getLanguages()
-  console.log(allLangs,"asdasdasdasdasdas")
+  // console.log(allLangs,"asdasdasdasdasdas")
   return null
 	return (
     <>

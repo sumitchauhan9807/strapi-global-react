@@ -129,7 +129,7 @@ function Router() {
 	const language = useSelector((state) => state.language);
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+		window.scrollTo({top: 0, behavior: 'smooth'});
   }, [pathname]);
 	const { response, loading, error } = useAxios({
 		method: "get",

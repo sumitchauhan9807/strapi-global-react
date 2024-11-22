@@ -66,21 +66,28 @@ export const Languages = [
 		code: "en",
 		name: "Србија",
 		flag: serbia,
-	},
+	}
 ];
 
 export const getLanguages = () => {
+	return explodeArray(Languages,4)
+};
+
+export const explodeArray = (array, childsLength) => {
 	let allLangs = [];
 	let myarr = [];
-	let arraysLength = 2;
-  let itemsPushed = 0
-  for (let i = 0; i < arraysLength; i++) {
-    let arr = []
-    arr.push(Languages[i])
-	}
+	let itemsIndex = 0;
 
-	for (let i = 0; i < Languages.length; i++) {
-	
+	let noOfArrays = Math.ceil(array.length / childsLength);
+	for (let i = 0; i < noOfArrays; i++) {
+		for (let k = 0; k < childsLength; k++) {
+			if (array[itemsIndex]) {
+				myarr.push(array[itemsIndex]);
+			}
+			itemsIndex++;
+		}
+		allLangs.push(myarr);
+		myarr = [];
 	}
 	return allLangs;
 };

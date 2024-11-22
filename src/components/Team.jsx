@@ -28,7 +28,6 @@ function Team() {
 		}
 	}, [response]);
 	if (loading) return <PageSkeleton />;
-	console.log(data.data, "data.data");
 	if (!data.data) return;
 
 	return (
