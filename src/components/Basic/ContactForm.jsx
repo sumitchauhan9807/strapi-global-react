@@ -1,10 +1,63 @@
 import { baseUrl } from "src/helpers";
 import ReCAPTCHA from "react-google-recaptcha";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import axios from "src/axios";
+import { useState } from "react";
+
+const schema = z.object({
+	firstName: z.string().min(5, { message: "FirstName must have at least 4 characters" }),
+	lastName: z.string().min(8, { message: "Lastname must have at least 8 characters" }),
+	email: z.string().email(),
+	purpose: z.string(),
+	message: z.string().min(8, { message: "Message must have at least 8 characters" }),
+});
+
 function ContactForm({ data }) {
-	console.log(data, "datadatadata");
+	const [recapval, setRecapval] = useState("");
+	const [formSubmitted,isFormSubmitted] = useState(false)
+	const {
+		register,
+		handleSubmit,
+		setError,
+		formState: { errors },
+		reset
+	} = useForm({
+		resolver: zodResolver(schema),
+	});
 	const onChange = (data) => {
-		console.log(data)
-	}
+		console.log(data);
+		setRecapval(data);
+	};
+	const onSubmit = async (formData) => {
+		// if(!recapval) return alert("Please confirm you are not a bot :)")
+		try {
+			console.log(formData);
+			isFormSubmitted(false)
+			const { data } = await axios({
+				url: "custom/mail",
+				method: "post",
+				data: {
+					firstName: formData.firstName,
+					lastName: formData.lastName,
+					email: formData.email,
+					purpose: formData.purpose,
+					message: formData.message,
+					recaptcha: recapval,
+				},
+			});
+			reset()
+			isFormSubmitted(true)
+		} catch (e) {
+			setError("root", {
+				message: e.response.data.error,
+			});
+			// alert("tehre i serrr")
+			console.log(e.response.data.error);
+		}
+	};
+	console.log(errors);
 	return (
 		<>
 			<section className="mb-32">
@@ -13,43 +66,67 @@ function ContactForm({ data }) {
 					<div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border border-gray-300">
 						<div className="flex flex-wrap">
 							<div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
-								<form>
+								<form onSubmit={handleSubmit(onSubmit)}>
 									<div className="grid gap-4 grid-cols-1 lg:grid-cols-2  justify-between ">
 										<div className="relative mb-6" data-te-input-wrapper-init>
-											<input type="text" className="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none " id="exampleInput90" />
+											<input {...register("firstName")} type="text" className="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none " id="exampleInput90" />
+											{errors.firstName && <p className="text-red-500 text-xs italic mt-2">{errors.firstName.message}</p>}
 											<label className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none " htmlFor="exampleInput90">
 												First Name
 											</label>
 										</div>
 										<div className="relative mb-6" data-te-input-wrapper-init>
-											<input type="text" className="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none " id="exampleInput90" />
+											<input {...register("lastName")} type="text" className="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none " id="exampleInput90" />
+											{errors.lastName && <p className="text-red-500 text-xs italic mt-2">{errors.lastName.message}</p>}
 											<label className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none " htmlFor="exampleInput90">
 												Last Name
 											</label>
 										</div>
 									</div>
 									<div className="relative mb-6" data-te-input-wrapper-init>
-										<input type="email" className="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none " id="exampleInput91" />
+										<input {...register("email")} type="email" className="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none " id="exampleInput91" />
+										{errors.email && <p className="text-red-500 text-xs italic mt-2">{errors.email.message}</p>}
+
 										<label className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none " htmlFor="exampleInput91">
 											Email address
 										</label>
 									</div>
 									<div className="relative mb-6" data-te-input-wrapper-init>
-										<input type="email" className="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none " id="exampleInput91" />
+										<select {...register("purpose")} id="countries" class="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none ">
+											{data.Purpose.map((p, index) => {
+												return <option value={p.text}>{p.text}</option>;
+											})}
+											{/* <option selected>Choose a country</option>
+											<option value="CA">Canada</option>
+											<option value="FR">France</option>
+											<option value="DE">Germany</option> */}
+										</select>
+
 										<label className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none " htmlFor="exampleInput91">
-											Email address
+											Purpose
 										</label>
 									</div>
 									<div className="relative mb-6" data-te-input-wrapper-init>
-										<textarea className="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none " id="exampleFormControlTextarea1" rows={3} defaultValue={""} />
+										<textarea {...register("message")} className="peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none " id="exampleFormControlTextarea1" rows={3} defaultValue={""} />
+										{errors.message && <p className="text-red-500 text-xs italic mt-2">{errors.message.message}</p>}
+
 										<label htmlFor="exampleFormControlTextarea1" className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none ">
 											Message
 										</label>
 									</div>
 									<ReCAPTCHA sitekey="6LcSr4sqAAAAAP3JhRexDSfNpKya99zSgfjhlD8H" onChange={onChange} />,
-									<button type="button" className="mb-6 w-full rounded bg-sky-500 text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal   lg:mb-0">
+									<button type="submit" className="mb-6 w-full rounded bg-sky-500 text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal   lg:mb-0">
 										Send
 									</button>
+									{errors.root && (
+										<center>
+											<div className="text-red-500 mt-4">{errors.root.message}</div>
+										</center>
+									)}
+									{formSubmitted && 
+									<center><div className="text-green-500 mt-4">Thanks !! We will try to get back soon :</div></center>
+									
+									}
 								</form>
 							</div>
 							<div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
