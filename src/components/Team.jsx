@@ -48,7 +48,7 @@ function Team() {
 							>
 						<div className="w-full bg-gray-900 rounded-lg sahdow-lg overflow-hidden flex flex-col md:flex-row">
 							<div className="w-full md:w-2/5 h-80">
-								<img className="object-center object-cover w-full h-full" src={baseUrl() + item.image.url} alt="photo" />
+								<img className="object-center lg:object-cover lg:mt-0 mt-3  object-contain lg:rounded-none rounded-lg w-full h-full" src={baseUrl() + item.image.url} alt="photo" />
 							</div>
 							<div className="w-full md:w-3/5 text-left p-6 md:p-4 space-y-2">
 								<p className="text-xl text-white font-bold">{item.name}</p>
