@@ -198,9 +198,15 @@ export default function TopMen2() {
 				<Link style={{ fontSize: "15px" }} to="/partners" className="relative p-4 cursor-pointer">
 					<span className="uppercase font-semibold px-6">Partners</span>
 				</Link>
-				<div style={{ fontSize: "15px" }} className="relative p-4 cursor-pointer">
+				{/* <div style={{ fontSize: "15px" }} className="relative p-4 cursor-pointer">
 					<span className="uppercase font-semibold px-6">About</span>
-				</div>
+				</div> */}
+				<Link style={{ fontSize: "15px" }} to="/team" className="relative p-4 cursor-pointer">
+					<span className="uppercase font-semibold px-6">Team</span>
+				</Link>
+				<Link style={{ fontSize: "15px" }} to="/contactus" className="relative p-4 cursor-pointer">
+					<span className="uppercase font-semibold px-6">Contact Us</span>
+				</Link>
 				<LanguageSelect />
 			</div>
 		</menu>

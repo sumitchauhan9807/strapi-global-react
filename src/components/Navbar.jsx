@@ -167,6 +167,26 @@ export const Nav = () => {
                 About us
               </a>
             </div>
+            <div className="flex relative h-full">
+              <a
+                href="/about"
+                className="flex items-center text-gray-300 hover:text-white transition duration-200 h-full px-6"
+                aria-label="About us"
+                title="About us"
+              >
+                Team
+              </a>
+            </div>
+            <div className="flex relative h-full">
+              <a
+                href="/about"
+                className="flex items-center text-gray-300 hover:text-white transition duration-200 h-full px-6"
+                aria-label="About us"
+                title="About us"
+              >
+                Contact us
+              </a>
+            </div>
 
           </nav>
 

@@ -46,7 +46,7 @@ function Countries() {
 									<li className>
 										<a href="" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
 											<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-												<img src={baseUrl() + country.flag.url} style={{ float: "left", height: "50px", marginRight: "7px" }} />
+												<img src={baseUrl() + country.flag.url} style={{ float: "left", height: "20px", marginRight: "7px" }} />
 											</div>
 											<div className="ml-4 w-4/5">
 												<p className="text-xs font-medium text-gray-900"> {country.name}</p>
