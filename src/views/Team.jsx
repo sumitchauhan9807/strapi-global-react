@@ -14,7 +14,7 @@ function OurTeam() {
 	const [data, setData] = useState([]);
 	const { response, loading, error } = useAxios({
 		method: "get",
-		url: `partner-page?${qs}locale=${language.language}`,
+		url: `team-page?${qs}locale=${language.language}`,
 	});
 	useEffect(() => {
 		if (response !== null) {
