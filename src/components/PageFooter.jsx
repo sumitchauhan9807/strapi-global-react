@@ -147,19 +147,19 @@ export const Footer = () => {
 				</center>
 				<center>
 					<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 border-t border-gray-800 sm:flex-row">
-						<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 yborder-gray-800 sm:flex-row">
+						<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-4 yborder-gray-800 sm:flex-row">
 							<p className="text-sm text-gray-500">
-								<Link className="" to="/terms">Terms</Link> |
-								<Link className="ml-2 " to="/privacy">Privacy Policy</Link> |
-								{/* <Link className="ml-2" to="/imprint">Imprint</Link> | */}
-								<Link className="ml-2" to="/impressum">Legal Notice</Link> |
-								<Link className="ml-2" to="/datenschutz">Data Protection</Link>
-
+								<Link className="" to="/terms">Terms</Link>
+								<Link className="ml-2" to="/privacy">Privacy Policy</Link>
+								<Link className="ml-2" to="/imprint">Imprint</Link>
+								<Link className="ml-2" to="/impressum">Impressum</Link>
+								<Link className="ml-2" to="/datenschutz">datenschutz</Link>
 							</p>
-						</div><p className="text-sm text-gray-500">
+						</div>
+						<div><p className="text-sm text-gray-500">
 							© Copyright 2024 GLOBAL WORLD IK LLC. All rights reserved.
-						</p>
-						<SocialMedia />
+						</p></div> 
+						<div><SocialMedia /></div>
 					</div>
 				</center>
 			</div>
