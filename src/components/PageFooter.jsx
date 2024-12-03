@@ -159,7 +159,7 @@ export const Footer = () => {
 						<div><p className="text-sm text-gray-500">
 							© Copyright 2024 GLOBAL WORLD IK LLC. All rights reserved.
 						</p></div> 
-						<div></div>
+						<SocialMedia />
 					</div>
 				</center>
 			</div>
