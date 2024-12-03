@@ -9,7 +9,7 @@ export default function TopMen() {
   const globalData = useContext(GlobalData);
 
   return (
-    <menu className="flex flex-wrap items-center lg:justify-between justify-center  bg-[#141b24] p-4 text-white">
+    <menu className="flex flex-wrap items-center lg:justify-between justify-center lg:px-24  bg-[#141b24] p-4 text-white">
       {/* Left Section */}
       {/* <span className="text-xl glow block py-2 lg:hidden  md:text-base uppercase text-center bg-transparent">
         <b>**Still under construction**</b>
