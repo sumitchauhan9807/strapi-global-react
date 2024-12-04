@@ -142,7 +142,7 @@ function ContactForm({ data }) {
 										<div className="flex items-center">
 											<input id="link-checkbox" type="checkbox" defaultValue className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 											<label htmlFor="link-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-											Yes, I would like to be contacted and advised by ecotel (by phone/email) or by an ecotel sales partner personally about the selected product, promotions and other marketing and sales purposes. Please note that this declaration of consent is voluntary and can be revoked at any time. *
+											Yes, I would like to be contacted and advised by Global World (by phone/email) or by an Global World sales partner personally about the selected product, promotions and other marketing and sales purposes. Please note that this declaration of consent is voluntary and can be revoked at any time. *
 											</label>
 										</div>
 									</div>
