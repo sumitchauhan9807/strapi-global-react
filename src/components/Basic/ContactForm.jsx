@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import axios from "src/axios";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const schema = z.object({
 	firstName: z.string().min(5, { message: "FirstName must have at least 4 characters" }),
@@ -151,9 +152,9 @@ function ContactForm({ data }) {
 											<input ref={privacyPolicyRef}  type="checkbox" defaultValue className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
 											<label htmlFor="link-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
 												Yes, I have read the
-												<a href="#" className="text-blue-600 dark:text-blue-500 hover:underline">
+												<Link to="/privacy" className="text-blue-600 dark:text-blue-500 hover:underline">
 													&nbsp; privacy policy
-												</a>{" "}
+												</Link>
 												. I am aware that my data will be processed for the intended purpose. *
 											</label>
 										</div>
