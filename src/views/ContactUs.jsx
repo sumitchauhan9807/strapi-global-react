@@ -10,6 +10,7 @@ import france from "src/assets/flags/france.png";
 import { explodeArray } from "src/helpers";
 // available traffic for this country
 import ContactForm from 'src/components/Basic/ContactForm'
+import Features from 'src/components/Basic/Features'
 // import Animate from "src/components/Basic/Animate";
 
 let qs = constructQueryString(["Lists","Form.info","Form.Purpose","Form.info.icon"]);
@@ -57,6 +58,7 @@ export const ContactUs = () => {
 			</div>
 
 			<ContactForm data={data.data.Form}/>
+			<Features/>
 		</div>
 	);
 };
