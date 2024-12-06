@@ -133,11 +133,11 @@ const ContactForm1 = ({ data }) => {
 				<div className="space-y-2">
 					<div className="flex items-center">
 						<input type="checkbox" id="marketing-consent" className="mr-2" />
-						<label htmlFor="marketing-consent">Yes, I would like to be contacted by ecotel. I can revoke this consent at any time.</label>
+						<label dangerouslySetInnerHTML={{ __html: data.Declaration.replaceAll("\n", "<br/>") }} htmlFor="marketing-consent"></label>
 					</div>
 					<div className="flex items-center">
 						<input ref={privacyPolicyRef} type="checkbox" id="privacy-policy" className="mr-2" />
-						<label htmlFor="privacy-policy">Yes, I have read the privacy policy.</label>
+						<label dangerouslySetInnerHTML={{ __html: data.PrivacyPolicy.replaceAll("\n", "<br/>") }}  htmlFor="privacy-policy"></label>
 					</div>
 				</div>
 				<ReCAPTCHA sitekey="6LcSr4sqAAAAAP3JhRexDSfNpKya99zSgfjhlD8H" onChange={onChange} />,
