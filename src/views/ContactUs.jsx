@@ -58,7 +58,8 @@ export const ContactUs = () => {
 				</div>
 			</div>
 
-			<ContactForm data={data.data.Form}/> <ContactForm1/>
+			{/* <ContactForm data={data.data.Form}/>  */}
+			<ContactForm1 data={data.data.Form}/>
 			<Features/>
 		</div>
 	);
