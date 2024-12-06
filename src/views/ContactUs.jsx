@@ -11,6 +11,7 @@ import { explodeArray } from "src/helpers";
 // available traffic for this country
 import ContactForm from 'src/components/Basic/ContactForm'
 import Features from 'src/components/Basic/Features'
+import ContactForm1 from "src/components/NewForm";
 // import Animate from "src/components/Basic/Animate";
 
 let qs = constructQueryString(["Lists","Form.info","Form.Purpose","Form.info.icon"]);
@@ -57,7 +58,7 @@ export const ContactUs = () => {
 				</div>
 			</div>
 
-			<ContactForm data={data.data.Form}/>
+			<ContactForm data={data.data.Form}/> <ContactForm1/>
 			<Features/>
 		</div>
 	);
