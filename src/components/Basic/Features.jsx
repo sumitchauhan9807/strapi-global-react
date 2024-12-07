@@ -16,7 +16,7 @@ const Features = ({ data }) => {
 					>
 						<div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition transform flex items-center">
 							<div className="mr-4">
-								<img style={{ height: "100px" }} src={baseUrl() + contact.Image.url} />
+								<img style={{ height: "60px" }} src={baseUrl() + contact.Image.url} />
 							</div>
 							<div>
 								<h3 className="text-lg font-semibold text-gray-800 mb-2">{contact.Heading}</h3>
