@@ -66,12 +66,12 @@ const ContactForm1 = ({ data }) => {
 			console.log(e.response.data.error);
 		}
 	};
-	console.log(errors);
+	
 	return (
 		<div className="bg-gray-800 text-white py-10 px-5 sm:px-10">
 			<form onSubmit={handleSubmit(onSubmit)} className="space-y-5 max-w-3xl mx-auto">
-				<h2 className="text-2xl font-bold mb-5">Sie haben noch Fragen?</h2>
-				<p className="mb-8">Hier können Sie uns gerne eine schriftliche Mitteilung senden. Unser Service-Team kümmert sich dann schnellstmöglich um die Beantwortung Ihrer E-Mail. Sie benötigen eine direkte Antwort? Kein Problem! Nutzen Sie einfach eine unserer weiteren Kontaktmöglichkeiten weiter unten.</p>
+				<h2 className="text-2xl font-bold mb-5">{data.Heading}</h2>
+				<p className="mb-8">{data.SubHeading}</p>
 				<div>
 					<label className="block mb-2" htmlFor="help-topic">
 						How can we help you? *

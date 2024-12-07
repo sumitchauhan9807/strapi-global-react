@@ -14,7 +14,7 @@ import Features from 'src/components/Basic/Features'
 import ContactForm1 from "src/components/NewForm";
 // import Animate from "src/components/Basic/Animate";
 
-let qs = constructQueryString(["Lists","Form.info","Form.Purpose","Form.info.icon"]);
+let qs = constructQueryString(["Lists","Form.info","Form.Purpose","Form.info.icon","ContactLists.Lists","ContactLists.Lists.Image"]);
 
 export const ContactUs = () => {
 	const language = useSelector((state) => state.language);
@@ -31,6 +31,7 @@ export const ContactUs = () => {
 	}, [response]);
 	if (loading) return <PageSkeleton />;
 	if (!data?.data) return;
+	console.log(data)
 	return (
 		<div className="min-h-screen bg-gray-50 text-gray-900 py-10">
 			<div className="max-w-xl sm:mx-auto lg:max-w-2xl">
@@ -60,7 +61,7 @@ export const ContactUs = () => {
 
 			{/* <ContactForm data={data.data.Form}/>  */}
 			<ContactForm1 data={data.data.Form}/>
-			<Features/>
+			<Features data={data.data.ContactLists}/>
 		</div>
 	);
 };
