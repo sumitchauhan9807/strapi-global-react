@@ -77,7 +77,7 @@
 import React from "react";
 import { FiPhone, FiMail, FiMessageCircle } from "react-icons/fi";
 
-const Features = () => {
+const Features = ({data}) => {
   const contacts = [
     {
       title: "Mehrwertdienste",
@@ -148,28 +148,24 @@ const Features = () => {
 
   return (
     <div className="p-6 md:p-10 bg-gray-50 min-h-screen">
-      <h1 className="text-2xl md:text-3xl font-bold text-center mb-6">
-        Sie telefonieren oder chatten lieber?
-      </h1>
-      <p className="text-center text-gray-600 text-base md:text-lg mb-8">
-        Hier haben wir weitere Kontaktmöglichkeiten für Sie.
-      </p>
+     	<h1 className="text-2xl md:text-3xl font-bold text-center mb-6">{data.Heading}</h1>
+			<p className="text-center text-gray-600 text-base md:text-lg mb-8">{data.SubHeading}</p>
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-        {contacts.map((contact, index) => (
+        {data.Lists.map((contact, index) => (
           <div
             key={index}
             className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition transform flex items-center"
           >
-            <div className="mr-4">{getIcon(contact.type)}</div>
+            <div className="mr-4">{getIcon('phone')}</div>
             <div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                {contact.title}
+                {contact.Heading}
               </h3>
-              {contact.phone && (
-                <p className="text-gray-600 mb-4">{contact.phone}</p>
-              )}
+             
+                <p className="text-gray-600 mb-4">{contact.Number}</p>
+              
               <button className="text-orange-500 font-medium text-sm hover:underline">
-                {contact.actionText}
+                Call
               </button>
             </div>
           </div>
