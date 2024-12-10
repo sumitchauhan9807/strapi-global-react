@@ -68,7 +68,7 @@ const ContactForm1 = ({ data }) => {
 			console.log(e.response.data.error);
 		}
 	};
-	console.log(data,"gotmd")
+
 	return (
 		<div className="bg-gray-800 text-white py-10 px-5 sm:px-10">
 			<form onSubmit={handleSubmit(onSubmit)} className="space-y-5 max-w-3xl mx-auto">

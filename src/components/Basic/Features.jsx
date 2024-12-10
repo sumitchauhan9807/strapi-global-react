@@ -2,6 +2,7 @@ import { baseUrl } from "src/helpers";
 import Animate from "src/components/Basic/Animate";
 
 const Features = ({ data }) => {
+	console.log(data,"datadata")
 	return (
 		<div className="p-6 md:p-10 bg-gray-50 min-h-screen">
 			<h1 className="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-800">
@@ -33,10 +34,11 @@ const Features = ({ data }) => {
 								</h3>
 								<p className="text-gray-600 text-sm mb-1">{contact.Number}</p>
 								<a
-									href={`tel:${contact.Number}`}
+								target="_blank"
+									href={contact.Link}
 									className="text-orange-500 font-medium text-sm hover:underline"
 								>
-									{contact.ActionText || "Call"}
+									{contact.Text}
 								</a>
 							</div>
 						</div>
