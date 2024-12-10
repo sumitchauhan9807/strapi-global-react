@@ -14,7 +14,7 @@ import Features from 'src/components/Basic/Features'
 import ContactForm1 from "src/components/NewForm";
 // import Animate from "src/components/Basic/Animate";
 
-let qs = constructQueryString(["Lists","Form.info","Form.Purpose","Form.info.icon","ContactLists.Lists","ContactLists.Lists.Image"]);
+let qs = constructQueryString(["Lists","Form.info","Form.Purpose","Form.info.icon","Form.FormFields","ContactLists.Lists","ContactLists.Lists.Image"]);
 
 export const ContactUs = () => {
 	const language = useSelector((state) => state.language);
