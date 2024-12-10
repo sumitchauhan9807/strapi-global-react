@@ -12,6 +12,7 @@ const schema = z.object({
 	lastName: z.string().min(8, { message: "Lastname must have at least 4 characters" }),
 	company: z.string().min(8, { message: "Company name must have at least 8 characters" }),
 	phonenumber: z.string().min(7, { message: "phonenumber must have at least 8 characters" }),
+	phoneFix: z.string().min(7, { message: "Must have at least 8 characters" }),
 	email: z.string().email(),
 	purpose: z.string(),
 	message: z.string().min(8, { message: "Message must have at least 8 characters" }),
@@ -53,6 +54,7 @@ const ContactForm1 = ({ data }) => {
 					message: formData.message,
 					phonenumber: formData.phonenumber,
 					company: formData.company,
+					phoneFix:formData.phoneFix,
 					recaptcha: recapval,
 				},
 			});
@@ -121,6 +123,13 @@ const ContactForm1 = ({ data }) => {
 						</label>
 						<input {...register("phonenumber")} type="tel" id="phone" className="w-full p-3 rounded border border-gray-300 text-black shadow-2xl" />
 						{errors.phonenumber && <p className="text-red-500 text-xs italic mt-2">{errors.phonenumber.message}</p>}
+					</div>
+					<div>
+						<label className="block mb-2" htmlFor="phone">
+						{data.FormFields.PhoneFix}
+						</label>
+						<input {...register("phoneFix")} type="tel" id="phone" className="w-full p-3 rounded border border-gray-300 text-black shadow-2xl" />
+						{errors.phoneFix && <p className="text-red-500 text-xs italic mt-2">{errors.phoneFix.message}</p>}
 					</div>
 				</div>
 				<div>
