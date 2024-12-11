@@ -4,7 +4,7 @@ import Animate from "src/components/Basic/Animate";
 const Features = ({ data }) => {
 	console.log(data,"datadata")
 	return (
-		<div className="p-6 md:p-10 bg-gray-50 min-h-screen">
+		<div className="p-6 md:p-10 bg-gray-50">
 			<h1 className="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-800">
 				{data.Heading}
 			</h1>

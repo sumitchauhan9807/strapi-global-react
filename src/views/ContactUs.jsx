@@ -11,13 +11,18 @@ import { explodeArray } from "src/helpers";
 // available traffic for this country
 import ContactForm from 'src/components/Basic/ContactForm'
 import Features from 'src/components/Basic/Features'
+import GoogleMapComponent from 'src/components/Basic/GoogleMapComponent'
 import ContactForm1 from "src/components/NewForm";
+import { useLoadScript } from "@react-google-maps/api";
 // import Animate from "src/components/Basic/Animate";
-
+//AIzaSyDOkFPJ7laX0Tsy0QehCHQaN2UBrRvr_gI
 let qs = constructQueryString(["Lists","Form.info","Form.Purpose","Form.info.icon","Form.FormFields","ContactLists.Lists","ContactLists.Lists.Image"]);
 
 export const ContactUs = () => {
 	const language = useSelector((state) => state.language);
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyDOkFPJ7laX0Tsy0QehCHQaN2UBrRvr_gI" // Add your API key
+  });
 
 	const [data, setData] = useState([]);
 	const { response, loading, error } = useAxios({
@@ -62,6 +67,7 @@ export const ContactUs = () => {
 			{/* <ContactForm data={data.data.Form}/>  */}
 			<ContactForm1 data={data.data.Form}/>
 			<Features data={data.data.ContactLists}/>
+			{isLoaded && <GoogleMapComponent/>}
 		</div>
 	);
 };
