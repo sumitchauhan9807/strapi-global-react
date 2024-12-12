@@ -31,7 +31,7 @@ function Countries() {
 
 	return (
 		<div id="full-width-megamenu" aria-labelledby="full-width-megamenu" className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-			<div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-6 justify-between ">
+			<div className="grid grid-cols-2  lg:grid-cols-6 justify-between ">
 				{allCountries.map((countries, index) => {
 					return (
 						<Animate
@@ -43,7 +43,7 @@ function Countries() {
 						<ul key={index} className="text-sm text-gray-700  " aria-labelledby="dropdownLargeButton">
 							{countries.map((country, index) => {
 								return (
-									<li className>
+									<li className=" ">
 										<a href="" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
 											<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
 												<img src={baseUrl() + country.flag.url} style={{ float: "left", height: "20px", marginRight: "7px" }} />
