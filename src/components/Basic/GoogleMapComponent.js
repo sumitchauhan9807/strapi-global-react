@@ -16,7 +16,7 @@ function Map({ markers }) {
 		markers.forEach(({ position }) => bounds.extend(position));
 		map.fitBounds(bounds);
 		setTimeout(()=>{
-			map.setZoom(12)
+			map.setZoom(13)
 		},1000)
 	};
 

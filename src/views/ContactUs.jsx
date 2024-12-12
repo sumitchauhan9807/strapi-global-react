@@ -92,7 +92,7 @@ export const ContactUs = () => {
 									},
 								]}
 							/>
-							, 
+							 
 						</div>
 						<div className=" rounded-lg m-4">
 							<GoogleMapComponent
@@ -104,7 +104,7 @@ export const ContactUs = () => {
 									},
 								]}
 							/>
-						</div>, 
+						</div> 
 						<div className=" rounded-lg m-4">
 							<GoogleMapComponent
 								markers={[
