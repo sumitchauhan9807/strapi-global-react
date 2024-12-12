@@ -21,7 +21,7 @@ const Features = ({ data }) => {
 						}}
 					>
 						<div className="bg-white p-5 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 flex items-center -mt-5">
-							<div className="w-12 h-12 flex items-center justify-center bg-orange-100 text-orange-500 rounded-full mr-4">
+							<div className="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-500 rounded-full mr-4">
 								<img
 									className="w-6 h-6 object-contain"
 									src={baseUrl() + contact.Image.url}
@@ -36,7 +36,7 @@ const Features = ({ data }) => {
 								<a
 								target="_blank"
 									href={contact.Link}
-									className="text-orange-500 font-medium text-sm hover:underline"
+									className="text-blue-500 font-medium text-sm hover:underline"
 								>
 									{contact.Text}
 								</a>
