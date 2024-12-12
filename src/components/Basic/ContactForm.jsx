@@ -159,7 +159,7 @@ function ContactForm({ data }) {
 											</label>
 										</div>
 									</div>
-									<ReCAPTCHA sitekey="6Lf9uJgqAAAAAPqx0jCSnnBKJPHyh97PunEvP28v" onChange={onChange} />,
+									<ReCAPTCHA sitekey="6LcznZkqAAAAAJDAqNGkqN1Cb3cfuFHMmkzp3v06" onChange={onChange} />,
 									<button type="submit" className="mb-6 w-full rounded bg-sky-500 text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal   lg:mb-0">
 										Send
 									</button>

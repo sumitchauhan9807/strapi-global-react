@@ -149,7 +149,7 @@ const ContactForm1 = ({ data }) => {
 						<label dangerouslySetInnerHTML={{ __html: data.PrivacyPolicy.replaceAll("\n", "<br/>") }}  htmlFor="privacy-policy"></label>
 					</div>
 				</div>
-				<ReCAPTCHA sitekey="6LcSr4sqAAAAAP3JhRexDSfNpKya99zSgfjhlD8H" onChange={onChange} />,
+				<ReCAPTCHA sitekey="6LcznZkqAAAAAJDAqNGkqN1Cb3cfuFHMmkzp3v06" onChange={onChange} />,
 				<button type="submit" className="bg-orange-500 text-white font-bold py-3 px-6 rounded hover:bg-orange-600">
 					Submit
 				</button>

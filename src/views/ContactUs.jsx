@@ -67,7 +67,7 @@ export const ContactUs = () => {
 			{/* <ContactForm data={data.data.Form}/>  */}
 			<ContactForm1 data={data.data.Form} />
 			<Features data={data.data.ContactLists} />
-			<div id="main" className="p-6 w-full grid grid-cols-1 xl:grid-cols-3 gap-8">
+			<div id="main" className="p-6 w-full grid grid-cols-1 xl:grid-cols-4 ">
 				{isLoaded && (
 					<>
 						<div className=" rounded-lg m-4">

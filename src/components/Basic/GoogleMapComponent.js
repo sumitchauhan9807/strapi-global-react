@@ -17,7 +17,6 @@ function Map({ markers }) {
 		map.fitBounds(bounds);
 		setTimeout(()=>{
 			map.setZoom(12)
-			// alert("Sf")
 		},1000)
 	};
 
