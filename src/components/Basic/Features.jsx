@@ -32,7 +32,7 @@ const Features = ({ data }) => {
 								<h3 className="text-base font-semibold text-gray-800 mb-1">
 									{contact.Heading}
 								</h3>
-								<p className="text-gray-600 text-sm mb-1">{contact.Number}</p>
+								<p className="text-gray-600 text-sm mb-1 h-4">{contact.Number}</p>
 								<a
 								target="_blank"
 									href={contact.Link}
