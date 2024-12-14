@@ -9,7 +9,7 @@ export default function TopMen() {
   const globalData = useContext(GlobalData);
 
   return (
-    <menu className="flex flex-col lg:flex-row items-center lg:justify-between lg:px-36 bg-[#141b24] p-4 text-white">
+    <menu className="flex flex-col lg:flex-row items-center lg:justify-between lg:px-28 bg-[#141b24] p-4 text-white">
       {/* Left Section */}
       <div className="flex flex-wrap gap-6 lg:flex-row items-center ">
         <div className="uppercase text-center lg:text-left font-light">
@@ -23,7 +23,7 @@ export default function TopMen() {
       </div>
 
       {/* Middle Section (Social Media Icons) */}
-      <div className="my-4 lg:my-0  hidden lg:block justify-center">
+      <div className="my-4 lg:my-0  hidden lg:block ml-4 justify-center">
         <SocialMedia />
       </div>
 
