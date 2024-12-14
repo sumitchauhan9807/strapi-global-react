@@ -23,7 +23,7 @@ export default function TopMen() {
       </div>
 
       {/* Middle Section (Social Media Icons) */}
-      <div className="my-4 lg:my-0  hidden lg:block ml-60 justify-center">
+      <div className="my-4 lg:my-0  hidden lg:block ml-64 justify-center">
         <SocialMedia />
       </div>
 
