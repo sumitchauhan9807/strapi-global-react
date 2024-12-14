@@ -13,7 +13,7 @@ import russia from "src/assets/flags/russia.png";
 import serbia from "src/assets/flags/serbia.png";
 
 
-import {getLanguages} from 'src/helpers'
+import {getLanguagesArray,Languages} from 'src/helpers'
 function LanguageSelector() {
 	const [isOpen, setIsOpen] = useState(false);
 	const dispatch = useDispatch();
@@ -21,22 +21,22 @@ function LanguageSelector() {
 	const setLanguage = (lang) => {
 		dispatch(setLang(lang));
 	};
-  let allLangs = getLanguages()
-  // console.log(allLangs,"asdasdasdasdasdas")
-  return null
+  let allLangs = getLanguagesArray(5)
+  let activeLanguage = Languages.find(l => l.code == language.language)
+	return  null
 	return (
     <>
 		<a className="relative inline-block text-left ml-2 h-full">
 			<div>
 				<button onClick={() => setIsOpen((prev) => !prev)} type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white p-2 px-4 text-base font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
-					Language {language.language}
+				<img src={activeLanguage.flag} style={{  height: "25px" }} /> {activeLanguage.name}
 					<svg className="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
 						<path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
 					</svg>
 				</button>
 			</div>
 		</a>
-    {isOpen && <Language/>}
+    {isOpen && <Language allLangs={allLangs} setLanguage={setLanguage}/>}
     </>
 	);
 }
@@ -52,261 +52,30 @@ function LanguageSelector() {
 export default LanguageSelector;
 
 
-function Language() {
+function Language({allLangs,setLanguage}) {
   return (
     <div id="full-width-megamenu" aria-labelledby="full-width-megamenu" className="dropdown-menu animate-fade z-10  absolute lg:top-full left-0 right-0 m-auto bg-white rounded-lg shadow-[0px_15px_30px_0px_rgba(16,24,40,0.1)] lg:px-10 xl:px-8 md:px-5 p-4 max-w-screen-2xl xl:py-8 lg:py-4 md:py-2l  ">
-			<div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 justify-between ">
-				<ul className="text-sm text-gray-700  " aria-labelledby="dropdownLargeButton">
-					
-					<li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-				
-				</ul>
-				<ul className="text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
-					
-        <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-					
-				</ul>
-				<ul className="text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
-				
-        <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-          <li className>
-						<a href="javascript:;" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
-							<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-              <img src={france} style={{ float: "left", height: "20px", marginRight: "7px" }} />
-							</div>
-							<div className="ml-4 w-4/5">
-              <p className="text-xs font-medium text-gray-900"> India</p>
-							</div>
-						</a>
-					</li>
-				</ul>
+			<div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-6 justify-between ">
+				{allLangs.map((langArray,index)=>{
+					return (
+						<ul key={index} className="text-sm text-gray-700  " aria-labelledby="dropdownLargeButton">
+							{langArray.map((language,index)=>{
+								return (
+							<li key={index}>
+								<a onClick={(e)=> {e.preventDefault() ; setLanguage(language.code)}} href="#" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
+									<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
+									<img src={language.flag} style={{ float: "left", height: "20px", marginRight: "7px" }} />
+									</div>
+									<div className="ml-4 w-4/5">
+									<p className="text-xs font-medium text-gray-900"> {language.name}</p>
+									</div>
+								</a>
+							</li>
+								)
+							})}
+						</ul>
+					)
+				})}
 			</div>
 		</div>
   )

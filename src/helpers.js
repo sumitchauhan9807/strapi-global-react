@@ -27,6 +27,11 @@ export const Languages = [
 		flag: USA,
 	},
 	{
+		code: "de",
+		name: "Deutsch",
+		flag: germany,
+	},
+	{
 		code: "ar",
 		name: "العربية",
 		flag: arabic,
@@ -35,11 +40,6 @@ export const Languages = [
 		code: "en",
 		name: "française",
 		flag: france,
-	},
-	{
-		code: "de",
-		name: "Deutsch",
-		flag: germany,
 	},
 	{
 		code: "en",
@@ -66,11 +66,11 @@ export const Languages = [
 		code: "en",
 		name: "Србија",
 		flag: serbia,
-	}
+	},
 ];
 
-export const getLanguages = () => {
-	return explodeArray(Languages,4)
+export const getLanguagesArray = (length = 4) => {
+	return explodeArray(Languages, length);
 };
 
 export const explodeArray = (array, childsLength) => {

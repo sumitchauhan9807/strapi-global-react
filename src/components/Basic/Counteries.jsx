@@ -18,7 +18,7 @@ function Countries() {
 	const [data, setData] = useState([]);
 	const { response, loading, error } = useAxios({
 		method: "get",
-		url: `countries?${qs}locale=${language.language}&sort[0]=name:desc`,
+		url: `countries?${qs}locale=${language.language}&sort[0]=name:asc`,
 	});
 	useEffect(() => {
 		if (response !== null) {
