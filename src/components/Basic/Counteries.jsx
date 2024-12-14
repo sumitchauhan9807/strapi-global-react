@@ -49,7 +49,7 @@ function Countries() {
 												<img src={baseUrl() + country.flag.url} style={{ float: "left", height: "20px", marginRight: "7px" }} />
 											</div>
 											<div className="ml-4 w-4/5">
-												<p className="text-xs font-medium text-gray-900"> {country.name}</p>
+												<p className="text-xs font-medium text-gray-900"> {country.CountryCode} {country.name}</p>
 											</div>
 										</a>
 									</li>
