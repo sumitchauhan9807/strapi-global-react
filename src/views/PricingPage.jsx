@@ -6,8 +6,8 @@ export const PricingPage = () => {
   return (
    <>
    <PricingTabs/>
-   <GlobalWorldMap/>
-   <Countries/>
+   {/* <GlobalWorldMap/>
+   <Countries/> */}
    </>
   );
 };

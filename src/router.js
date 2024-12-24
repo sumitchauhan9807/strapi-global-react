@@ -25,6 +25,8 @@ import AccSales from "src/views/AccelerationofSales";
 import ChatBotbuilder from "src/views/ChatbotBuilder";
 import FreelancerChatbot from "src/views/ChatbotdesignforFreelancers";
 import OurPartners from "src/views/OurPartners";
+import CountriesPage from "src/views/Countries";
+
 import Team from "src/views/Team";
 import Terms from "src/views/Terms";
 import Privacy from "src/views/Privacy";
@@ -37,7 +39,7 @@ import useAxios from "./Hooks/UseAxios";
 import { constructQueryString } from "src/helpers";
 import Impressum from "./views/ImpresSum";
 import Datenschutz from "./views/DatenscHutz";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 // const router = createBrowserRouter([
 //   {
@@ -128,10 +130,10 @@ let qs = constructQueryString(["LightLogo", "DarkLogo"]);
 function Router() {
 	const [data, setData] = useState([]);
 	const language = useSelector((state) => state.language);
-  const { pathname } = useLocation();
-  useEffect(() => {
-		window.scrollTo({top: 0, behavior: 'smooth'});
-  }, [pathname]);
+	const { pathname } = useLocation();
+	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	}, [pathname]);
 	const { response, loading, error } = useAxios({
 		method: "get",
 		url: `global?${qs}locale=${language.language}`,
@@ -169,6 +171,7 @@ function Router() {
 					<Route exact path="/chatbotbuilder" element={<ChatBotbuilder />} />
 					<Route exact path="/freelancerchatbot" element={<FreelancerChatbot />} />
 					<Route exact path="/partners" element={<OurPartners />} />
+					<Route exact path="/countries" element={<CountriesPage />} />
 					<Route exact path="/team" element={<Team />} />
 					<Route exact path="/terms" element={<Terms />} />
 					<Route exact path="/privacy" element={<Privacy />} />

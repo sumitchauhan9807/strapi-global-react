@@ -61,7 +61,11 @@ function Countries() {
 			return;
 		}
 		let fiteredCountries = data.map((country) => {
-			if (country.name.toLowerCase().includes(searchText.toLowerCase())) {
+			let trimmedText = searchText.trim().toLowerCase()
+			let countryName = country.name.toLowerCase()
+			let countryCode = country.CountryCode.trim()
+
+			if (countryName.includes(trimmedText) || countryCode.includes(trimmedText) ) {
 				country.hidden = false;
 			} else {
 				country.hidden = true;
