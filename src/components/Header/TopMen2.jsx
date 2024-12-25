@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { productMenuItems, solutionsMenuItems, pricingMenuItems } from "../menuItems";
+import { productMenuItems, solutionsMenuItems, pricingMenuItems ,useProductMenuItems ,useSolutionsMenuItems } from "../menuItems";
 import LanguageSelect from "src/components/small/LanguageSelector";
 import { Link } from "react-router-dom";
 import Logo from "src/assets/logo.png";
@@ -15,56 +15,11 @@ const splitArray = (arr, indexToSplit) => {
 	return { first, second };
 };
 
-export const ProductMenuList = () => {
-	return (
-		<div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[690px] overflow-hidden z-20 p-8 rounded-2xl">
-			{productMenuItems.map((item, index) => (
-				<Link key={index} to={item.link} className="flex gap-4 text-white">
-					<figure className="flex justify-center items-center p-3 bg-[#141b24] text-white rounded-md">{item.icon}</figure>
-					<div className="flex flex-col text-[#e3e0e0]">
-						<strong className="text-base">{item.title}</strong>
-						<small className="text-sm">{item.description}</small>
-					</div>
-				</Link>
-			))}
-		</div>
-	);
-};
 
-export const PricingMenuList = () => {
-	return (
-		<div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[700px] overflow-hidden z-20 p-8 rounded-2xl">
-			{pricingMenuItems.map((item) => (
-				<div className="flex gap-4 text-white">
-					<figure className="flex justify-center items-center p-3 bg-[#141b24] text-white rounded-md">{item.icon}</figure>
-					<div className="flex flex-col text-[#e3e0e0]">
-						<strong className="text-base">{item.title}</strong>
-						<small className="text-sm">{item.description}</small>
-					</div>
-				</div>
-			))}
-		</div>
-	);
-};
-
-export const SolutionMenuList = () => {
-	return (
-		<div className="flex flex-col gap-8 absolute left-[-10rem] top-[90%] bg-[#24282e] w-[500px] h-[990px] overflow-hidden z-20 p-8 rounded-2xl">
-			{solutionsMenuItems.map((item, index) => (
-				<Link key={index} to={item.link} className="flex gap-4 text-white">
-					<figure className="flex justify-center items-center p-3 bg-[#141b24] text-white rounded-md">{item.icon}</figure>
-					<div className="flex flex-col text-[#e3e0e0]">
-						<strong className="text-base">{item.title}</strong>
-						<small className="text-sm">{item.description}</small>
-					</div>
-				</Link>
-			))}
-		</div>
-	);
-};
 
 export const ProductMenuList2 = () => {
-	let solutionItems = splitArray(productMenuItems, 3);
+	let meunItems = useProductMenuItems()
+	let solutionItems = splitArray(meunItems, 3);
 	return (
 		<div id="mega-menu-full-dropdown" className=" absolute left-[-10rem] top-[90%] bg-[#24282e] w-[700px] overflow-hidden z-20 p-8 rounded-2xl ">
 			<div className="grid max-w-screen-2xl px-2 py-2 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-2">
@@ -108,7 +63,8 @@ export const ProductMenuList2 = () => {
 };
 
 export const SolutionMenuList2 = () => {
-	let solutionItems = splitArray(solutionsMenuItems, 5);
+	let meunItems = useSolutionsMenuItems()
+	let solutionItems = splitArray(meunItems, 5);
 	return (
 		<div id="mega-menu-full-dropdown" className=" absolute left-[-10rem] top-[90%] bg-[#24282e] w-[700px] overflow-hidden z-20 p-8 rounded-2xl ">
 			<div className="grid max-w-screen-2xl px-2 py-2 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-2">
