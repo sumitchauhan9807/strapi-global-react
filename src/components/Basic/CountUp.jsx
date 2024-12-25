@@ -19,7 +19,7 @@ function CountUpSection({ data }) {
 							<div className="flex flex-col justify-center items-center gap-2 border border-dashed border-gray-500 p-4 rounded-md h-32">
 								<div className="flex gap-2 items-center">
 									<Counter value={item.value} duration={item.duration} />
-									<img style={{ height: "30px" }} src={baseUrl() + item.icon.url} />
+									<img style={{ height: "30px" }} src={baseUrl() + item.icon?.url} />
 								</div>
 								<span className="font-semibold opacity-70 text-sm text-center">{item.text}</span>
 							</div>

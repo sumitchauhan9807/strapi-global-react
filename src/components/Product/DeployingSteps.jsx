@@ -59,7 +59,7 @@ function DeployingSteps({ data }) {
 							animateIn: "bounceInRight",
 						}}
 					>
-						<img className=" w-full rounded shadow-lg  " src={baseUrl() + data.Image.url} alt="" />
+						<img className=" w-full rounded shadow-lg  " src={baseUrl() + data.Image?.url} alt="" />
 					</Animate>
 				</div>
 			</div>

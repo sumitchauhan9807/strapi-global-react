@@ -28,7 +28,9 @@ export const Footer = () => {
 	// console.log(globalData, "globalData");
 	const { response, loading, error } = useAxios({
 		method: "get",
-		url: `footer?${qs}locale=${language.language}`,
+		// url: `footer?${qs}locale=${language.language}`,
+		url: `footer?${qs}locale=en`,
+
 	});
 	useEffect(() => {
 		if (response !== null) {
