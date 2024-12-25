@@ -31,42 +31,42 @@ export const Languages = [
 		name: "Deutsch",
 		flag: germany,
 	},
-	{
-		code: "ar",
-		name: "العربية",
-		flag: arabic,
-	},
-	{
-		code: "en",
-		name: "française",
-		flag: france,
-	},
-	{
-		code: "en",
-		name: "Magyarország",
-		flag: hungary,
-	},
-	{
-		code: "en",
-		name: "Italia",
-		flag: italy,
-	},
+	// {
+	// 	code: "ar",
+	// 	name: "العربية",
+	// 	flag: arabic,
+	// },
+	// {
+	// 	code: "en",
+	// 	name: "française",
+	// 	flag: france,
+	// },
+	// {
+	// 	code: "en",
+	// 	name: "Magyarország",
+	// 	flag: hungary,
+	// },
+	// {
+	// 	code: "en",
+	// 	name: "Italia",
+	// 	flag: italy,
+	// },
 
-	{
-		code: "en",
-		name: "română",
-		flag: romania,
-	},
-	{
-		code: "en",
-		name: "Русский",
-		flag: russia,
-	},
-	{
-		code: "en",
-		name: "Србија",
-		flag: serbia,
-	},
+	// {
+	// 	code: "en",
+	// 	name: "română",
+	// 	flag: romania,
+	// },
+	// {
+	// 	code: "en",
+	// 	name: "Русский",
+	// 	flag: russia,
+	// },
+	// {
+	// 	code: "en",
+	// 	name: "Србија",
+	// 	flag: serbia,
+	// },
 ];
 
 export const getLanguagesArray = (length = 4) => {

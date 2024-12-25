@@ -23,7 +23,7 @@ function LanguageSelector() {
 	};
   let allLangs = getLanguagesArray(5)
   let activeLanguage = Languages.find(l => l.code == language.language)
-	return  null
+	// return  null
 	return (
     <>
 		<a className="relative inline-block text-left ml-2 h-full">
