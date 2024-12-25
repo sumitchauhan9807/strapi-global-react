@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { productMenuItems, solutionsMenuItems, pricingMenuItems } from "../menuItems";
-import LanguageSelect from "src/components/small/LanguageSelector";
+import LanguageSelect from "src/components/small/NewLanguageselector";
 import { Link } from "react-router-dom";
 import Logo from "src/assets/logo.png";
 import { useLocation } from "react-router-dom";
