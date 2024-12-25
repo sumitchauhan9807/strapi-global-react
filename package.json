@@ -15,6 +15,7 @@
     "fbjs": "^3.0.5",
     "force": "^0.0.3",
     "i18next": "^24.2.0",
+    "i18next-browser-languagedetector": "^8.0.2",
     "react": "^18.3.1",
     "react-animate-on-scroll": "^2.1.9",
     "react-countup": "^6.5.3",

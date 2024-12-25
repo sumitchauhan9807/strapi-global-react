@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { PageSkeleton } from "src/components/small/Skeletons";
 
 import { useWindowDimensions } from "src/Hooks/HelperHooks";
+import { useTranslation } from 'react-i18next';
 
 import useAxios from "src/Hooks/UseAxios";
 import { constructQueryString } from "src/helpers";
@@ -24,7 +25,7 @@ export const Footer = () => {
 	const language = useSelector((state) => state.language);
 	const globalData = useContext(GlobalData);
 	const { height, width } = useWindowDimensions();
-
+	const { t } = useTranslation();
 	// console.log(globalData, "globalData");
 	const { response, loading, error } = useAxios({
 		method: "get",
@@ -68,7 +69,7 @@ export const Footer = () => {
 				<div className="grid row-gap-10 mb-8 lg:grid-cols-3">
 					<div className="grid lg:grid-cols-5 grid-cols-1  lg:gap-20  row-gap-8 lg:col-span-3 md:grid-cols-4">
 						<div>
-							<p className="font-medium tracking-wide text-gray-300">Working Hours</p>
+							<p className="font-medium tracking-wide text-gray-300">{t('Working Hours')}</p>
 							<ul className="mt-2 space-y-2">
 								{data.data.WorkingHours.map((item) => {
 									return (
@@ -90,7 +91,7 @@ export const Footer = () => {
 						</div>
 						{width < 1064 && <br />}
 						<div>
-							<p className="font-medium tracking-wide text-gray-300">Contact Us</p>
+							<p className="font-medium tracking-wide text-gray-300">{t('Contact Us')}</p>
 							<ul className="mt-2 space-y-2">
 								{data.data.MobileNumbers.Number.map((item) => {
 									let spacing = item.LeftSpacing.split("s")[1];
@@ -113,7 +114,7 @@ export const Footer = () => {
 						{width < 1064 && <br />}
 
 						<div>
-							<p className="font-medium tracking-wide text-gray-300">Headquarters</p>
+							<p className="font-medium tracking-wide text-gray-300">{t('Headquarters')}</p>
 							<ul className="mt-2 space-y-2">
 								<li>
 									<a className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200" dangerouslySetInnerHTML={{ __html: location1 }}></a>
@@ -151,11 +152,11 @@ export const Footer = () => {
 					<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 border-t border-gray-800 sm:flex-row">
 						<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 yborder-gray-800 sm:flex-row">
 							<p className="text-sm text-gray-500">
-							<Link className="" to="/terms">Terms</Link> |
-								<Link className="ml-2 " to="/privacy">Privacy Policy</Link> |
+							<Link className="" to="/terms">{t('Terms')}</Link> |
+								<Link className="ml-2 " to="/privacy">{t('Privacy Policy')}</Link> |
 								{/* <Link className="ml-2" to="/imprint">Imprint</Link> | */}
-								<Link className="ml-2" to="/impressum">Legal Notice</Link> |
-								<Link className="ml-2" to="/datenschutz">Data Protection</Link>
+								<Link className="ml-2" to="/impressum">{t('Legal Notice')}</Link> |
+								<Link className="ml-2" to="/datenschutz">{t('Data Protection')}</Link>
 							</p>
 						</div>
 						<div><p className="text-sm text-gray-500">

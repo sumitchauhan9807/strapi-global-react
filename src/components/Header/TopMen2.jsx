@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { productMenuItems, solutionsMenuItems, pricingMenuItems } from "../menuItems";
-import LanguageSelect from "src/components/small/NewLanguageselector";
+import LanguageSelect from "src/components/small/LanguageSelector";
 import { Link } from "react-router-dom";
 import Logo from "src/assets/logo.png";
 import { useLocation } from "react-router-dom";
@@ -8,7 +8,7 @@ import { TbSettingsAutomation } from "react-icons/tb";
 import { GlobalData } from "src/context";
 import { useContext } from "react";
 import { baseUrl } from "src/helpers";
-
+import { useTranslation } from 'react-i18next';
 const splitArray = (arr, indexToSplit) => {
 	let first = arr.slice(0, indexToSplit);
 	let second = arr.slice(indexToSplit + 1);
@@ -153,7 +153,7 @@ export const SolutionMenuList2 = () => {
 
 export default function TopMen2() {
 	const globalData = useContext(GlobalData);
-
+  const { t } = useTranslation();
 	const ref = useRef(null);
 	const [activeMenu, setActiveMenu] = useState("");
 	let location = useLocation();
@@ -176,7 +176,7 @@ export default function TopMen2() {
 						setActiveMenu("products");
 					}}
 				>
-					<span className={`uppercase font-semibold rounded-t-md p-4 px-6 ${activeMenu === "products" ? "bg-[#24282e] text-white" : "text-[#3b516d]"}`}>Products</span>
+					<span className={`uppercase font-semibold rounded-t-md p-4 px-6 ${activeMenu === "products" ? "bg-[#24282e] text-white" : "text-[#3b516d]"}`}> {t('Products')} </span>
 					{activeMenu === "products" && <ProductMenuList2 />}
 				</div>
 				<div
@@ -189,26 +189,26 @@ export default function TopMen2() {
 						setActiveMenu("features");
 					}}
 				>
-					<span className={`uppercase font-semibold rounded-t-md p-4 px-6 ${activeMenu === "features" ? "bg-[#24282e] text-white" : "text-[#3b516d]"}`}>Solutions</span>
+					<span className={`uppercase font-semibold rounded-t-md p-4 px-6 ${activeMenu === "features" ? "bg-[#24282e] text-white" : "text-[#3b516d]"}`}>{t('Solutions')}</span>
 					{activeMenu === "features" && <SolutionMenuList2 />}
 				</div>
 				<Link style={{ fontSize: "15px" }} to="/pricing" className="relative p-4 cursor-pointer">
-					<span className="uppercase font-semibold px-6">Pricing</span>
+					<span className="uppercase font-semibold px-6">{t('Pricing')}</span>
 				</Link>
 				<Link style={{ fontSize: "15px" }} to="/partners" className="relative p-4 cursor-pointer">
-					<span className="uppercase font-semibold px-6">Partners</span>
+					<span className="uppercase font-semibold px-6">{t('Partners')}</span>
 				</Link>
 				<Link style={{ fontSize: "15px" }} to="/countries" className="relative p-4 cursor-pointer">
-					<span className="uppercase font-semibold px-6">Countries</span>
+					<span className="uppercase font-semibold px-6">{t('Countries')}</span>
 				</Link>
 				{/* <div style={{ fontSize: "15px" }} className="relative p-4 cursor-pointer">
 					<span className="uppercase font-semibold px-6">About</span>
 				</div> */}
 				<Link style={{ fontSize: "15px" }} to="/team" className="relative p-4 cursor-pointer">
-					<span className="uppercase font-semibold px-6">Team</span>
+					<span className="uppercase font-semibold px-6">{t('Team')}</span>
 				</Link>
 				<Link style={{ fontSize: "15px" }} to="/contactus" className="relative p-4 cursor-pointer">
-					<span className="uppercase font-semibold px-6">Contact Us</span>
+					<span className="uppercase font-semibold px-6">{t('Contact Us')}</span>
 				</Link>
 				<LanguageSelect />
 			</div>
