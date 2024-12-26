@@ -7,7 +7,7 @@ import { baseUrl } from "src/helpers";
 import Animate from "src/components/Basic/Animate";
 
 let qs = constructQueryString(["logo"]);
-function Partners() {
+function Partners({Heading}) {
 	const [data, setData] = useState([]);
 	const language = useSelector((state) => state.language);
 	const { response, loading, error } = useAxios({
@@ -26,7 +26,7 @@ function Partners() {
 			<div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
 			<div className="mx-auto mb-10 lg:max-w-xl sm:text-center">
           <p className="inline-block px-3 py-px mb-4  font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-            Our Partners
+            {Heading}
           </p>
         </div>
 				<div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">

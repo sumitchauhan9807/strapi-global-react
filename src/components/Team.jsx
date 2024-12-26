@@ -15,7 +15,7 @@ import Signal from "src/assets/icons/Signal.png";
 
 let qs = constructQueryString(["image"]);
 
-function Team() {
+function Team({pageData}) {
 	const [data, setData] = useState([]);
 	const language = useSelector((state) => state.language);
 	const { response, loading, error } = useAxios({
@@ -34,8 +34,8 @@ function Team() {
 		<div className="w-full bg-gray-800">
 		<section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
 			<div className="text-center pb-12">
-			<p style={{color:"white"}} className="inline-block px-3 py-px mb-4  font-semibold tracking-wider  uppercase rounded-full ">Discover Our Team</p>
-			<p style={{color:"white"}} className="text-base text-gray-700 md:text-lg ">Global World teams work hard for your goals</p>
+			<p style={{color:"white"}} className="inline-block px-3 py-px mb-4  font-semibold tracking-wider  uppercase rounded-full ">{pageData.Heading}</p>
+			<p style={{color:"white"}} className="text-base text-gray-700 md:text-lg ">{pageData.SubHeading}</p>
 			</div>
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 				{data.data.map((item, index) => {

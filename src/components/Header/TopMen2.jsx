@@ -9,16 +9,13 @@ import { LuMousePointerClick } from "react-icons/lu";
 import { GrShieldSecurity } from "react-icons/gr";
 import { GrIntegration } from "react-icons/gr";
 import { TbSettingsAutomation } from "react-icons/tb";
-import Logo from "src/assets/logo.png";
 import { useLocation } from "react-router-dom";
 import { GlobalData } from "src/context";
 import { useContext } from "react";
 import { baseUrl } from "src/helpers";
-import { useTranslation } from "react-i18next";
-import { PageSkeleton } from "src/components/small/Skeletons";
-import useAxios from "src/Hooks/UseAxios";
-import { useSelector } from "react-redux";
+
 import { constructQueryString } from "src/helpers";
+
 const splitArray = (arr, indexToSplit) => {
 	let first = arr.slice(0, indexToSplit);
 	let second = arr.slice(indexToSplit + 1);
@@ -102,34 +99,22 @@ const DropdownMenu = ({ menuData, setActiveMenu, activeMenu }) => {
 
 export default function TopMen2() {
 	const globalData = useContext(GlobalData);
-	const { t } = useTranslation();
-	const ref = useRef(null);
+	const navigation = globalData.translations.Navigation;
+
 	const [activeMenu, setActiveMenu] = useState("");
-	const [data, setData] = useState([]);
-	const language = useSelector((state) => state.language);
-	const { response, loading, error } = useAxios({
-		method: "get",
-		url: `translation?${qs}locale=${language.language}`,
-	});
-	useEffect(() => {
-		if (response !== null) {
-			setData(response);
-		}
-	}, [response]);
+
 	let location = useLocation();
 	useEffect(() => {
 		setActiveMenu("");
 	}, [location]);
-	if (loading) return <PageSkeleton />;
-	if (!data.data) return;
 
 	return (
 		<menu className="flex items-center justify-between p-2 px-8 h-24">
 			<Link to="/">
-				<img src={baseUrl() + globalData.LightLogo.url} style={{ height: "98px" }} />
+				<img src={baseUrl() + globalData.global.LightLogo.url} style={{ height: "98px" }} />
 			</Link>
 			<div className="flex text-[#3b516d] relative items-center right-16">
-				{data.data.Navigation?.MenuItem.map((menu) => {
+				{navigation.MenuItem.map((menu) => {
 					if (menu.Type == "dropdown") {
 						return <DropdownMenu menuData={menu} setActiveMenu={setActiveMenu} activeMenu={activeMenu} />;
 					}

@@ -41,94 +41,14 @@ import Impressum from "./views/ImpresSum";
 import Datenschutz from "./views/DatenscHutz";
 import { useLocation } from "react-router-dom";
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Home />,
-//   },
-//   {
-//     path: 'solutions/phone-numbers',
-//     element: <Solutions />,
-//   },
-//   {
-//     path: 'solutions/robot-controller',
-//     element: <RobotController />,
-//   },
-//   {
-//     path: 'solutions/home-office',
-//     element: <HomeOffice />,
-//   },
-//   {
-//     path: 'solutions/voice-robots',
-//     element: <VoiceRobots />,
-//   },
-//   {
-//     path: 'contactus',
-//     element: <ContactUs />
-//   },
-//   {
-//     path: '/pricing',
-//     element: <PricingPage />,
-//   },
-//   {
-//     path: '/automatedcalls',
-//     element: <AutomatedCallsPage />,
-//   },
-//   {
-//     path: '/aicontactcenter',
-//     element: <AiContactcenter />,
 
-//   },
-//   {
-//     path: '/phonenumber',
-//     element: <PhoneNumber />,
-
-//   },
-//   {
-//     path: '/siptrunk',
-//     element: <SipTrunk />,
-//   },
-//   {
-//     path: '/texttospeach',
-//     element: <TextTospeach />,
-//   },
-//   {
-//     path: '/voicerobot',
-//     element: <VoiceRobot />,
-//   },
-//   {
-//     path: '/pbx',
-//     element: <PBx />,
-//   },
-//   {
-//     path: '/calltranscription',
-//     element: <CallTranscription />,
-//   },
-//   {
-//     path: '/callrecording',
-//     element: <CallRecording />,
-//   },
-//   {
-//     path: '/chatbotnews',
-//     element: <ChatbotNews />,
-//   },
-//   {
-//     path: '/accsales',
-//     element: <AccSales />,
-//   },
-//   {
-//     path: '/chatbotbuilder',
-//     element: <ChatBotbuilder />,
-//   },
-//   {
-//     path:'/freelancerchatbot',
-//     element:<FreelancerChatbot/>,
-//   }
-
-// ]);
 let qs = constructQueryString(["LightLogo", "DarkLogo"]);
+let qs2 = constructQueryString(["Navigation.MenuItem.SubMenu","TopMenu"]);
+
 function Router() {
 	const [data, setData] = useState([]);
+	const [translations, setTranslations] = useState([]);
+
 	const language = useSelector((state) => state.language);
 	const { pathname } = useLocation();
 	useEffect(() => {
@@ -138,16 +58,31 @@ function Router() {
 		method: "get",
 		url: `global?${qs}locale=${language.language}`,
 	});
+	const translationQuery = useAxios({
+		method: "get",
+		url: `translation?${qs2}locale=${language.language}`,
+	});
 	useEffect(() => {
 		if (response !== null) {
 			setData(response);
 		}
 	}, [response]);
+	useEffect(() => {
+		if (translationQuery.response !== null) {
+			setTranslations(translationQuery.response);
+		}
+	}, [translationQuery.response]);
 	if (loading) return <PageSkeleton />;
+	if (translationQuery.loading) return <PageSkeleton />;
+
 	if (!data.data) return;
+	if (!translations.data) return;
 	return (
 		<>
-			<GlobalData.Provider value={data.data}>
+			<GlobalData.Provider value={{
+				global:data.data,
+				translations:translations.data
+			}}>
 				<Menu />
 				<Routes>
 					<Route exact path="/" element={<Home />} />

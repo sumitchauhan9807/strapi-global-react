@@ -28,7 +28,7 @@ function OurTeam() {
     <section className="flex relative items-center w-full h-[400px] overflow-hidden border">
 				<img className="absolute w-full" src={baseUrl()+data.data.TopImage.url} alt="" />
 			</section>
-			<Team/>
+			<Team pageData={data.data}/>
 		</>
 	);
 }
