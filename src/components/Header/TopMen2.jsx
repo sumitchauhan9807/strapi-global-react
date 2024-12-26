@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { useProductMenuItems, useSolutionsMenuItems } from "../menuItems";
+// import { useProductMenuItems, useSolutionsMenuItems } from "../menuItems";
 import LanguageSelect from "src/components/small/LanguageSelector";
-import { useProductMenuItems ,useSolutionsMenuItems } from "../menuItems";
-import LanguageSelect from "src/components/small/NewLanguageselector";
+// import { useProductMenuItems ,useSolutionsMenuItems } from "../menuItems";
+// import LanguageSelect from "src/components/small/NewLanguageselector";
 import { Link } from "react-router-dom";
 import { GrAnalytics } from "react-icons/gr";
 import { LuMousePointerClick } from "react-icons/lu";
