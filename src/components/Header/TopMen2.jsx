@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+<<<<<<< HEAD
 import { useProductMenuItems, useSolutionsMenuItems } from "../menuItems";
 import LanguageSelect from "src/components/small/LanguageSelector";
+=======
+import { useProductMenuItems ,useSolutionsMenuItems } from "../menuItems";
+import LanguageSelect from "src/components/small/NewLanguageselector";
+>>>>>>> c074ef5fa36a71c912fec68373125549c9ac2422
 import { Link } from "react-router-dom";
 import { GrAnalytics } from "react-icons/gr";
 import { LuMousePointerClick } from "react-icons/lu";
