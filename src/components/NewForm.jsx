@@ -4,9 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import axios from "src/axios";
-import { useRef, useState } from "react";
+import { useRef, useState ,useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { GlobalData } from "src/context";
 const schema = z.object({
 	firstName: z.string().min(5, { message: "FirstName must have at least 4 characters" }),
 	lastName: z.string().min(8, { message: "Lastname must have at least 4 characters" }),
@@ -21,6 +21,7 @@ const schema = z.object({
 const ContactForm1 = ({ data }) => {
 	const [recapval, setRecapval] = useState("");
 	const [formSubmitted, isFormSubmitted] = useState(false);
+	const globalData = useContext(GlobalData);
 	const privacyPolicyRef = useRef(false);
 	const {
 		register,
@@ -149,9 +150,9 @@ const ContactForm1 = ({ data }) => {
 						<label dangerouslySetInnerHTML={{ __html: data.PrivacyPolicy.replaceAll("\n", "<br/>") }}  htmlFor="privacy-policy"></label>
 					</div>
 				</div>
-				<ReCAPTCHA sitekey="6LcznZkqAAAAAJDAqNGkqN1Cb3cfuFHMmkzp3v06" onChange={onChange} />,
+				<ReCAPTCHA sitekey="6LcznZkqAAAAAJDAqNGkqN1Cb3cfuFHMmkzp3v06" onChange={onChange} />
 				<button type="submit" className="bg-orange-500 text-white font-bold py-3 px-6 rounded hover:bg-orange-600">
-					Submit
+					{globalData.translations.Submit}
 				</button>
 				{errors.root && (
 					<center>

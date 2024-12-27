@@ -69,7 +69,7 @@ export const Footer = () => {
 				<div className="grid row-gap-10 mb-8 lg:grid-cols-3">
 					<div className="grid lg:grid-cols-5 grid-cols-1  lg:gap-20  row-gap-8 lg:col-span-3 md:grid-cols-4">
 						<div>
-							<p className="font-medium tracking-wide text-gray-300">{t('Working Hours')}</p>
+							<p className="font-medium tracking-wide text-gray-300">{globalData.translations.WorkingHours}</p>
 							<ul className="mt-2 space-y-2">
 								{data.data.WorkingHours.map((item) => {
 									return (
@@ -91,7 +91,7 @@ export const Footer = () => {
 						</div>
 						{width < 1064 && <br />}
 						<div>
-							<p className="font-medium tracking-wide text-gray-300">{t('Contact Us')}</p>
+							<p className="font-medium tracking-wide text-gray-300">{globalData.translations.ContactUs}</p>
 							<ul className="mt-2 space-y-2">
 								{data.data.MobileNumbers.Number.map((item) => {
 									let spacing = item.LeftSpacing.split("s")[1];
@@ -114,7 +114,7 @@ export const Footer = () => {
 						{width < 1064 && <br />}
 
 						<div>
-							<p className="font-medium tracking-wide text-gray-300">{t('Headquarters')}</p>
+							<p className="font-medium tracking-wide text-gray-300">{globalData.translations.Headquaters}</p>
 							<ul className="mt-2 space-y-2">
 								<li>
 									<a className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200" dangerouslySetInnerHTML={{ __html: location1 }}></a>

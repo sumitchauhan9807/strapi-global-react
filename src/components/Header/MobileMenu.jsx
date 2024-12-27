@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "src/assets/logo.png";
-import { useProductMenuItems, useSolutionsMenuItems } from "../menuItems";
 import { useLocation } from "react-router-dom";
 import { GlobalData } from "src/context";
 import { useContext } from "react";

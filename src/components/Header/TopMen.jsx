@@ -7,7 +7,6 @@ import { SocialMedia } from "src/components/Header/SocialMedia.jsx";
 
 export default function TopMen() {
 	const globalData = useContext(GlobalData);
-	console.log(globalData.translations.TopMenu, "globalDataglobalDataglobalData");
 	return (
 		<menu className="flex flex-col lg:flex-row items-center lg:justify-between lg:px-28 bg-[#141b24] p-4 text-white">
 			{/* Left Section */}
