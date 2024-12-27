@@ -25,12 +25,12 @@ export const Footer = () => {
 	const language = useSelector((state) => state.language);
 	const globalData = useContext(GlobalData);
 	const { height, width } = useWindowDimensions();
-	const { t } = useTranslation();
+	// const { t } = useTranslation();
 	// console.log(globalData, "globalData");
 	const { response, loading, error } = useAxios({
 		method: "get",
 		// url: `footer?${qs}locale=${language.language}`,
-		url: `footer?${qs}locale=en`,
+		url: `footer?${qs}locale=${language.language}`,
 
 	});
 	useEffect(() => {
@@ -41,18 +41,24 @@ export const Footer = () => {
 	if (loading) return <PageSkeleton />;
 	if (!data.data) return;
 
-	let location1 = data.data.Location1.replaceAll("\n", "<br/>");
-	let location2 = data.data.Location2.replaceAll("\n", "<br/>");
-	let location3 = data.data.Location3.replaceAll("\n", "<br/>");
-	let location4 = data.data.Location4.replaceAll("\n", "<br/>");
-	let location5 = data.data.Location5.replaceAll("\n", "<br/>");
+	let location1 = data.data.Location1?.replaceAll("\n", "<br/>");
+	let location2 = data.data.Location2?.replaceAll("\n", "<br/>");
+	let location3 = data.data.Location3?.replaceAll("\n", "<br/>");
+	let location4 = data.data.Location4?.replaceAll("\n", "<br/>");
+	let location5 = data.data.Location5?.replaceAll("\n", "<br/>");
+	let location6 = data.data.Location6?.replaceAll("\n", "<br/>");
+	let location7 = data.data.Location7?.replaceAll("\n", "<br/>");
+
 
 	if (width < 1064) {
-		location1 = location1.replaceAll("<br/><br/>", "<br/>")
-		location2 = location2.replaceAll("<br/><br/>", "<br/>")
-		location3 = location3.replaceAll("<br/><br/>", "<br/>")
-		location4 = location4.replaceAll("<br/><br/>", "<br/>")
-		location5 = location5.replaceAll("<br/><br/>", "<br/>")
+		location1 = location1?.replaceAll("<br/><br/>", "<br/>")
+		location2 = location2?.replaceAll("<br/><br/>", "<br/>")
+		location3 = location3?.replaceAll("<br/><br/>", "<br/>")
+		location4 = location4?.replaceAll("<br/><br/>", "<br/>")
+		location5 = location5?.replaceAll("<br/><br/>", "<br/>")
+		location6 = location6?.replaceAll("<br/><br/>", "<br/>")
+		location7 = location7?.replaceAll("<br/><br/>", "<br/>")
+
 	}
 	// console.log(location3)
 	// let location1 = data.data.Location1
@@ -90,10 +96,10 @@ export const Footer = () => {
 							</ul>
 						</div>
 						{width < 1064 && <br />}
-						<div>
+						{/* <div>
 							<p className="font-medium tracking-wide text-gray-300">{globalData.translations.ContactUs}</p>
 							<ul className="mt-2 space-y-2">
-								{data.data.MobileNumbers.Number.map((item) => {
+								{data.data.MobileNumbers?.Number.map((item) => {
 									let spacing = item.LeftSpacing.split("s")[1];
 									return (
 										<li>
@@ -110,7 +116,7 @@ export const Footer = () => {
 									);
 								})}
 							</ul>
-						</div>
+						</div> */}
 						{width < 1064 && <br />}
 
 						<div>
@@ -141,6 +147,17 @@ export const Footer = () => {
 								<li>
 									<a className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200" dangerouslySetInnerHTML={{ __html: location5 }}></a>
 								</li>
+								<li>
+									<a className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200" dangerouslySetInnerHTML={{ __html: location6 }}></a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							{/* <p className="font-medium tracking-wide text-gray-300">Location</p> */}
+							<ul className="mt-2 space-y-2">
+								<li>
+									<a className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200" dangerouslySetInnerHTML={{ __html: location7 }}></a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -152,15 +169,15 @@ export const Footer = () => {
 					<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 border-t border-gray-800 sm:flex-row">
 						<div className="flex flex-col lg:justify-between justify-center items-center pt-5 pb-10 yborder-gray-800 sm:flex-row">
 							<p className="text-sm text-gray-500">
-							<Link className="" to="/terms">{t('Terms')}</Link> |
-								<Link className="ml-2 " to="/privacy">{t('Privacy Policy')}</Link> |
+							<Link className="" to="/terms">{globalData.translations.Terms}</Link> |
+								<Link className="ml-2 " to="/privacy">{globalData.translations.PrivacyPolicy}</Link> |
 								{/* <Link className="ml-2" to="/imprint">Imprint</Link> | */}
-								<Link className="ml-2" to="/impressum">{t('Legal Notice')}</Link> |
-								<Link className="ml-2" to="/datenschutz">{t('Data Protection')}</Link>
+								<Link className="ml-2" to="/impressum">{globalData.translations.LegalNotice}</Link> |
+								<Link className="ml-2" to="/datenschutz">{globalData.translations.DataProtection}</Link>
 							</p>
 						</div>
 						<div><p className="text-sm text-gray-500">
-							© Copyright 2024 GLOBAL WORLD IK LLC. All rights reserved. 
+						{globalData.translations.CopyRight}
 						</p></div> 
 						<SocialMedia />
 					</div>

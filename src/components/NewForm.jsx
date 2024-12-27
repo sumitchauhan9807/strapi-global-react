@@ -7,22 +7,26 @@ import axios from "src/axios";
 import { useRef, useState ,useContext } from "react";
 import { Link } from "react-router-dom";
 import { GlobalData } from "src/context";
-const schema = z.object({
-	firstName: z.string().min(5, { message: "FirstName must have at least 4 characters" }),
-	lastName: z.string().min(8, { message: "Lastname must have at least 4 characters" }),
-	company: z.string().min(8, { message: "Company name must have at least 8 characters" }),
-	phonenumber: z.string().min(7, { message: "phonenumber must have at least 8 characters" }),
-	phoneFix: z.string().min(7, { message: "Must have at least 8 characters" }),
-	email: z.string().email(),
-	purpose: z.string(),
-	message: z.string().min(8, { message: "Message must have at least 8 characters" }),
-});
+import { useTranslation } from 'react-i18next';
+
+
 
 const ContactForm1 = ({ data }) => {
 	const [recapval, setRecapval] = useState("");
 	const [formSubmitted, isFormSubmitted] = useState(false);
 	const globalData = useContext(GlobalData);
 	const privacyPolicyRef = useRef(false);
+	const { t } = useTranslation();
+	const schema = z.object({
+		firstName: z.string().min(2, { message: t('FirstName must have at least 2 characters') }),
+		lastName: z.string().min(3, { message: t('Lastname must have at least 3 characters') }),
+		company: z.string().min(3, { message: t("Company name must have at least 3 characters") }),
+		phonenumber: z.string().min(7, { message: t("phonenumber must have at least 7 characters") }),
+		phoneFix: z.string().min(7, { message: t('Mobile Nr Must have at least 7 characters') }),
+		email: z.string().email({message:t('Invalid Email')}),
+		purpose: z.string(),
+		message: z.string().min(15, { message: t('Message must have at least 15 characters') }),
+	});
 	const {
 		register,
 		handleSubmit,
