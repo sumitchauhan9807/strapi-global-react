@@ -136,7 +136,7 @@ const NotFoundBox = ({globalData,searchText,clearFilter}) => {
 			<div className=" mx-auto">
 				<div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
 					<div className="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
-						<img src={baseUrl() + globalData.LightLogo.url} alt="ui/ux review check" />
+						<img src={baseUrl() + globalData.global.LightLogo.url} alt="ui/ux review check" />
 						<div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
 						<button className="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
 							<span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">

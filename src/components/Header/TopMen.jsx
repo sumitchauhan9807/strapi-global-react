@@ -65,7 +65,7 @@ export default function TopMen() {
 				</svg>
 				<span>{globalData.global.Phonenumber} &nbsp;</span>
 				<a target="_blank" rel="noopener noreferrer" href={`mailto:${globalData.global.Email}`} className="underline hover:text-gray-300 hidden lg:block transition">
-					{globalData.Email}
+					{globalData.global.Email}
 				</a>{" "}
 				<br />
 			</div>

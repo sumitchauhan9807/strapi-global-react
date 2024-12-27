@@ -14,14 +14,14 @@ import { GlobalData } from "src/context";
 import { useContext } from "react";
 import { baseUrl } from "src/helpers";
 
-import { constructQueryString } from "src/helpers";
+
 
 const splitArray = (arr, indexToSplit) => {
 	let first = arr.slice(0, indexToSplit);
 	let second = arr.slice(indexToSplit + 1);
 	return { first, second };
 };
-let qs = constructQueryString(["Navigation.MenuItem.SubMenu"]);
+
 
 const GetRandomIcon = ({ index }) => {
 	if (index > 5) {
