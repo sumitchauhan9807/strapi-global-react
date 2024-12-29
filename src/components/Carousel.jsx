@@ -93,7 +93,7 @@ const Count = ({ country }) => {
 	return (
 		<a href="#" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
 			<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
-				<img src={baseUrl() + country.flag.url} style={{ float: "left", height: "40px", borderRadius: "100%", width: "40px" }} />
+				<img src={baseUrl() + country.flag.url} style={{ float: "left", height: "40px",  }} />
 			</div>
 			<div className="ml-4 w-4/5">
 				<p className="text-xs font-medium text-gray-900">
@@ -111,7 +111,7 @@ const CarouselItem = ({ countries, carouselDimensions }) => {
 			<div className="flex">
 				{countriesArr.map((countArr, index) => {
 					return (
-						<div key={index} className={`w-1/${carouselDimensions.Columns} px-2`} key={index}>
+						<div key={index} className={`w-1/${carouselDimensions.Columns} px-12`} key={index}>
 							{countArr.map((count, index) => {
 								return <Count country={count} />;
 							})}
