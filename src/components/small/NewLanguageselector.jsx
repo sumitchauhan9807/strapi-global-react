@@ -84,7 +84,7 @@ function Language({allLangs,setLanguage}) {
 function NavBar2() {
 	return (
 		<div id="full-width-megamenu" aria-labelledby="full-width-megamenu" className="dropdown-menu animate-fade z-10  lg:absolute top-full left-0 right-0 m-auto bg-white rounded-lg shadow-[0px_15px_30px_0px_rgba(16,24,40,0.1)] lg:px-10 xl:px-8 md:px-5 p-4 max-w-screen-2xl xl:py-8 lg:py-4 md:py-2l  ">
-			<div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 justify-between ">
+			<div className="grid grid-cols-1 lg:grid-cols-2  justify-between ">
 				<ul className="text-sm text-gray-700  " aria-labelledby="dropdownLargeButton">
 					<h6 className="font-medium text-sm text-gray-500 mb-2"> Features</h6>
 					<li className>
