@@ -8,6 +8,7 @@ import Animate from "src/components/Basic/Animate";
 import { baseUrl } from "src/helpers";
 import GlobalWorldMap from "src/components/Basic/GlobalWorldMap";
 import Countries from 'src/components/Basic/Counteries'
+import Carousel from 'src/components/Carousel'
 let qs = constructQueryString(["TopImage"]);
 
 

@@ -9,6 +9,7 @@ import { baseUrl } from "src/helpers";
 import france from "src/assets/flags/france.png";
 import { explodeArray } from "src/helpers";
 import { GlobalData } from "src/context";
+import Carousel from 'src/components/Carousel'
 
 let qs = constructQueryString(["flag"]);
 
@@ -28,7 +29,7 @@ const filterCountries = (countries, searchText) => {
 function Countries() {
 	const language = useSelector((state) => state.language);
 	const globalData = useContext(GlobalData);
-	console.log(globalData,"globalDataglobalDataglobalData")
+	// console.log(globalData,"globalDataglobalDataglobalData")
 	const [data, setData] = useState([]);
 	const [searchText, setSearchText] = useState("");
 	const { response, loading, error } = useAxios({
@@ -77,8 +78,8 @@ function Countries() {
 	if (loading) return <PageSkeleton />;
 	if (!data.length) return;
 	let filteredCountries = data.filter((c) => !c.hidden);
-	let allCountries = explodeArray(filteredCountries, 11);
-
+	let allCountries = explodeArray(filteredCountries, 6);
+	return 		<Carousel countries={filteredCountries}/>
 	return (
 		<div id="full-width-megamenu" aria-labelledby="full-width-megamenu" className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
 			<div className="relative mb-12">
@@ -163,7 +164,7 @@ const NotFoundBox = ({globalData,searchText,clearFilter}) => {
 };
 
 const CountriesTable = ({ allCountries }) => {
-	console.log(allCountries, "allCountries");
+	// console.log(allCountries, "allCountries");
 	return (
 		<div id="full-width-megamenu" aria-labelledby="full-width-megamenu" className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
 			<div className="relative overflow-x-auto shadow-md sm:rounded-lg">
