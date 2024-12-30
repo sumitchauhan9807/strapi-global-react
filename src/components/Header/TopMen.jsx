@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { GlobalData } from "src/context";
 import { useContext } from "react";
 import { SocialMedia } from "src/components/Header/SocialMedia.jsx";
+import LanguageSelect from "src/components/small/MobileLanguageselector";
+
 
 export default function TopMen() {
 	const globalData = useContext(GlobalData);
@@ -72,7 +74,7 @@ export default function TopMen() {
 				{globalData.Email}
 			</a>
 			<div className="my-4 lg:my-0 flex lg:hidden block justify-center">
-				<SocialMedia />
+				<SocialMedia /><LanguageSelect />
 			</div>
 		</menu>
 	);

@@ -72,9 +72,9 @@ export const Footer = () => {
 	return (
 		<div className="bg-gray-900 flex justify-center ite">
 			<div className="pt-16 mx-auto max-w-screen-lg sm:max-w-xl md:max-w-full ">
-				<div className="grid row-gap-10 mb-8 lg:grid-cols-3 lg:px-6 px-4">
-					<div className="grid lg:grid-cols-5 grid-cols-1  lg:gap-20  row-gap-8 lg:col-span-3 md:grid-cols-4">
-						<div>
+				<div className="grid row-gap-10 mb-8 lg:grid-cols-3 lg:px-6 px-0">
+					<div className="grid lg:grid-cols-5 grid-cols-1  lg:gap-20  row-gap-8 lg:col-span-3 md:grid-cols-4 px-4">
+						<div className="">
 							<p className="font-medium tracking-wide text-gray-300">{globalData.translations.WorkingHours}</p>
 							<ul className="mt-2 space-y-2">
 								{data.data.WorkingHours.map((item) => {
