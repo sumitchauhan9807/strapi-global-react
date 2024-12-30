@@ -5,12 +5,14 @@ import { useSelector } from "react-redux";
 import { constructQueryString } from "src/helpers";
 import { baseUrl } from "src/helpers";
 import Animate from "src/components/Basic/Animate";
+import { useWindowDimensions } from "src/Hooks/HelperHooks";
 
 let qs = constructQueryString(["image"]);
 
 function DialerProducts() {
 	const [data, setData] = useState([]);
 	const language = useSelector((state) => state.language);
+	const wd = useWindowDimensions();
 	const { response, loading, error } = useAxios({
 		method: "get",
 		url: `products?${qs}locale=${language.language}`,
@@ -25,16 +27,28 @@ function DialerProducts() {
 	return (
 		<>
 			{data.data.map((list, index) => {
-				if (index % 2 == 0) {
-					return <RightImageSection data={list} />;
-				}
-				if (index % 2 != 0) {
-					return <LeftImageSection data={list} />;
+				if (wd.width > 1024) {
+					return <FullWidthSection list={list} index={index} />;
+				} else {
+					return <MobileWidthSection list={list} />;
 				}
 			})}
 		</>
 	);
 }
+
+const FullWidthSection = ({ list, index }) => {
+	if (index % 2 == 0) {
+		return <RightImageSection data={list} />;
+	}
+	if (index % 2 != 0) {
+		return <LeftImageSection data={list} />;
+	}
+};
+
+const MobileWidthSection = ({list, index}) => {
+	return <LeftImageSection data={list} />;
+};
 
 const RightImageSection = ({ data }) => {
 	return (
