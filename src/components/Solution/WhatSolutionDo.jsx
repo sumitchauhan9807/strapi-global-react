@@ -3,7 +3,7 @@ function WhatSolutionDo({ data }) {
 	return (
 		<section className="flex flex-col max-w-[1280px] mx-auto">
 			<h4 className="flex font-bold text-2xl mx-auto my-8">{data.Heading}</h4>
-			<section className="grid grid-cols-2 gap-8">
+			<section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 				{data.SolutionDos.map((solu) => {
 					return (
 						<div key={solu.id} className="flex flex-col p-16 bg-[#fafafa]">

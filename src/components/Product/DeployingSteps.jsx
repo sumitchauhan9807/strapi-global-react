@@ -12,7 +12,7 @@ function DeployingSteps({ data }) {
 				<h2 className="max-w-lg mb-6 font-sans text-2xl font-semi-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">{data.Heading}</h2>
 				<p className="text-base text-gray-700 md:text-lg">{data.SubHeading}</p>
 			</div>
-			<div className="grid gap-6 row-gap-10 lg:grid-cols-2 py-10">
+			<div className="grid gap-6 row-gap-10 grid-cols-1 lg:grid-cols-2 py-10">
 				<div className="lg:py-6 lg:pr-16">
 					<Animate
 						config={{
