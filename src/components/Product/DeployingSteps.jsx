@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { baseUrl } from "src/helpers";
 import Animate from "src/components/Basic/Animate";
+import { GlobalData } from "src/context";
 
 function DeployingSteps({ data }) {
+	const globalData = useContext(GlobalData);
+
 	return (
 		<>
 			<div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12 py-10">
@@ -47,7 +51,7 @@ function DeployingSteps({ data }) {
 								</div>
 							</div>
 							<div className="pt-1">
-								<p className="mb-2 text-lg font-bold">Success</p>
+								<p className="mb-2 text-lg font-bold">{globalData.translations.Success}</p>
 								<p className="text-gray-700" />
 							</div>
 						</div>
