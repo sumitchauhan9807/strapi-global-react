@@ -11,7 +11,7 @@ function ProductDescription({ data }) {
 							animateIn: "bounceInLeft",
 						}}
 					>
-						<img src={baseUrl() + data.Image.url} alt="Robot" className="w-full max-w-xs" />
+						<img src={baseUrl() + data.Image.url} alt="Robot" style={{maxWidth:"500px"}} className="" />
 					</Animate>
 				</div>
 				<div className="flex-2 p-6">
