@@ -54,8 +54,8 @@ export default LanguageSelector;
 
 function Language({allLangs,setLanguage}) {
   return (
-    <div id="full-width-megamenu" aria-labelledby="full-width-megamenu" className="dropdown-menu animate-fade z-10  absolute lg:top-full  right-0 m-auto bg-white rounded-lg shadow-[0px_15px_30px_0px_rgba(16,24,40,0.1)] lg:px-4 xl:px-4 md:px-5 p-4 max-w-screen-2xl xl:py-4 lg:py-4 md:py-2l  ">
-			<div className="grid grid-cols-1 lg:grid-cols-2  justify-between ">
+    <div id="full-width-megamenu" aria-labelledby="full-width-megamenu" className="dropdown-menu animate-fade z-10  absolute lg:top-full  right-0 m-auto bg-white rounded-lg shadow-[0px_15px_30px_0px_rgba(16,24,40,0.1)]  xl:px-4  md:px-5 p-4 max-w-screen-xl lg:px-2 px-10 xl:py-4 lg:py-4 md:py-2l  ">
+			<div className="grid grid-cols-1 lg:grid-cols-2  justify-betweenc ">
 				{allLangs.map((langArray,index)=>{
 					return (
 						<ul key={index} className="text-sm text-gray-700  " aria-labelledby="dropdownLargeButton">
