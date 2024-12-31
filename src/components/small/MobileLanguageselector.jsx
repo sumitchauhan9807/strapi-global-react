@@ -28,8 +28,8 @@ function LanguageSelector() {
     <>
 		<a className="relative inline-block text-left ml-2 h-full">
 			<div>
-				<button onClick={() => setIsOpen((prev) => !prev)} type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-lg  p-2 px-4 mt-3 text-base font-semibold bg-white text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-800" id="menu-button" aria-expanded="true" aria-haspopup="true">
-				<img src={activeLanguage.flag} style={{  height: "18px" }} /> <div className="text-xs text-gray-900">{activeLanguage.name}</div> 
+				<button onClick={() => setIsOpen((prev) => !prev)} type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-lg  p-2 px-4 mt-3 text-base font-semibold bg-white text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+				<img src={activeLanguage.flag} style={{  height: "18px" }} /> <div className="text-xs text-gray-900 ">{activeLanguage.name}</div> 
 					<svg className="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
 						<path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
 					</svg>
@@ -58,7 +58,7 @@ function Language({allLangs,setLanguage}) {
 			<div className="grid grid-cols-1 lg:grid-cols-2  justify-betweenc ">
 				{allLangs.map((langArray,index)=>{
 					return (
-						<ul key={index} className="text-sm text-gray-700  " aria-labelledby="dropdownLargeButton">
+						<ul key={index} className="text-sm text-gray-700 hover:text-gray-50  " aria-labelledby="dropdownLargeButton">
 							{langArray.map((language,index)=>{
 								return (
 							<li key={index}>
