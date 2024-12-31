@@ -4,6 +4,7 @@ import { GlobalData } from "src/context";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { explodeArray, baseUrl } from "src/helpers";
 import { useWindowDimensions } from "src/Hooks/HelperHooks";
+import DidSearch from 'src/components/DidSearch'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "src/assets/css/slick-custom.css";
@@ -11,9 +12,8 @@ import "src/assets/css/slick-custom.css";
 // const Columns = 4;
 
 export default function SimpleSlider({ countries }) {
-	const [searchText, setSearchText] = useState("");
+	
 	const [currentIndex,setCurrentIndex] = useState(0)
-	const globalData = useContext(GlobalData);
 	const slider = useRef(null);
 	console.log(slider, "sliderslider");
 	var settings = {
@@ -58,7 +58,9 @@ export default function SimpleSlider({ countries }) {
 		<>
 			<div className="relative">
 				<div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-					<input value={searchText} onChange={(e) => setSearchText(e.target.value)} type="search" id="search" className=" mb-4  w-full lg:w-1/2 block  p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={globalData.translations.CountriesSearchPlaceholder} required />
+		<DidSearch/>
+
+					
 					<Slider {...settings} ref={slider}>
 						{coutriesArr.map((countries, index) => {
 							return <CarouselItem key={index} countries={countries} carouselDimensions={carouselDimensions} />;
