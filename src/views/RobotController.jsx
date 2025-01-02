@@ -4,6 +4,7 @@ import { constructQueryString } from 'src/helpers'
 import { useSelector } from 'react-redux'
 import { useEffect ,useState } from 'react';
 import { baseUrl } from 'src/helpers'
+import {useLanguageInQuery} from 'src/Hooks/HelperHooks'
 
 import contactFormVectorImg from "../assets/images/contactForm.jpg";
 import SolutionDescription from "src/components/Solution/SolutionDescription";
@@ -24,6 +25,7 @@ let qs = constructQueryString([
 		"HowSolutionWorks"
 ]);
 export default function Solutions() {
+    useLanguageInQuery()
     const [data, setData] = useState([]);
     const language = useSelector((state) => state.language);
     const { response, loading, error } = useAxios({

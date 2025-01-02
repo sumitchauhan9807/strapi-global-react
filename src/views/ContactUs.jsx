@@ -7,11 +7,14 @@ import Animate from "src/components/Basic/Animate";
 import Features from "src/components/Basic/Features";
 import ContactForm1 from "src/components/NewForm";
 import GoogleMaps from "src/components/GoogleMaps";
+import {useLanguageInQuery} from 'src/Hooks/HelperHooks'
+
 // import Animate from "src/components/Basic/Animate";
 //AIzaSyDOkFPJ7laX0Tsy0QehCHQaN2UBrRvr_gI
 let qs = constructQueryString(["Lists", "Form.info", "Form.Purpose", "Form.info.icon", "Form.FormFields", "ContactLists.Lists", "ContactLists.Lists.Image"]);
 
 export const ContactUs = () => {
+	useLanguageInQuery()
 	const language = useSelector((state) => state.language);
 	const [data, setData] = useState([]);
 	const { response, loading, error } = useAxios({

@@ -7,6 +7,7 @@ import ProductDescription from 'src/components/Product/ProductDescription'
 import ProductSpecsList from 'src/components/Product/ProductSpecsList'
 import DeployingSteps from 'src/components/Product/DeployingSteps'
 
+import {useLanguageInQuery} from 'src/Hooks/HelperHooks'
 
 let qs = constructQueryString([
   "Description",
@@ -21,6 +22,7 @@ let qs = constructQueryString([
 ]);
 
 const PhoneNumber = () => {
+  useLanguageInQuery()
   const [data, setData] = useState([]);
   const language = useSelector((state) => state.language);
   const { response, loading, error } = useAxios({

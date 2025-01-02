@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import HeroBanner from "../components/HeroBanner.jsx";
+import {useLanguageInQuery} from 'src/Hooks/HelperHooks'
 
 import SectionTwo from "src/components/SectionTwo.jsx";
 import SectionThree from "src/components/SectionThree.jsx";
@@ -17,6 +18,7 @@ import { constructQueryString } from "src/helpers";
 let qs = constructQueryString(["Hero", "Hero.HeroText", "Hero.Image", "HomeSection1", "HomeSection1.Images", "HomeSection1.Lists","Countup.icon"]);
 
 function Home() {
+	useLanguageInQuery()
 	const [data, setData] = useState([]);
 	const language = useSelector((state) => state.language);
 	const { response, loading, error } = useAxios({

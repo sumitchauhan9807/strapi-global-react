@@ -1,8 +1,10 @@
 import React from "react";
 import transcription from "../assets/images/transcription.gif"
+import {useLanguageInQuery} from 'src/Hooks/HelperHooks'
 
 
 const CallTranscription = () => {
+  useLanguageInQuery()
   return (
     <div className="flex items-center justify-center p-10 bg-gray-50 rounded-lg">     
 

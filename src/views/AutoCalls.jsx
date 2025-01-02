@@ -1,8 +1,10 @@
 import React from "react";
 import Autocalls from "../assets/images/autocalls.gif"
+import {useLanguageInQuery} from 'src/Hooks/HelperHooks'
 
 
 const AutomatedCalls = () => {
+  useLanguageInQuery()
   return (
     <div className="flex items-center justify-center p-10 bg-gray-50 rounded-lg">     
 

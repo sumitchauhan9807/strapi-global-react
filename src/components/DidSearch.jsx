@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import { GlobalData } from "src/context";
-import { servicesAxios } from "src/axios";
+import { servicesAxios ,serviceBaseUrl } from "src/axios";
 import Loader from "src/components/small/Loader";
 import "src/assets/css/diddrop.css";
 import { useDebouncedValue } from "src/Hooks/HelperHooks";
@@ -14,7 +14,7 @@ function DidSearch() {
 	const getSearchResults = async () => {
 		if (searchText.length) {
       setLoading(true)
-			let { data } = await servicesAxios.get(`searchdid/${searchText}`);
+			let { data } = await servicesAxios.get(`search-number/${searchText}`);
 			setSearchData(data.did);
       setLoading(false)
 			// if(data.did = )
@@ -26,7 +26,7 @@ function DidSearch() {
 	useEffect(() => {
 		getSearchResults();
 	}, [debouncedSearchTerm]);
-	console.log(loading, "loading");
+	// console.log(loading, "loading");
 	return (
 		<div className="relative">
 			<input value={searchText} onChange={(e) => setSearchText(e.target.value)} type="text" className=" mb-4  w-full lg:w-1/2 block  p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={globalData.translations.CountriesSearchPlaceholder} />
@@ -51,33 +51,41 @@ const SearchedCountries = ({ searchData ,loading }) => {
 		</div>
 	);
 };
-
+//http://localhost:3030/assets/flags/al.svg
 const CountriesList = ({ searchData }) => {
+	// console.log(searchData,"searchData")
 	let countries = Object.keys(searchData);
 	return (
 		<>
 			{countries.map((country, index) => {
-				return (
-					<>
-						<li className="styles_option__57D02" data-value="/phone-numbers/all-phone-numbers/Germany/Local/">
-							<div className="styles_countryInfo__BZ0ud">
-								<img data-testid="circle-country-flag" width={18} height={18} title="de" src="https://hatscripts.github.io/circle-flags/flags/de.svg" /> <span className="styles_customLabel__Mln90">{country}</span>
-							</div>
-						</li>
-						{searchData[country].map((area, index) => {
-							return (
-								<li className="styles_option__57D02" data-value="/phone-numbers/all-phone-numbers/Germany/Local/Frankfurt/49-6109">
-									<div className="styles_prefixLabel__9P8BQ">
-										<div>
-											{area.countryCode}-{area.areaCode}
+				let subAreas = Object.keys(searchData[country].area)
+				console.log(countries)
+
+				return subAreas.map((subArea)=>{
+					let flag = searchData[country].isoCode?.toLowerCase()
+					return (
+						<>
+							<li className="styles_option__57D02" data-value="/phone-numbers/all-phone-numbers/Germany/Local/">
+								<div className="styles_countryInfo__BZ0ud">
+									<img data-testid="circle-country-flag" width={18} height={18} title="de" src={serviceBaseUrl + `assets/flags/${flag}.svg`} /> <span className="styles_customLabel__Mln90">{country}, {subArea}</span>
+								</div>
+							</li>
+							{searchData[country]['area'][subArea].map((area, index) => {
+								return (
+									<li className="styles_option__57D02" data-value="/phone-numbers/all-phone-numbers/Germany/Local/Frankfurt/49-6109">
+										<div className="styles_prefixLabel__9P8BQ">
+											<div>
+												{area.countryCode}-{area.prefix}
+											</div>
+											<div>{area.cityName}</div>
 										</div>
-										<div>{area.localArea}</div>
-									</div>
-								</li>
-							);
-						})}
-					</>
-				);
+									</li>
+								);
+							})}
+						</>
+					);
+				})
+				
 			})}
 		</>
 	);

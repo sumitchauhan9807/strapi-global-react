@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { PageSkeleton } from "src/components/small/Skeletons";
 
+import {useLanguageInQuery} from 'src/Hooks/HelperHooks'
 
 
 import useAxios from "src/Hooks/UseAxios";
@@ -15,6 +16,7 @@ let qs = constructQueryString([
 ]);
 
 const Datenschutz = () => {
+	useLanguageInQuery()
   const [data, setData] = useState([]);
 	const language = useSelector((state) => state.language);
 	const globalData = useContext(GlobalData);

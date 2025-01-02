@@ -2,6 +2,7 @@ import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Menu from "src/components/Menu";
 import Footer from "./components/PageFooter";
 // import Footer from "src/components/Footer";
+import { useParams } from 'react-router';
 
 import { PageSkeleton } from "src/components/small/Skeletons";
 import Home from "src/views/Home";
@@ -46,6 +47,7 @@ let qs = constructQueryString(["LightLogo", "DarkLogo"]);
 let qs2 = constructQueryString(["Navigation.MenuItem.SubMenu","TopMenu"]);
 
 function Router() {
+	
 	const [data, setData] = useState([]);
 	const [translations, setTranslations] = useState([]);
 
@@ -85,34 +87,34 @@ function Router() {
 			}}>
 				<Menu />
 				<Routes>
-					<Route exact path="/" element={<Home />} />
-					<Route exact path="/solutions/phone-numbers" element={<Solutions />} />
-					<Route exact path="/solutions/robot-controller" element={<RobotController />} />
-					<Route exact path="/solutions/home-office" element={<HomeOffice />} />
-					<Route exact path="/solutions/voice-robots" element={<VoiceRobots />} />
-					<Route exact path="/contactus" element={<ContactUs />} />
-					<Route exact path="/pricing" element={<PricingPage />} />
-					<Route exact path="/automatedcalls" element={<AutomatedCallsPage />} />
-					<Route exact path="/aicontactcenter" element={<AiContactcenter />} />
-					<Route exact path="/phonenumber" element={<PhoneNumber />} />
-					<Route exact path="/siptrunk" element={<SipTrunk />} />
-					<Route exact path="/texttospeach" element={<TextTospeach />} />
-					<Route exact path="/voicerobot" element={<VoiceRobot />} />
-					<Route exact path="/pbx" element={<PBx />} />
-					<Route exact path="/calltranscription" element={<CallTranscription />} />
-					<Route exact path="/callrecording" element={<CallRecording />} />
-					<Route exact path="/chatbotnews" element={<ChatbotNews />} />
-					<Route exact path="/accsales" element={<AccSales />} />
-					<Route exact path="/chatbotbuilder" element={<ChatBotbuilder />} />
-					<Route exact path="/freelancerchatbot" element={<FreelancerChatbot />} />
-					<Route exact path="/partners" element={<OurPartners />} />
-					<Route exact path="/countries" element={<CountriesPage />} />
-					<Route exact path="/team" element={<Team />} />
-					<Route exact path="/terms" element={<Terms />} />
-					<Route exact path="/privacy" element={<Privacy />} />
-					<Route exact path="/imprint" element={<Imprint />} />
-					<Route exact path="/impressum" element={<Impressum />} />
-					<Route exact path="/datenschutz" element={<Datenschutz />} />"
+					<Route exact path="/:lang?" element={<Home />} />
+					<Route exact path="/solutions/phone-numbers/:lang?" element={<Solutions />} />
+					<Route exact path="/solutions/robot-controller/:lang?" element={<RobotController />} />
+					<Route exact path="/solutions/home-office/:lang?" element={<HomeOffice />} />
+					<Route exact path="/solutions/voice-robots/:lang?" element={<VoiceRobots />} />
+					<Route exact path="/contactus/:lang?" element={<ContactUs />} />
+					<Route exact path="/pricing/:lang?" element={<PricingPage />} />
+					<Route exact path="/automatedcalls/:lang?" element={<AutomatedCallsPage />} />
+					<Route exact path="/aicontactcenter/:lang?" element={<AiContactcenter />} />
+					<Route exact path="/phonenumber/:lang?" element={<PhoneNumber />} />
+					<Route exact path="/siptrunk/:lang?" element={<SipTrunk />} />
+					<Route exact path="/texttospeach/:lang?" element={<TextTospeach />} />
+					<Route exact path="/voicerobot/:lang?" element={<VoiceRobot />} />
+					<Route exact path="/pbx/:lang?" element={<PBx />} />
+					<Route exact path="/calltranscription/:lang?" element={<CallTranscription />} />
+					<Route exact path="/callrecording/:lang?" element={<CallRecording />} />
+					<Route exact path="/chatbotnews/:lang?" element={<ChatbotNews />} />
+					<Route exact path="/accsales/:lang?" element={<AccSales />} />
+					<Route exact path="/chatbotbuilder/:lang?" element={<ChatBotbuilder />} />
+					<Route exact path="/freelancerchatbot/:lang?" element={<FreelancerChatbot />} />
+					<Route exact path="/partners/:lang?" element={<OurPartners />} />
+					<Route exact path="/countries/:lang?" element={<CountriesPage />} />
+					<Route exact path="/team/:lang?" element={<Team />} />
+					<Route exact path="/terms/:lang?" element={<Terms />} />
+					<Route exact path="/privacy/:lang?" element={<Privacy />} />
+					<Route exact path="/imprint/:lang?" element={<Imprint />} />
+					<Route exact path="/impressum/:lang?" element={<Impressum />} />
+					<Route exact path="/datenschutz/:lang?" element={<Datenschutz />} />"
 				</Routes>
 				<Footer />
 			</GlobalData.Provider>

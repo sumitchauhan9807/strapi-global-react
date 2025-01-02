@@ -6,10 +6,13 @@ import { useSelector } from "react-redux";
 import { PageSkeleton } from "src/components/small/Skeletons";
 import Animate from "src/components/Basic/Animate";
 import { baseUrl } from "src/helpers";
+import {useLanguageInQuery} from 'src/Hooks/HelperHooks'
+
 let qs = constructQueryString(["TopImage"]);
 
 
 function OurPartners() {
+	useLanguageInQuery()
 	const language = useSelector((state) => state.language);
 
 	const [data, setData] = useState([]);

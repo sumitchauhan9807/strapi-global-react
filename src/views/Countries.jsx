@@ -9,10 +9,13 @@ import { baseUrl } from "src/helpers";
 import GlobalWorldMap from "src/components/Basic/GlobalWorldMap";
 import Countries from 'src/components/Basic/Counteries'
 import Carousel from 'src/components/Carousel'
+import {useLanguageInQuery} from 'src/Hooks/HelperHooks'
+
 let qs = constructQueryString(["TopImage"]);
 
 
 function CountriesPage() {
+	useLanguageInQuery()
 	const language = useSelector((state) => state.language);
 
 	const [data, setData] = useState([]);

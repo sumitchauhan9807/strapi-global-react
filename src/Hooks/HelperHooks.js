@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-
+import { useParams } from "react-router";
+import { setLang } from "src/redux/language";
+import { useDispatch, useSelector } from "react-redux";
 export function useWindowDimensions() {
 	const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
@@ -23,18 +25,30 @@ function getWindowDimensions() {
 	};
 }
 
+export const useLanguageInQuery = () => {
+	const params = useParams();
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		if (params.lang) {
+			console.log("exter lang detected");
+			dispatch(setLang(params.lang));
+		}
+	}, [params.lang]);
+};
+
 export const useDebouncedValue = (inputValue, delay) => {
-  const [debouncedValue, setDebouncedValue] = useState(inputValue);
+	const [debouncedValue, setDebouncedValue] = useState(inputValue);
 
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedValue(inputValue);
-    }, delay);
+	useEffect(() => {
+		const handler = setTimeout(() => {
+			setDebouncedValue(inputValue);
+		}, delay);
 
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [inputValue, delay]);
+		return () => {
+			clearTimeout(handler);
+		};
+	}, [inputValue, delay]);
 
-  return debouncedValue;
+	return debouncedValue;
 };

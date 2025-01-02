@@ -6,6 +6,7 @@ import { useEffect } from "react";
 function App() {
 	const language = useSelector((state) => state.language);
 	const { i18n } = useTranslation();
+	
 	useEffect(() => {
 		i18n.changeLanguage(language.language);
 	}, [language.language]);
