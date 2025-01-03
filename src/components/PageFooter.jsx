@@ -10,7 +10,7 @@ import { constructQueryString } from "src/helpers";
 import { GlobalData } from "src/context";
 import { useContext } from "react";
 import { SocialMedia } from "src/components/Header/SocialMedia.jsx";
-import { Link } from "react-router-dom";
+import  Link  from "src/components/Basic/Link";
 let qs = constructQueryString([
 	"WorkingHours",
 	//  "ContactUs",

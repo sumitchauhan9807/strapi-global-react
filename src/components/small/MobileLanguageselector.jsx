@@ -19,7 +19,14 @@ function LanguageSelector() {
 	const dispatch = useDispatch();
 	const language = useSelector((state) => state.language);
 	const setLanguage = (lang) => {
+		let currentPath = window.location.pathname
+		
+		Languages.forEach((lang)=>{
+			currentPath = currentPath.replaceAll(`/${lang.code}`,"")
+		})
 		dispatch(setLang(lang));
+		window.history.replaceState(null, '', currentPath+`/${lang}`)
+
 	};
   let allLangs = getLanguagesArray(5)
   let activeLanguage = Languages.find(l => l.code == language.language)
@@ -54,7 +61,7 @@ export default LanguageSelector;
 
 function Language({allLangs,setLanguage}) {
   return (
-    <div id="full-width-megamenu" aria-labelledby="full-width-megamenu" className="dropdown-menu animate-fade z-10 mt-14  absolute lg:top-full   right-8 m-auto bg-white rounded-lg shadow-[0px_15px_30px_0px_rgba(16,24,40,0.1)]  xl:px-4  md:px-5 p-4 max-w-screen-xl lg:px-2 px-4 xl:py-4 lg:py-4   ">
+    <div id="full-width-megamenu" aria-labelledby="full-width-megamenu" className="dropdown-menu animate-fade z-10 mt-2  absolute lg:top-full   right-8 m-auto bg-white rounded-lg shadow-[0px_15px_30px_0px_rgba(16,24,40,0.1)]  xl:px-4  md:px-5 p-4 max-w-screen-xl lg:px-2 px-4 xl:py-4 lg:py-4   ">
 			<div className="grid grid-cols-1 lg:grid-cols-2  justify-betweenc ">
 				{allLangs.map((langArray,index)=>{
 					return (

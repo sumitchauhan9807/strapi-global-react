@@ -74,7 +74,7 @@ export default function TopMen() {
 				{globalData.Email}
 			</a>
 			<div className="my-4 lg:my-0 flex lg:hidden block justify-center">
-				<SocialMedia /><LanguageSelect />
+				<SocialMedia /><div className="ml-4"><LanguageSelect /></div>
 			</div>
 		</menu>
 	);

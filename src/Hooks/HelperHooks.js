@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { setLang } from "src/redux/language";
 import { useDispatch, useSelector } from "react-redux";
+import { Languages } from "src/helpers";
 export function useWindowDimensions() {
 	const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
@@ -31,8 +32,10 @@ export const useLanguageInQuery = () => {
 
 	useEffect(() => {
 		if (params.lang) {
-			console.log("exter lang detected");
-			dispatch(setLang(params.lang));
+			let isLangExists = Languages.find((l) => l.code == params.lang);
+			if (isLangExists) {
+				// dispatch(setLang(params.lang));
+			}
 		}
 	}, [params.lang]);
 };

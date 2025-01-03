@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import LanguageSelect from "src/components/small/NewLanguageselector";
 // import { useProductMenuItems ,useSolutionsMenuItems } from "../menuItems";
 // import LanguageSelect from "src/components/small/NewLanguageselector";
-import { Link } from "react-router-dom";
+import  Link  from "src/components/Basic/Link";
 import { GrAnalytics } from "react-icons/gr";
 import { LuMousePointerClick } from "react-icons/lu";
 import { GrShieldSecurity } from "react-icons/gr";

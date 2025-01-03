@@ -2,15 +2,6 @@ import { useState } from "react";
 import { setLang } from "src/redux/language";
 import { useDispatch, useSelector } from "react-redux";
 
-import USA from "src/assets/flags/usa.png";
-import arabic from "src/assets/flags/arabic.png";
-import france from "src/assets/flags/france.png";
-import germany from "src/assets/flags/germany.png";
-import hungary from "src/assets/flags/hungary.png";
-import italy from "src/assets/flags/italy.png";
-import romania from "src/assets/flags/romania.png";
-import russia from "src/assets/flags/russia.png";
-import serbia from "src/assets/flags/serbia.png";
 
 
 import {getLanguagesArray,Languages} from 'src/helpers'
@@ -19,7 +10,14 @@ function LanguageSelector() {
 	const dispatch = useDispatch();
 	const language = useSelector((state) => state.language);
 	const setLanguage = (lang) => {
+		let currentPath = window.location.pathname
+		
+		Languages.forEach((lang)=>{
+			currentPath = currentPath.replaceAll(`/${lang.code}`,"")
+		})
 		dispatch(setLang(lang));
+		window.history.replaceState(null, '', currentPath+`/${lang}`)
+
 	};
   let allLangs = getLanguagesArray(5)
   let activeLanguage = Languages.find(l => l.code == language.language)
@@ -29,7 +27,7 @@ function LanguageSelector() {
 		<a className="relative inline-block text-left ml-2 h-full">
 			<div>
 				<button onClick={() => setIsOpen((prev) => !prev)} type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white p-2 px-4 text-base font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
-				<img src={activeLanguage.flag} style={{  height: "25px" }} /> {activeLanguage.name}
+				<img src={activeLanguage.flag} style={{  height: "25px" }} /> {activeLanguage.code}
 					<svg className="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
 						<path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
 					</svg>
