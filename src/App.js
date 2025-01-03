@@ -16,7 +16,9 @@ function App() {
 	if (lastQueryContainsLanguage(lastQuery)) {
 		dispatch(setLang(lastQuery));
 	} else {
-		dispatch(setLang("en"));
+		if(window.location.pathname != '/') {
+			dispatch(setLang("en"));
+		}
 	}
 
 	useEffect(() => {

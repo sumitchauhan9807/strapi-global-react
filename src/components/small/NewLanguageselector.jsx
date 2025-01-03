@@ -16,8 +16,9 @@ function LanguageSelector() {
 			currentPath = currentPath.replaceAll(`/${lang.code}`,"")
 		})
 		dispatch(setLang(lang));
-		window.history.replaceState(null, '', currentPath+`/${lang}`)
-
+		if(currentPath != '/') {
+			window.history.replaceState(null, '', currentPath+`/${lang}`)
+		}
 	};
   let allLangs = getLanguagesArray(5)
   let activeLanguage = Languages.find(l => l.code == language.language)
