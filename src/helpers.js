@@ -91,3 +91,17 @@ export const explodeArray = (array, childsLength) => {
 	}
 	return allLangs;
 };
+
+export const filterDomainData = (data) => {
+	if (window.location.host.includes("local")) {
+		data.data.domainData = data.data.DomainSpecificData.find((d) => d.domain == "us");
+		return data;
+	}
+
+	let domainArray = window.location.host.split(".");
+	let thisDomian = domainArray[domainArray.length - 1];
+	if (thisDomian) {
+		data.data.domainData = data.data.DomainSpecificData.find((d) => d.domain == thisDomian);
+	}
+	return data;
+};

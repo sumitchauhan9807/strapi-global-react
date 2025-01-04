@@ -32,7 +32,7 @@ import Team from "src/views/Team";
 import Terms from "src/views/Terms";
 import Privacy from "src/views/Privacy";
 import Imprint from "src/views/Imprint";
-
+import { filterDomainData } from 'src/helpers'
 import { GlobalData } from "src/context";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -43,7 +43,7 @@ import Datenschutz from "./views/DatenscHutz";
 import { useLocation } from "react-router-dom";
 
 
-let qs = constructQueryString(["LightLogo", "DarkLogo"]);
+let qs = constructQueryString(["LightLogo", "DarkLogo","DomainSpecificData"]);
 let qs2 = constructQueryString(["Navigation.MenuItem.SubMenu","TopMenu"]);
 
 function Router() {
@@ -66,7 +66,8 @@ function Router() {
 	});
 	useEffect(() => {
 		if (response !== null) {
-			setData(response);
+			let filteredData = filterDomainData(response)
+			setData(filteredData);
 		}
 	}, [response]);
 	useEffect(() => {

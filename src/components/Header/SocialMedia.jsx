@@ -75,7 +75,7 @@ export const SocialMedia = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={globalData.global.whatsapp}
+          href={globalData.global.domainData.Whatsapp}
           className="transition hover:opacity-80 animate-pulse"
         >
           <img src={Whatsapp} alt="WhatsApp" className="h-6" />
