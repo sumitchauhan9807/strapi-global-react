@@ -85,7 +85,7 @@ export const SocialMedia = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={globalData.global.signal}
+          href={globalData.global.domainData.Signal}
           className="transition hover:opacity-80 animate-pulse"
         >
           <img src={Signal} alt="Signal" className="h-6" />
