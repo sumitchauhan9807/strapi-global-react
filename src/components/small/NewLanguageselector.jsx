@@ -60,12 +60,12 @@ function Language({allLangs,setLanguage}) {
 						<ul key={index} className="text-sm text-gray-700  " aria-labelledby="dropdownLargeButton">
 							{langArray.map((language,index)=>{
 								return (
-							<li key={index}>
-								<a onClick={(e)=> {e.preventDefault() ; setLanguage(language.code)}} href="#" className="py-2 transition-all duration-500 hover:bg-gray-50 hover:rounded-xl flex items-center ">
+							<li key={index} >
+								<a onClick={(e)=> {e.preventDefault() ; setLanguage(language.code)}} href="#" className="py-2 transition-all duration-500 transform hover:scale-105 hover:translate-x-2 flex items-center ">
 									<div className="bg-orange-50 rounded-lg  flex items-center justify-center">
 									<img src={language.flag} style={{ float: "left", height: "20px", marginRight: "7px" }} />
 									</div>
-									<div className="ml-4 w-4/5">
+									<div className="ml-4 w-4/5 k">
 									<p className="text-xs font-medium text-gray-900"> {language.name}</p>
 									</div>
 								</a>
