@@ -25,7 +25,7 @@ export const SocialMedia = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={globalData.global.facebook}
+          href={globalData?.global?.facebook}
           className="transition hover:opacity-80"
         >
           <img src={Facebook} alt="Facebook" className="h-6" />
@@ -35,7 +35,7 @@ export const SocialMedia = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={globalData.global.skype}
+          href={globalData?.global?.skype}
           className="transition hover:opacity-80"
         >
           <img src={Skype} alt="Skype" className="h-6" />
@@ -45,7 +45,7 @@ export const SocialMedia = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={globalData.global.xing}
+          href={globalData?.global?.xing}
           className="transition hover:opacity-80"
         >
           <img src={Xing} alt="Xing" className="h-6" />
@@ -55,7 +55,7 @@ export const SocialMedia = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={globalData.global.linkedin}
+          href={globalData?.global?.linkedin}
           className="transition hover:opacity-80"
         >
           <img src={Linkedin} alt="LinkedIn" className="h-6" />
@@ -65,7 +65,7 @@ export const SocialMedia = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={globalData.global.instagram} // Corrected the link
+          href={globalData?.global?.instagram} // Corrected the link
           className="transition hover:opacity-80"
         >
           <img src={Instagram} alt="Instagram" className="h-6" />
@@ -75,7 +75,7 @@ export const SocialMedia = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={globalData.global.domainData.Whatsapp}
+          href={globalData?.global?.domainData?.Whatsapp}
           className="transition hover:opacity-80 animate-pulse"
         >
           <img src={Whatsapp} alt="WhatsApp" className="h-6" />
@@ -85,7 +85,7 @@ export const SocialMedia = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={globalData.global.domainData.Signal}
+          href={globalData?.global?.domainData?.Signal}
           className="transition hover:opacity-80 animate-pulse"
         >
           <img src={Signal} alt="Signal" className="h-6" />
