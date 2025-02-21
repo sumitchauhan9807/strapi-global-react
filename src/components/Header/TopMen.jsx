@@ -9,6 +9,7 @@ import LanguageSelect from "src/components/small/MobileLanguageselector";
 
 export default function TopMen() {
 	const globalData = useContext(GlobalData);
+	console.log(globalData,"globalDataglobalDataglobalDataglobalData")
 	return (
 		<menu className="flex flex-col lg:flex-row items-center lg:justify-between lg:px-28 bg-[#141b24] p-4 text-white">
 			{/* Left Section */}
@@ -47,7 +48,7 @@ export default function TopMen() {
 						</g>
 					</g>
 				</svg>
-				<span>{globalData.global?.domainData?.Phonenumber} &nbsp;</span>
+				<span>{globalData.global?.Phonenumber} &nbsp;</span>
 				<svg xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" width="20" height="20" style={{ shapeRendering: "geometricPrecision", textRendering: "geometricPrecision", imageRendering: "optimizeQuality", fillRule: "evenodd", clipRule: "evenodd" }} viewBox="0 0 6.827 6.827">
 					<defs>
 						<style dangerouslySetInnerHTML={{ __html: ".fil0{fill:none}.fil2{fill:#e64a19}" }} />
@@ -64,14 +65,14 @@ export default function TopMen() {
 						</g>
 					</g>
 				</svg>
-				<span>{globalData.global?.domainData?.Phonenumber2} &nbsp;</span>
-				<a target="_blank" rel="noopener noreferrer" href={`mailto:${globalData?.global?.domainData?.Email}`} className="underline hover:text-gray-300 hidden lg:block transition">
-					{globalData?.global?.domainData?.Email}
+				<span>{globalData.global?.TopMenuPhone1} &nbsp;</span>
+				<a target="_blank" rel="noopener noreferrer" href={`mailto:${globalData?.global?.Email}`} className="underline hover:text-gray-300 hidden lg:block transition">
+					{globalData?.global?.Email}
 				</a>{" "}
 				<br />
 			</div>
-			<a target="_blank" rel="noopener noreferrer" href={`mailto:${globalData?.global?.domainData?.Email}`} className="underline hover:text-gray-300 lg:hidden block transition">
-				{globalData?.global?.domainData?.Email}
+			<a target="_blank" rel="noopener noreferrer" href={`mailto:${globalData?.global?.Email}`} className="underline hover:text-gray-300 lg:hidden block transition">
+				{globalData?.global?.Email}
 			</a>
 			<div className="my-4 lg:my-0 flex lg:hidden block justify-center">
 				<SocialMedia /><div className="ml-8"><LanguageSelect /></div>
