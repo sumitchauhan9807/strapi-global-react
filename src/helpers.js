@@ -94,7 +94,7 @@ export const explodeArray = (array, childsLength) => {
 
 export const filterDomainData = (data) => {
 	if (window.location.host.includes("local")) {
-		data.data.domainData = data.data.DomainSpecificData.find((d) => d.domain == "us");
+		data.data.domainData = data.data.DomainSpecificData.find((d) => d.domain == "net");
 		return data;
 	}
 
