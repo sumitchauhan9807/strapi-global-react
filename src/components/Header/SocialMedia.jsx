@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import Facebook from "src/assets/icons/Facebook.gif";
 import Linkedin from "src/assets/icons/linkedin.gif";
 import Xing from "src/assets/icons/xing.gif";
-import Skype from "src/assets/icons/Skype.gif";
+import Skype from "src/assets/icons/teams.gif";
 import Instagram from "src/assets/icons/Instagram.gif";
 import Whatsapp from "src/assets/icons/whatsapp.png";
 import Signal from "src/assets/icons/Signal.png";
