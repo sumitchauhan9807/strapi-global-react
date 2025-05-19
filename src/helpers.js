@@ -9,7 +9,7 @@ import romania from "src/assets/flags/romania.png";
 import russia from "src/assets/flags/russia.png";
 import serbia from "src/assets/flags/serbia.png";
 export const baseUrl = () => {
-	return production ? "https://backend.globalchat.us" : "http://localhost:1337";
+	return production ? "https://backend.724voip.net" : "http://localhost:1337";
 };
 
 export const constructQueryString = (fields) => {
